@@ -20,6 +20,8 @@
 		DE7726FE250EE4E8002E6EA7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DE7726FD250EE4E8002E6EA7 /* .swiftlint.yml */; };
 		DEB4EDBA2510DFD9009F744F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDB92510DFD9009F744F /* LoginView.swift */; };
 		DEB4EDBC2510FF4E009F744F /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDBB2510FF4E009F744F /* Separator.swift */; };
+		DEB4EDBE25123E21009F744F /* SigninController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDBD25123E21009F744F /* SigninController.swift */; };
+		DEB4EDC0251244E5009F744F /* LoginViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDBF251244E5009F744F /* LoginViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		DE7726FD250EE4E8002E6EA7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		DEB4EDB92510DFD9009F744F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DEB4EDBB2510FF4E009F744F /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
+		DEB4EDBD25123E21009F744F /* SigninController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninController.swift; sourceTree = "<group>"; };
+		DEB4EDBF251244E5009F744F /* LoginViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				DE7726C5250E8950002E6EA7 /* LoginController.swift */,
+				DEB4EDBD25123E21009F744F /* SigninController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				DE7726F8250E8A1E002E6EA7 /* Extension.swift */,
+				DEB4EDBF251244E5009F744F /* LoginViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -339,9 +345,11 @@
 				DEB4EDBA2510DFD9009F744F /* LoginView.swift in Sources */,
 				DE7726C6250E8950002E6EA7 /* LoginController.swift in Sources */,
 				DEB4EDBC2510FF4E009F744F /* Separator.swift in Sources */,
+				DEB4EDC0251244E5009F744F /* LoginViewExtension.swift in Sources */,
 				DE7726FB250E8A2A002E6EA7 /* Utility.swift in Sources */,
 				DE7726C2250E8950002E6EA7 /* AppDelegate.swift in Sources */,
 				DE7726C4250E8950002E6EA7 /* SceneDelegate.swift in Sources */,
+				DEB4EDBE25123E21009F744F /* SigninController.swift in Sources */,
 				DE7726F7250E8A0F002E6EA7 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

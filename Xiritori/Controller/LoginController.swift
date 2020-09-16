@@ -11,10 +11,6 @@ import UIKit
 class LoginController: UIViewController {
     let loginView: LoginView = {
         let view = LoginView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.submitAction = {
-            print("Clicou!")
-        }
         return view
     }()
     
@@ -22,12 +18,29 @@ class LoginController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        view.addSubview(loginView)
         
         self.setupLayout()
     }
     
+    private func login() {
+        print("Logar!")
+    }
+    
+    private func guest() {
+        print("Convidado!")
+    }
+    
+    private func signin() {
+        print("Cadastrar!")
+    }
+    
     private func setupLayout() {
+        view.addSubview(loginView)
+        loginView.translatesAutoresizingMaskIntoConstraints = false
+        loginView.submitAction = { self.login() }
+        loginView.signinAction = { self.signin() }
+        loginView.guestAction = { self.guest() }
+        
         NSLayoutConstraint.activate([
             loginView.topAnchor.constraint(equalTo: view.topAnchor),
             loginView.leftAnchor.constraint(equalTo: view.leftAnchor),
