@@ -13,7 +13,6 @@ class LoginView: UIView {
     // Logo Image.
     lazy var logo: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "test"))
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
@@ -26,7 +25,6 @@ class LoginView: UIView {
         textField.borderStyle = UITextField.BorderStyle.roundedRect
         textField.keyboardType = .emailAddress
         textField.textContentType = .emailAddress
-        textField.translatesAutoresizingMaskIntoConstraints = false
         textField.clipsToBounds = true
         return textField
     }()
@@ -40,7 +38,6 @@ class LoginView: UIView {
         textField.borderStyle = UITextField.BorderStyle.roundedRect
         textField.textContentType = .password
         textField.isSecureTextEntry = true
-        textField.translatesAutoresizingMaskIntoConstraints = false
         textField.clipsToBounds = true
         return textField
     }()
@@ -52,7 +49,6 @@ class LoginView: UIView {
         button.setTitleColor(.blue, for: .normal)
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.gray.cgColor
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(submit), for: .touchUpInside)
         return button
     }()
@@ -60,14 +56,12 @@ class LoginView: UIView {
     // Separator OR
     lazy var separator: Separator = {
         let sep = Separator()
-        sep.translatesAutoresizingMaskIntoConstraints = false
         return sep
     }()
     
     // Authorization Apple
     lazy var autoriztionAppleButton: ASAuthorizationAppleIDButton = {
         let authorizationButton = ASAuthorizationAppleIDButton()
-        authorizationButton.translatesAutoresizingMaskIntoConstraints = false
         authorizationButton.clipsToBounds = true
         return authorizationButton
     }()
@@ -79,7 +73,6 @@ class LoginView: UIView {
         button.setTitleColor(.blue, for: .normal)
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.gray.cgColor
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(submit), for: .touchUpInside)
         return button
     }()
@@ -91,7 +84,6 @@ class LoginView: UIView {
         button.setTitleColor(.blue, for: .normal)
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.gray.cgColor
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(submit), for: .touchUpInside)
         return button
     }()
@@ -119,7 +111,7 @@ class LoginView: UIView {
         submitButton.layer.cornerRadius = submitButton.frame.height / 2
         autoriztionAppleButton.layer.cornerRadius = autoriztionAppleButton.frame.height / 2
         signinButton.layer.cornerRadius = signinButton.frame.height / 2
-        (guestButton).layer.cornerRadius = (guestButton).frame.height / 2
+        guestButton.layer.cornerRadius = guestButton.frame.height / 2
     }
     
     // Dismiss the keyboard when the view is touched.
@@ -139,8 +131,11 @@ class LoginView: UIView {
         self.addSubview(guestButton)
     }
     
+// MARK: - CONSTRAINTS
+    
     private func setupLayout() {
         // Logo Constraints
+        logo.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             logo.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
             logo.centerXAnchor.constraint(equalTo: self.centerXAnchor),
@@ -148,6 +143,7 @@ class LoginView: UIView {
             logo.heightAnchor.constraint(equalTo: logo.widthAnchor)
         ])
         // Email TextField Constraints
+        emailTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             emailTextField.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 40),
             emailTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 40),
@@ -155,6 +151,7 @@ class LoginView: UIView {
             emailTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
         // Password TextField Contraints
+        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 10),
             passwordTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 40),
@@ -162,6 +159,7 @@ class LoginView: UIView {
             passwordTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
         // Submit Button Contraints
+        submitButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             submitButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10),
             submitButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 40),
@@ -169,12 +167,14 @@ class LoginView: UIView {
             submitButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         // Separator
+        separator.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             separator.topAnchor.constraint(equalTo: submitButton.bottomAnchor, constant: 40),
             separator.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 40),
             separator.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -40)
         ])
         // Apple Authorization Button
+        autoriztionAppleButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             autoriztionAppleButton.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 55),
             autoriztionAppleButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 40),
@@ -182,6 +182,7 @@ class LoginView: UIView {
             autoriztionAppleButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         // SignIn Button Contraints
+        signinButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             signinButton.topAnchor.constraint(equalTo: autoriztionAppleButton.bottomAnchor, constant: 10),
             signinButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 40),
@@ -189,6 +190,7 @@ class LoginView: UIView {
             signinButton.heightAnchor.constraint(equalToConstant: 50)
         ])
         // Guest Button Contraints
+        guestButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             guestButton.topAnchor.constraint(equalTo: signinButton.bottomAnchor, constant: 10),
             guestButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 40),

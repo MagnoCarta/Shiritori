@@ -12,6 +12,9 @@ class LoginController: UIViewController {
     let loginView: LoginView = {
         let view = LoginView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.submitAction = {
+            print("Clicou!")
+        }
         return view
     }()
     
@@ -22,10 +25,6 @@ class LoginController: UIViewController {
         view.addSubview(loginView)
         
         self.setupLayout()
-        
-        loginView.submitAction = {
-            print("Clicou!")
-        }
     }
     
     private func setupLayout() {
