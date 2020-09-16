@@ -22,6 +22,8 @@
 		DEB4EDBC2510FF4E009F744F /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDBB2510FF4E009F744F /* Separator.swift */; };
 		DEB4EDBE25123E21009F744F /* SigninController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDBD25123E21009F744F /* SigninController.swift */; };
 		DEB4EDC0251244E5009F744F /* LoginViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDBF251244E5009F744F /* LoginViewExtension.swift */; };
+		DEB4EDC225124C94009F744F /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDC125124C94009F744F /* SigninView.swift */; };
+		DEB4EDC425124CD0009F744F /* SigninViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDC325124CD0009F744F /* SigninViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		DEB4EDBB2510FF4E009F744F /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
 		DEB4EDBD25123E21009F744F /* SigninController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninController.swift; sourceTree = "<group>"; };
 		DEB4EDBF251244E5009F744F /* LoginViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewExtension.swift; sourceTree = "<group>"; };
+		DEB4EDC125124C94009F744F /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
+		DEB4EDC325124CD0009F744F /* SigninViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 			children = (
 				DE7726F8250E8A1E002E6EA7 /* Extension.swift */,
 				DEB4EDBF251244E5009F744F /* LoginViewExtension.swift */,
+				DEB4EDC325124CD0009F744F /* SigninViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 				DE7726CC250E8952002E6EA7 /* LaunchScreen.storyboard */,
 				DEB4EDB92510DFD9009F744F /* LoginView.swift */,
 				DEB4EDBB2510FF4E009F744F /* Separator.swift */,
+				DEB4EDC125124C94009F744F /* SigninView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,8 +347,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEB4EDC425124CD0009F744F /* SigninViewExtension.swift in Sources */,
 				DE7726F9250E8A1E002E6EA7 /* Extension.swift in Sources */,
 				DEB4EDBA2510DFD9009F744F /* LoginView.swift in Sources */,
+				DEB4EDC225124C94009F744F /* SigninView.swift in Sources */,
 				DE7726C6250E8950002E6EA7 /* LoginController.swift in Sources */,
 				DEB4EDBC2510FF4E009F744F /* Separator.swift in Sources */,
 				DEB4EDC0251244E5009F744F /* LoginViewExtension.swift in Sources */,

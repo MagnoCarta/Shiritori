@@ -69,7 +69,7 @@ class LoginView: UIView {
         return authorizationButton
     }()
     
-    // Submit Button.
+    // Signin Button.
     lazy var signinButton: UIButton = {
         let button = UIButton()
         button.setTitle("Cadastrar", for: .normal)
@@ -80,7 +80,7 @@ class LoginView: UIView {
         return button
     }()
     
-    // Submit Button.
+    // Guest Button.
     lazy var guestButton: UIButton = {
         let button = UIButton()
         button.setTitle("Convidado", for: .normal)

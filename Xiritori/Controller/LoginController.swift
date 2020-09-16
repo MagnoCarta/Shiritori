@@ -17,7 +17,10 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        self.view.backgroundColor = .white
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.barTintColor = .white
+        self.navigationController?.overrideUserInterfaceStyle = .light
         
         self.setupLayout()
     }
@@ -31,7 +34,11 @@ class LoginController: UIViewController {
     }
     
     private func signin() {
-        print("Cadastrar!")
+        let signinScreen = SigninController()
+        let backItem = UIBarButtonItem()
+        backItem.title = "Login"
+        navigationItem.backBarButtonItem = backItem
+        navigationController?.pushViewController(signinScreen, animated: true)
     }
     
     private func setupLayout() {

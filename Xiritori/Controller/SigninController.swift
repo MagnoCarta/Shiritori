@@ -9,9 +9,15 @@
 import UIKit
 
 class SigninController: UIViewController {
+    
+    let signinView = SigninView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .red
+        
+        self.navigationItem.title = "Cadastrar"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.view = signinView
+        
     }
 }
