@@ -9,50 +9,39 @@
 import UIKit
 
 class LoginController: UIViewController {
-    let loginView: LoginView = {
+// MARK: - VIEW
+    lazy var loginView: LoginView = {
         let view = LoginView()
+        view.submitAction = { self.login() }
+        view.signinAction = { self.signin() }
+        view.guestAction = { self.guest() }
         return view
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.view.backgroundColor = .white
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.barTintColor = .white
-        self.navigationController?.overrideUserInterfaceStyle = .light
-        
-        self.setupLayout()
+// MARK: - APP CYCLE
+    override func loadView() {
+        super.loadView()
+        self.view = loginView
     }
     
-    private func login() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.navigationBar.standardAppearance.configureWithTransparentBackground()
+        // Always use Light Mode.
+        self.navigationController?.overrideUserInterfaceStyle = .light
+    }
+    
+// MARK: - ACTIONS
+    func login() { // login action.
         print("Logar!")
     }
     
-    private func guest() {
+    private func guest() { // log as a guest.
         print("Convidado!")
     }
     
-    private func signin() {
-        let signinScreen = SigninController()
-        let backItem = UIBarButtonItem()
-        backItem.title = "Login"
-        navigationItem.backBarButtonItem = backItem
-        navigationController?.pushViewController(signinScreen, animated: true)
-    }
-    
-    private func setupLayout() {
-        view.addSubview(loginView)
-        loginView.translatesAutoresizingMaskIntoConstraints = false
-        loginView.submitAction = { self.login() }
-        loginView.signinAction = { self.signin() }
-        loginView.guestAction = { self.guest() }
-        
-        NSLayoutConstraint.activate([
-            loginView.topAnchor.constraint(equalTo: view.topAnchor),
-            loginView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            loginView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            loginView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+    private func signin() { // goes to signin screen.
+        let signinController = SigninController()
+        navigationController?.pushViewController(signinController, animated: true)
     }
 }

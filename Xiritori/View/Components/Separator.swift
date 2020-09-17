@@ -9,7 +9,7 @@
 import UIKit
 
 class Separator: UIView {
-    
+    // Views
     lazy var line: UIView = {
         let view = UIView()
         view.backgroundColor = .gray
@@ -25,7 +25,8 @@ class Separator: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
+    // Inits
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupLayout()
@@ -35,6 +36,7 @@ class Separator: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // Constraints
     private func setupLayout() {
         self.addSubview(line)
         self.addSubview(labelOr)

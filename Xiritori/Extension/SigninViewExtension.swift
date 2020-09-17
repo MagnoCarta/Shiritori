@@ -9,7 +9,12 @@
 import UIKit
 
 extension SigninView {
-    func setupLayout() {
+    func setupAllViews() {
+        self.setupTextFields()
+        self.setupButtons()
+    }
+    
+    private func setupTextFields() {
         // Username TextField Constraints
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -42,6 +47,9 @@ extension SigninView {
             repeatPasswordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
             repeatPasswordTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    private func setupButtons() {
         // Signin TextField Constraints
         signinButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

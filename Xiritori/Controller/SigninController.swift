@@ -9,15 +9,26 @@
 import UIKit
 
 class SigninController: UIViewController {
-    
+// MARK: - VIEW
     let signinView = SigninView()
+
+// MARK: - APP CYCLE
+    override func loadView() {
+        super.loadView()
+        self.view = signinView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationItem.title = "Cadastrar"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.view = signinView
-        
+        self.configureNavBar()
+    }
+    
+// MARK: - FUNC
+    private func configureNavBar() {
+        let backItem = UIBarButtonItem(title: "Login", style: .plain, target: nil, action: nil)
+        navigationItem.title = "Cadastrar"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.standardAppearance.configureWithTransparentBackground()
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backItem
     }
 }

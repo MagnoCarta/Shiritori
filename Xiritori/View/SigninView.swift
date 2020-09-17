@@ -77,13 +77,14 @@ class SigninView: UIView {
         super.init(frame: frame)
         self.backgroundColor = .white
         self.addSubviews()
-        self.setupLayout()
+        self.setupAllViews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+// MARK: - FUNC
     private func addSubviews() {
         self.addSubview(usernameTextField)
         self.addSubview(emailTextField)

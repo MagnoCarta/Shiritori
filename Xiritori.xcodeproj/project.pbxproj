@@ -179,10 +179,10 @@
 			isa = PBXGroup;
 			children = (
 				DE7726CA250E8952002E6EA7 /* Assets.xcassets */,
-				DE7726CC250E8952002E6EA7 /* LaunchScreen.storyboard */,
+				DEB4EDC525139678009F744F /* Components */,
 				DEB4EDB92510DFD9009F744F /* LoginView.swift */,
-				DEB4EDBB2510FF4E009F744F /* Separator.swift */,
 				DEB4EDC125124C94009F744F /* SigninView.swift */,
+				DE7726CC250E8952002E6EA7 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,6 +193,14 @@
 				DE7726FA250E8A2A002E6EA7 /* Utility.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		DEB4EDC525139678009F744F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DEB4EDBB2510FF4E009F744F /* Separator.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
