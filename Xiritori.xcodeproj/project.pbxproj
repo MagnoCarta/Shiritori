@@ -18,6 +18,8 @@
 		DE7726F9250E8A1E002E6EA7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726F8250E8A1E002E6EA7 /* Extension.swift */; };
 		DE7726FB250E8A2A002E6EA7 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726FA250E8A2A002E6EA7 /* Utility.swift */; };
 		DE7726FE250EE4E8002E6EA7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DE7726FD250EE4E8002E6EA7 /* .swiftlint.yml */; };
+		DECEF85B2513AD9B009AF56D /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEF85A2513AD9B009AF56D /* FriendsController.swift */; };
+		DECEF85D2513ADB0009AF56D /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEF85C2513ADB0009AF56D /* FriendsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		DE7726F8250E8A1E002E6EA7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		DE7726FA250E8A2A002E6EA7 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		DE7726FD250EE4E8002E6EA7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		DECEF85A2513AD9B009AF56D /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
+		DECEF85C2513ADB0009AF56D /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				DE7726C5250E8950002E6EA7 /* ViewController.swift */,
+				DECEF85A2513AD9B009AF56D /* FriendsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			children = (
 				DE7726CA250E8952002E6EA7 /* Assets.xcassets */,
 				DE7726CC250E8952002E6EA7 /* LaunchScreen.storyboard */,
+				DECEF85C2513ADB0009AF56D /* FriendsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -331,9 +337,11 @@
 			files = (
 				DE7726F9250E8A1E002E6EA7 /* Extension.swift in Sources */,
 				DE7726C6250E8950002E6EA7 /* ViewController.swift in Sources */,
+				DECEF85D2513ADB0009AF56D /* FriendsView.swift in Sources */,
 				DE7726FB250E8A2A002E6EA7 /* Utility.swift in Sources */,
 				DE7726C2250E8950002E6EA7 /* AppDelegate.swift in Sources */,
 				DE7726C4250E8950002E6EA7 /* SceneDelegate.swift in Sources */,
+				DECEF85B2513AD9B009AF56D /* FriendsController.swift in Sources */,
 				DE7726F7250E8A0F002E6EA7 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
