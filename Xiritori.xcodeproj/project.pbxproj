@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE3201922514EFF600346B9D /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3201912514EFF600346B9D /* ColorExt.swift */; };
 		DE7726C2250E8950002E6EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C1250E8950002E6EA7 /* AppDelegate.swift */; };
 		DE7726C4250E8950002E6EA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C3250E8950002E6EA7 /* SceneDelegate.swift */; };
 		DE7726C6250E8950002E6EA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C5250E8950002E6EA7 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE3201912514EFF600346B9D /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
 		DE7726BE250E8950002E6EA7 /* Xiritori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xiritori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7726C1250E8950002E6EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE7726C3250E8950002E6EA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				DE7726F8250E8A1E002E6EA7 /* Extension.swift */,
+				DE3201912514EFF600346B9D /* ColorExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7726F9250E8A1E002E6EA7 /* Extension.swift in Sources */,
+				DE3201922514EFF600346B9D /* ColorExt.swift in Sources */,
 				DE7726C6250E8950002E6EA7 /* ViewController.swift in Sources */,
 				DECEF85D2513ADB0009AF56D /* FriendsView.swift in Sources */,
 				DE7726FB250E8A2A002E6EA7 /* Utility.swift in Sources */,
