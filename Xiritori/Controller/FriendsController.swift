@@ -32,14 +32,21 @@ class FriendsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        friendsView.tableView.delegate = self
+        friendsView.tableView.dataSource = self
         self.configureNavBar()
+        
+        self.friendsView.tableView.register(FriendsTableViewCell.self, forCellReuseIdentifier: "FriendCell")
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        friendsView.addGestureRecognizer(tap)
     }
 // MARK: - ACTIONS
     
     @objc func addFriend() {
         print("Add Friend")
     }
-// MARK: - FUNC
+// MARK: - FUNCS
     private func configureNavBar() {
         navigationItem.title = "Lista de Amigos"
         // Always use Light Mode.
@@ -47,5 +54,31 @@ class FriendsController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.standardAppearance.configureWithTransparentBackground()
         navigationController?.navigationBar.topItem?.rightBarButtonItem = barButton
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
+
+// MARK: - UITableView Delegate and DataSource
+
+extension FriendsController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as? FriendsTableViewCell
+        
+//        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        
+//        cell.selectionStyle = .none
+//        cell.backgroundColor = .clear
+//        cell.textLabel?.text = "Title \(indexPath.row)"
+//        cell.detailTextLabel?.text = "Body \(indexPath.row)"
+        
+        return cell!
     }
 }
