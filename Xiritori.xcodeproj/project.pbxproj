@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE3201902514DB0D00346B9D /* UIVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE32018F2514DB0D00346B9D /* UIVIewExtension.swift */; };
 		DE7726C2250E8950002E6EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C1250E8950002E6EA7 /* AppDelegate.swift */; };
 		DE7726C4250E8950002E6EA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C3250E8950002E6EA7 /* SceneDelegate.swift */; };
 		DE7726C6250E8950002E6EA7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C5250E8950002E6EA7 /* LoginController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE32018F2514DB0D00346B9D /* UIVIewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewExtension.swift; sourceTree = "<group>"; };
 		DE7726BE250E8950002E6EA7 /* Xiritori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xiritori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7726C1250E8950002E6EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE7726C3250E8950002E6EA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				DE7726F8250E8A1E002E6EA7 /* Extension.swift */,
 				DEB4EDBF251244E5009F744F /* LoginViewExtension.swift */,
 				DEB4EDC325124CD0009F744F /* SigninViewExtension.swift */,
+				DE32018F2514DB0D00346B9D /* UIVIewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE3201902514DB0D00346B9D /* UIVIewExtension.swift in Sources */,
 				DEB4EDC425124CD0009F744F /* SigninViewExtension.swift in Sources */,
 				DE7726F9250E8A1E002E6EA7 /* Extension.swift in Sources */,
 				DEB4EDBA2510DFD9009F744F /* LoginView.swift in Sources */,

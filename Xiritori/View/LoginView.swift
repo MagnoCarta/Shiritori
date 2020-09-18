@@ -110,7 +110,16 @@ class LoginView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        self.addSubviews()
+        self.addSubviews(
+            logo,
+            emailTextField,
+            passwordTextField,
+            submitButton,
+            separator,
+            autoriztionAppleButton,
+            signinButton,
+            guestButton
+        )
         self.setupAllViews()
     }
 
@@ -133,16 +142,5 @@ class LoginView: UIView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         self.endEditing(true)
-    }
-    
-    private func addSubviews() {
-        self.addSubview(logo)
-        self.addSubview(emailTextField)
-        self.addSubview(passwordTextField)
-        self.addSubview(submitButton)
-        self.addSubview(separator)
-        self.addSubview(autoriztionAppleButton)
-        self.addSubview(signinButton)
-        self.addSubview(guestButton)
     }
 }

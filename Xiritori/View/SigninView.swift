@@ -76,7 +76,13 @@ class SigninView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        self.addSubviews()
+        self.addSubviews(
+            usernameTextField,
+            emailTextField,
+            passwordTextField,
+            repeatPasswordTextField,
+            signinButton
+        )
         self.setupAllViews()
     }
     
@@ -85,17 +91,9 @@ class SigninView: UIView {
     }
     
 // MARK: - FUNC
-    private func addSubviews() {
-        self.addSubview(usernameTextField)
-        self.addSubview(emailTextField)
-        self.addSubview(passwordTextField)
-        self.addSubview(repeatPasswordTextField)
-        self.addSubview(signinButton)
-    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         usernameTextField.layer.cornerRadius = usernameTextField.frame.height / 2
         emailTextField.layer.cornerRadius = emailTextField.frame.height / 2
         passwordTextField.layer.cornerRadius = passwordTextField.frame.height / 2
