@@ -49,6 +49,7 @@ class FriendsController: UIViewController {
 // MARK: - ACTIONS
     @objc func addFriend() {
         let addFriendController = AddFriendController()
+        //let navController = UINavigationController(rootViewController: addFriendController)
         navigationController?.present(addFriendController, animated: true, completion: nil)
     }
     
@@ -60,6 +61,12 @@ class FriendsController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.standardAppearance.configureWithTransparentBackground()
         navigationController?.navigationBar.topItem?.rightBarButtonItem = barButton
+        
+        let searchBarController = UISearchController()
+        searchBarController.searchBar.setUpSearchBar()
+        navigationItem.searchController = searchBarController
+        
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     @objc func dismissKeyboard() {

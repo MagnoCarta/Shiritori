@@ -9,17 +9,18 @@
 import UIKit
 
 class AddFriend: UIView {
-    // SearchBar
-    let searchBar = FriendsSearchBar()
-       
     // TableView
     let tableView = FriendsTableView(frame: .zero, style: .plain)
+    
+    // SearchBar
+    let friendSearchBar = UISearchBar()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        self.addSubview(searchBar)
         self.addSubview(tableView)
+        self.addSubview(friendSearchBar)
+        friendSearchBar.setUpSearchBar()
         self.septupSearchBar()
     }
     
@@ -29,17 +30,16 @@ class AddFriend: UIView {
     
     // Constraints
     func septupSearchBar() {
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        friendSearchBar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 40),
-            searchBar.heightAnchor.constraint(equalToConstant: 50),
-            searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
-            searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8)
+            friendSearchBar.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
+            friendSearchBar.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
+            friendSearchBar.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10)
         ])
-    
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
+            tableView.topAnchor.constraint(equalTo: friendSearchBar.bottomAnchor, constant: 10),
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor)

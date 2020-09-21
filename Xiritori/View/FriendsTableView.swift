@@ -18,8 +18,8 @@ class FriendsTableView: UITableView {
         self.alwaysBounceHorizontal = false
         self.separatorInset = .zero
         self.tableFooterView = UIView()
-        self.layer.borderWidth = 0.3
-        self.layer.borderColor = UIColor.gray.cgColor
+//        self.layer.borderWidth = 0.3
+//        self.layer.borderColor = UIColor.gray.cgColor
         self.rowHeight = 95
     }
     

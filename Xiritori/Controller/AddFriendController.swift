@@ -20,17 +20,15 @@ class AddFriendController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view = addFriendView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         self.addFriendView.tableView.register(FriendsTableViewCell.self, forCellReuseIdentifier: "AddFriendCell")
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         addFriendView.addGestureRecognizer(tap)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @objc func dismissKeyboard() {

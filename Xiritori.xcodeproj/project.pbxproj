@@ -12,7 +12,7 @@
 		DE6952A72518D4AD00F9648F /* AddFriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6952A62518D4AC00F9648F /* AddFriendController.swift */; };
 		DE6952A92518D4D000F9648F /* AddFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6952A82518D4D000F9648F /* AddFriend.swift */; };
 		DE6952AB2518EA4100F9648F /* FriendsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6952AA2518EA4100F9648F /* FriendsTableView.swift */; };
-		DE6952AD2518EB9700F9648F /* FriendsSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6952AC2518EB9700F9648F /* FriendsSearchBar.swift */; };
+		DE6952AD2518EB9700F9648F /* UISearchBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6952AC2518EB9700F9648F /* UISearchBarExtension.swift */; };
 		DE7726C2250E8950002E6EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C1250E8950002E6EA7 /* AppDelegate.swift */; };
 		DE7726C4250E8950002E6EA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C3250E8950002E6EA7 /* SceneDelegate.swift */; };
 		DE7726C6250E8950002E6EA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C5250E8950002E6EA7 /* ViewController.swift */; };
@@ -51,7 +51,7 @@
 		DE6952A62518D4AC00F9648F /* AddFriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendController.swift; sourceTree = "<group>"; };
 		DE6952A82518D4D000F9648F /* AddFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriend.swift; sourceTree = "<group>"; };
 		DE6952AA2518EA4100F9648F /* FriendsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableView.swift; sourceTree = "<group>"; };
-		DE6952AC2518EB9700F9648F /* FriendsSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsSearchBar.swift; sourceTree = "<group>"; };
+		DE6952AC2518EB9700F9648F /* UISearchBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarExtension.swift; sourceTree = "<group>"; };
 		DE7726BE250E8950002E6EA7 /* Xiritori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xiritori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7726C1250E8950002E6EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE7726C3250E8950002E6EA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +175,7 @@
 			children = (
 				DE7726F8250E8A1E002E6EA7 /* Extension.swift */,
 				DE3201912514EFF600346B9D /* ColorExt.swift */,
+				DE6952AC2518EB9700F9648F /* UISearchBarExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -188,7 +189,6 @@
 				DECEF85C2513ADB0009AF56D /* FriendsView.swift */,
 				DE6952A82518D4D000F9648F /* AddFriend.swift */,
 				DE6952AA2518EA4100F9648F /* FriendsTableView.swift */,
-				DE6952AC2518EB9700F9648F /* FriendsSearchBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -366,7 +366,7 @@
 				DECEF85B2513AD9B009AF56D /* FriendsController.swift in Sources */,
 				DE7726F7250E8A0F002E6EA7 /* Model.swift in Sources */,
 				DE6952AB2518EA4100F9648F /* FriendsTableView.swift in Sources */,
-				DE6952AD2518EB9700F9648F /* FriendsSearchBar.swift in Sources */,
+				DE6952AD2518EB9700F9648F /* UISearchBarExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
