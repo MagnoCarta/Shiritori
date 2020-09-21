@@ -15,15 +15,15 @@ extension FriendsView {
         NSLayoutConstraint.activate([
             searchBar.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
             searchBar.heightAnchor.constraint(equalToConstant: 50),
-            searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
+            searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8)
         ])
     }
     
     func setupTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor)

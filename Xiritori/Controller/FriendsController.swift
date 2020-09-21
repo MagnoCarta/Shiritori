@@ -41,11 +41,12 @@ class FriendsController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         friendsView.addGestureRecognizer(tap)
     }
-// MARK: - ACTIONS
     
+// MARK: - ACTIONS
     @objc func addFriend() {
         print("Add Friend")
     }
+    
 // MARK: - FUNCS
     private func configureNavBar() {
         navigationItem.title = "Lista de Amigos"

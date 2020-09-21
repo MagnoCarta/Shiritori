@@ -15,7 +15,8 @@ class FriendsView: UIView {
         searchBar.searchBarStyle = .minimal
         searchBar.searchTextField.backgroundColor = .white
         searchBar.searchTextField.returnKeyType = .search
-        searchBar.isOpaque = false
+        searchBar.searchTextField.layer.cornerRadius = 18
+        searchBar.searchTextField.clipsToBounds = true
         return searchBar
     }()
     
@@ -28,6 +29,8 @@ class FriendsView: UIView {
         tableView.alwaysBounceHorizontal = false
         tableView.separatorInset = .zero
         tableView.tableFooterView = UIView()
+        tableView.layer.borderWidth = 0.3
+        tableView.layer.borderColor = UIColor.gray.cgColor
         tableView.rowHeight = 95
         return tableView
     }()

@@ -30,6 +30,7 @@ class FriendsTableViewCell: UITableViewCell {
         button.backgroundColor = .gray
         button.layer.cornerRadius = 15
         button.setTitleColor(.black, for: .normal)
+        //button.addTarget(self, action: #selector(test), for: .touchDown)
         return button
     }()
     
@@ -39,6 +40,7 @@ class FriendsTableViewCell: UITableViewCell {
         button.backgroundColor = .gray
         button.layer.cornerRadius = 15
         button.setTitleColor(.black, for: .normal)
+        //button.addTarget(self, action: #selector(test), for: .touchDown)
         return button
     }()
     
@@ -52,9 +54,9 @@ class FriendsTableViewCell: UITableViewCell {
         self.contentView.addSubview(buttonVS)
         
         self.setupLayout()
-     }
-
-     required init?(coder aDecoder: NSCoder) {
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
     }
     
