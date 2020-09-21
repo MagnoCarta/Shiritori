@@ -10,30 +10,10 @@ import UIKit
 
 class FriendsView: UIView {
     // SearchBar
-    lazy var searchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.searchBarStyle = .minimal
-        searchBar.searchTextField.backgroundColor = .white
-        searchBar.searchTextField.returnKeyType = .search
-        searchBar.searchTextField.layer.cornerRadius = 18
-        searchBar.searchTextField.clipsToBounds = true
-        return searchBar
-    }()
+    let searchBar = FriendsSearchBar()
     
     // TableView
-    lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .plain)
-        tableView.backgroundColor = .clear
-        tableView.alwaysBounceVertical = true
-        tableView.tableHeaderView = .none
-        tableView.alwaysBounceHorizontal = false
-        tableView.separatorInset = .zero
-        tableView.tableFooterView = UIView()
-        tableView.layer.borderWidth = 0.3
-        tableView.layer.borderColor = UIColor.gray.cgColor
-        tableView.rowHeight = 95
-        return tableView
-    }()
+    let tableView = FriendsTableView(frame: .zero, style: .plain)
     
 // MARK: - INIT
     override init(frame: CGRect) {
@@ -47,5 +27,26 @@ class FriendsView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // Constraints
+    func septupSearchBar() {
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            searchBar.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
+            searchBar.heightAnchor.constraint(equalToConstant: 50),
+            searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
+            searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8)
+        ])
+    }
+    
+    func setupTableView() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
+            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+        ])
     }
 }

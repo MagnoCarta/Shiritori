@@ -40,7 +40,7 @@ class FriendsTableViewCell: UITableViewCell {
         button.backgroundColor = .gray
         button.layer.cornerRadius = 15
         button.setTitleColor(.black, for: .normal)
-        //button.addTarget(self, action: #selector(test), for: .touchDown)
+        button.addTarget(self, action: #selector(test2), for: .touchUpInside)
         return button
     }()
     
@@ -60,6 +60,22 @@ class FriendsTableViewCell: UITableViewCell {
        super.init(coder: aDecoder)
     }
     
+    func setupWhithoutButton() {
+        buttonRemove.removeFromSuperview()
+        labelName.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        buttonVS.setTitle("+", for: .normal)
+        buttonVS.removeTarget(self, action: #selector(test2), for: .touchUpInside)
+        buttonVS.addTarget(self, action: #selector(test1), for: .touchUpInside)
+    }
+    
+    @objc func test1() {
+        print("Test 01")
+    }
+    
+    @objc func test2() {
+        print("Test 02")
+    }
+    
     func setupLayout() {
         imageViewCell.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -72,7 +88,8 @@ class FriendsTableViewCell: UITableViewCell {
         labelName.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             labelName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 17.5),
-            labelName.leftAnchor.constraint(equalTo: imageViewCell.rightAnchor, constant: 17.5)
+            labelName.leftAnchor.constraint(equalTo: imageViewCell.rightAnchor, constant: 17.5),
+            labelName.rightAnchor.constraint(equalTo: buttonVS.leftAnchor, constant: -17.5)
         ])
         
         buttonRemove.translatesAutoresizingMaskIntoConstraints = false

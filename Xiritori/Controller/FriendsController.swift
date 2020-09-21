@@ -40,11 +40,16 @@ class FriendsController: UIViewController {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         friendsView.addGestureRecognizer(tap)
+        
+        // Temporaly
+//        let addFriendController = AddFriendController()
+//        navigationController?.present(addFriendController, animated: true, completion: nil)
     }
     
 // MARK: - ACTIONS
     @objc func addFriend() {
-        print("Add Friend")
+        let addFriendController = AddFriendController()
+        navigationController?.present(addFriendController, animated: true, completion: nil)
     }
     
 // MARK: - FUNCS
@@ -66,7 +71,7 @@ class FriendsController: UIViewController {
 
 extension FriendsController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
