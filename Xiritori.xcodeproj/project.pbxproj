@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92112710251A283100ED9C07 /* MyMessyHandwriting.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9211270F251A283100ED9C07 /* MyMessyHandwriting.ttf */; };
 		92E585FA2518CBEC00998AAC /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E585F92518CBEC00998AAC /* MainScreenController.swift */; };
 		92E585FC2518E71400998AAC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E585FB2518E71400998AAC /* ColorExtension.swift */; };
-		92E586022518EE2500998AAC /* MyMessyHandwriting.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92E586012518EE2500998AAC /* MyMessyHandwriting.ttf */; };
 		DE7726C2250E8950002E6EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C1250E8950002E6EA7 /* AppDelegate.swift */; };
 		DE7726C4250E8950002E6EA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C3250E8950002E6EA7 /* SceneDelegate.swift */; };
 		DE7726C6250E8950002E6EA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C5250E8950002E6EA7 /* ViewController.swift */; };
@@ -41,9 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9211270F251A283100ED9C07 /* MyMessyHandwriting.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyMessyHandwriting.ttf; sourceTree = SOURCE_ROOT; };
 		92E585F92518CBEC00998AAC /* MainScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenController.swift; sourceTree = "<group>"; };
 		92E585FB2518E71400998AAC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		92E586012518EE2500998AAC /* MyMessyHandwriting.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MyMessyHandwriting.ttf; path = ../../../../../Downloads/mymessyhandwriting/MyMessyHandwriting.ttf; sourceTree = "<group>"; };
 		DE7726BE250E8950002E6EA7 /* Xiritori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xiritori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7726C1250E8950002E6EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE7726C3250E8950002E6EA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		92E585FF2518EDB300998AAC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				92E586012518EE2500998AAC /* MyMessyHandwriting.ttf */,
+				9211270F251A283100ED9C07 /* MyMessyHandwriting.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -295,7 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92E586022518EE2500998AAC /* MyMessyHandwriting.ttf in Resources */,
+				92112710251A283100ED9C07 /* MyMessyHandwriting.ttf in Resources */,
 				DE7726FE250EE4E8002E6EA7 /* .swiftlint.yml in Resources */,
 				DE7726CE250E8952002E6EA7 /* LaunchScreen.storyboard in Resources */,
 				DE7726CB250E8952002E6EA7 /* Assets.xcassets in Resources */,
