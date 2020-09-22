@@ -58,9 +58,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string></string>
+		<string>Comfortaa.ttf</string>
 	</array>
-	<key>item 0</key>
-	<string>Comfortaa.ttf</string>
 </dict>
 </plist>
