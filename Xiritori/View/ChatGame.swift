@@ -47,8 +47,13 @@ class ChatGame: UIView {
     let shapeTop = UIView()
     let whiteBlueLineTop = UIView()
     let whiteBlueLineBot = UIView()
-    let tableView = UITableView()
-    
+    let tableView = UITableView(frame: .zero, style: .grouped)
+    var mensagemMockada: [String] = []
+    let shapeGreenPoints = UIView()
+    let greenPoints = UILabel()
+    let shapeOrangePoints = UIView()
+    let orangePoints = UILabel()
+    var path: UIBezierPath!
     
     override init(frame: CGRect) {
         
@@ -58,28 +63,70 @@ class ChatGame: UIView {
         
         
         super.init(frame: frame)
+        self.backgroundColor = .backgroundColor
         shape.backgroundColor = .seriousPurple
         shapeTop.backgroundColor = .seriousPurple
-        whiteBlueLineBot.backgroundColor = UIColor(red: 0, green: 220/255, blue: 195/255, alpha: 1)
-        whiteBlueLineTop.backgroundColor = UIColor(red: 0, green: 220/255, blue: 195/255, alpha: 1)
+        shapeGreenPoints.backgroundColor = .lightGreen
+        shapeOrangePoints.backgroundColor = .orangeChat
+        whiteBlueLineBot.backgroundColor = .lightGreen
+        whiteBlueLineTop.backgroundColor = .lightGreen
+        
         addSubview(shapeTop)
         addSubview(shape)
         addSubview(textField)
         addSubview(buttonSendText)
+        addSubview(shapeGreenPoints)
+        addSubview(shapeOrangePoints)
+        addSubview(greenPoints)
+        addSubview(orangePoints)
+        
         addConstraintTextField()
         addConstraintShape()
         addConstraintButton()
         addConstraintShapeTop()
-        self.backgroundColor = .backgroundColor
+        addConstraintTableView()
+        addConstraintShapeGPoints()
+        addConstraintShapeOPoints()
+        addConstraintGPoints()
+        addConstraintOPoints()
+        
+        delegates()
+        tableView.rowHeight = 80
+        tableView.separatorStyle = .none
+        tableView.register(ChatCell.self, forCellReuseIdentifier: Cells.chatCell)
+        tableView.backgroundColor = .backgroundColor
+        buttonSendText.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
+        keyboardActions()
+        
+        
+        
+        let circle = UIBezierPath.init(arcCenter: CGPoint(x: shapeTop.frame.midX, y: shapeTop.frame.midY), radius: 25, startAngle: 0, endAngle: 360, clockwise: true)
+        let circleShape = CAShapeLayer()
+        circleShape.path = circle.cgPath
+        circleShape.fillColor = UIColor.myLightRed.cgColor
+        self.layer.addSublayer(circleShape)
+    }
+    
+    
+   
+    
+    
+    func keyboardActions() {
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.addGestureRecognizer(tap)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        
-        let animatedCircle = AnimatedCircle()
-        self.addSubview(animatedCircle)
-        animatedCircle.runAnimation()
     }
+    
+    func delegates() {
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+    }
+    
+
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -120,9 +167,9 @@ class ChatGame: UIView {
     @objc func sendMessage() {
         //Muitas verificacoes pra depois, lembre-se
         
-        let textSent = textField.text
-        
-        
+        guard let textSent = textField.text else { return  }
+        mensagemMockada.append(textSent)
+        tableView.reloadData()
         
         
         
@@ -134,4 +181,22 @@ class ChatGame: UIView {
     
    
 
+}
+
+
+
+extension ChatGame: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        mensagemMockada.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Cells.chatCell) as! ChatCell
+        let messages = mensagemMockada[indexPath.row]
+        cell.set(message: messages)
+        return cell
+    }
+    
+    
+    
 }

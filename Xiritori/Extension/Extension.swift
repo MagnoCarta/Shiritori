@@ -78,15 +78,80 @@ extension ChatGame {
     
     func addConstraintRelogio() {
         
-        
-//        relogio.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//        
-//        
-//        ])
+
         
         
     }
+    
+    
+    
+    
+    func addConstraintTableView() {
+        addSubview(tableView)
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: shapeTop.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: shape.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+        ])
+        
+        
+        
+    }
+    
+    
+    func addConstraintShapeGPoints(){
+        shapeGreenPoints.translatesAutoresizingMaskIntoConstraints = false
+        shapeGreenPoints.layer.cornerRadius = 13
+        NSLayoutConstraint.activate([
+        shapeGreenPoints.heightAnchor.constraint(equalToConstant: 30),
+        shapeGreenPoints.bottomAnchor.constraint(equalTo: shapeTop.bottomAnchor,constant: -15),
+        shapeGreenPoints.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 15),
+        shapeGreenPoints.leadingAnchor.constraint(equalTo: self.centerXAnchor, constant: 90)
+        ])
+        
+    }
+    
+    func addConstraintShapeOPoints(){
+        shapeOrangePoints.translatesAutoresizingMaskIntoConstraints = false
+        shapeOrangePoints.layer.cornerRadius = 13
+        NSLayoutConstraint.activate([
+        shapeOrangePoints.heightAnchor.constraint(equalToConstant: 30),
+        shapeOrangePoints.bottomAnchor.constraint(equalTo: shapeGreenPoints.bottomAnchor,constant: -38),
+        shapeOrangePoints.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 15),
+        shapeOrangePoints.leadingAnchor.constraint(equalTo: self.centerXAnchor, constant: 90)
+        ])
+        
+    }
+    
+    func addConstraintGPoints(){
+        greenPoints.text = "300"
+        greenPoints.font = UIFont(name: "Comfortaa", size: 30)
+        greenPoints.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+                   greenPoints.heightAnchor.constraint(equalToConstant: 30),
+                   greenPoints.leadingAnchor.constraint(equalTo: shapeGreenPoints.leadingAnchor, constant: 10),
+                   greenPoints.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+                   greenPoints.centerYAnchor.constraint(equalTo: shapeGreenPoints.centerYAnchor)
+               ])
+        
+    }
+    
+    func addConstraintOPoints(){
+        orangePoints.text = "300"
+        orangePoints.font = UIFont(name: "Comfortaa", size: 30)
+        orangePoints.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+                   orangePoints.heightAnchor.constraint(equalToConstant: 30),
+                   orangePoints.leadingAnchor.constraint(equalTo: shapeOrangePoints.leadingAnchor, constant: 10),
+                   orangePoints.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+                   orangePoints.centerYAnchor.constraint(equalTo: shapeOrangePoints.centerYAnchor)
+               ])
+    }
+    
+    
     
 }
 
