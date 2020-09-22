@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		92112710251A283100ED9C07 /* MyMessyHandwriting.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9211270F251A283100ED9C07 /* MyMessyHandwriting.ttf */; };
 		92E585FA2518CBEC00998AAC /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E585F92518CBEC00998AAC /* MainScreenController.swift */; };
-		92E585FC2518E71400998AAC /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E585FB2518E71400998AAC /* ColorExtension.swift */; };
+		92E585FC2518E71400998AAC /* ColorExtension2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E585FB2518E71400998AAC /* ColorExtension2.swift */; };
 		DE7726C2250E8950002E6EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C1250E8950002E6EA7 /* AppDelegate.swift */; };
 		DE7726C4250E8950002E6EA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C3250E8950002E6EA7 /* SceneDelegate.swift */; };
-		DE7726C6250E8950002E6EA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C5250E8950002E6EA7 /* ViewController.swift */; };
 		DE7726CB250E8952002E6EA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE7726CA250E8952002E6EA7 /* Assets.xcassets */; };
 		DE7726CE250E8952002E6EA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7726CC250E8952002E6EA7 /* LaunchScreen.storyboard */; };
 		DE7726D9250E8952002E6EA7 /* XiritoriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726D8250E8952002E6EA7 /* XiritoriTests.swift */; };
@@ -43,11 +42,10 @@
 /* Begin PBXFileReference section */
 		9211270F251A283100ED9C07 /* MyMessyHandwriting.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyMessyHandwriting.ttf; sourceTree = SOURCE_ROOT; };
 		92E585F92518CBEC00998AAC /* MainScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenController.swift; sourceTree = "<group>"; };
-		92E585FB2518E71400998AAC /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		92E585FB2518E71400998AAC /* ColorExtension2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension2.swift; sourceTree = "<group>"; };
 		DE7726BE250E8950002E6EA7 /* Xiritori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xiritori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7726C1250E8950002E6EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE7726C3250E8950002E6EA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DE7726C5250E8950002E6EA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE7726CA250E8952002E6EA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE7726CD250E8952002E6EA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE7726CF250E8952002E6EA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 		DE7726F1250E8974002E6EA7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DE7726C5250E8950002E6EA7 /* ViewController.swift */,
 				92E585F92518CBEC00998AAC /* MainScreenController.swift */,
 			);
 			path = Controller;
@@ -168,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				DE7726F8250E8A1E002E6EA7 /* Extension.swift */,
-				92E585FB2518E71400998AAC /* ColorExtension.swift */,
+				92E585FB2518E71400998AAC /* ColorExtension2.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -344,9 +341,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE7726F9250E8A1E002E6EA7 /* Extension.swift in Sources */,
-				DE7726C6250E8950002E6EA7 /* ViewController.swift in Sources */,
 				DE7726FB250E8A2A002E6EA7 /* Utility.swift in Sources */,
-				92E585FC2518E71400998AAC /* ColorExtension.swift in Sources */,
+				92E585FC2518E71400998AAC /* ColorExtension2.swift in Sources */,
 				92E585FA2518CBEC00998AAC /* MainScreenController.swift in Sources */,
 				DE7726C2250E8950002E6EA7 /* AppDelegate.swift in Sources */,
 				DE7726C4250E8950002E6EA7 /* SceneDelegate.swift in Sources */,
