@@ -13,7 +13,7 @@ class MainScreenController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		self.view.backgroundColor = .playfulPurple
+		self.view.backgroundColor = .seriousPurple
 		setupPlayButton()
 		setupOptionsButton()
 		setupFriendsButton()
@@ -22,7 +22,7 @@ class MainScreenController: UIViewController {
 	func setupPlayButton() {
 		
 		let button = UIButton()
-		button.backgroundColor = .gooeyGreen
+		button.backgroundColor = .lightGreen
 		button.setTitleColor(.blazingBlack, for: .normal)
 		button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 64)
 		button.setTitle("JOGAR", for: .normal)
@@ -51,7 +51,7 @@ class MainScreenController: UIViewController {
 	func setupFriendsButton() {
 		
 		let button = UIButton()
-		button.backgroundColor = .outgoingOrange
+		button.backgroundColor = .blazingBlack
 		button.addTarget(self, action: #selector(self.pressedFriends), for: .touchUpInside)
 		self.view.addSubview(button)
 		
@@ -92,7 +92,7 @@ class MainScreenController: UIViewController {
 	func setupOptionsButton() {
 		
 		let button = UIButton()
-		button.backgroundColor = .ravingRed
+		button.backgroundColor = .lightRed
 		button.addTarget(self, action: #selector(self.pressedOptions), for: .touchUpInside)
 		self.view.addSubview(button)
 		

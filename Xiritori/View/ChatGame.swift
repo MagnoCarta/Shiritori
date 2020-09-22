@@ -102,7 +102,7 @@ class ChatGame: UIView {
         let circle = UIBezierPath.init(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: shapeTop.frame.size.height/2), radius: 25, startAngle: 0, endAngle: 360, clockwise: true)
         let circleShape = CAShapeLayer()
         circleShape.path = circle.cgPath
-        circleShape.fillColor = UIColor.myLightRed.cgColor
+        circleShape.fillColor = UIColor.lightRed.cgColor
         self.layer.addSublayer(circleShape)
     }
     
