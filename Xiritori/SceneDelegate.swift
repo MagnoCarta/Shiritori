@@ -15,9 +15,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
-        let viewControllerInicial = ChatGameController()
+
+
+        let viewControllerInicial = FriendsController()
+
+        let navigationController = UINavigationController(rootViewController: viewControllerInicial)
+
         window?.windowScene = windowScene
-        window?.rootViewController = viewControllerInicial
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
