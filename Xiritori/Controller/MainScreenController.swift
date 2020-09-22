@@ -10,10 +10,12 @@ import UIKit
 
 class MainScreenController: UIViewController {
 
+	let mainView = MainScreenView()
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-
-		self.view.backgroundColor = .seriousPurple
+		self.view = mainView
+		
 		setupPlayButton()
 		setupOptionsButton()
 		setupFriendsButton()
@@ -30,11 +32,12 @@ class MainScreenController: UIViewController {
 		self.view.addSubview(button)
 		
 		button.translatesAutoresizingMaskIntoConstraints = false
-		let buttonWidthConstraint = button.widthAnchor.constraint(equalToConstant: 300)
-		let buttonHeightConstraint = button.heightAnchor.constraint(equalToConstant: 150)
-		let buttonHorizontalConstraint = button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: -50)
-		let buttonVerticalConstraint = button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -100)
-		NSLayoutConstraint.activate([buttonWidthConstraint, buttonHeightConstraint, buttonHorizontalConstraint, buttonVerticalConstraint])
+		NSLayoutConstraint.activate([
+			button.widthAnchor.constraint(equalToConstant: 300),
+			button.heightAnchor.constraint(equalToConstant: 150),
+			button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: -50),
+			button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -100)
+		])
 		
 		button.transform = button.transform.rotated(by: 150)
 		
@@ -45,13 +48,15 @@ class MainScreenController: UIViewController {
 	}
 	
 	@objc func pressedPlay() {
-		self.view.backgroundColor = .systemGreen
+		let playController = PlayScreenController()
+		playController.modalPresentationStyle = .fullScreen
+		self.navigationController?.pushViewController(playController, animated: true)
 	}
 	
 	func setupFriendsButton() {
 		
 		let button = UIButton()
-		button.backgroundColor = .blazingBlack
+		button.backgroundColor = .orangeChat
 		button.addTarget(self, action: #selector(self.pressedFriends), for: .touchUpInside)
 		self.view.addSubview(button)
 		
@@ -62,20 +67,22 @@ class MainScreenController: UIViewController {
 		button.addSubview(label)
 		
 		label.translatesAutoresizingMaskIntoConstraints = false
-		let labelWidthConstraint = label.widthAnchor.constraint(equalToConstant: 150)
-		let labelHeightConstraint = label.heightAnchor.constraint(equalToConstant: 40)
-		let labelHorizontalConstraint = label.centerXAnchor.constraint(equalTo: button.centerXAnchor, constant: 10)
-		let labelVerticalConstraint = label.centerYAnchor.constraint(equalTo: button.centerYAnchor, constant: -2)
-		NSLayoutConstraint.activate([labelWidthConstraint, labelHeightConstraint, labelHorizontalConstraint, labelVerticalConstraint])
+		NSLayoutConstraint.activate([
+			label.widthAnchor.constraint(equalToConstant: 150),
+			label.heightAnchor.constraint(equalToConstant: 40),
+			label.centerXAnchor.constraint(equalTo: button.centerXAnchor, constant: 10),
+			label.centerYAnchor.constraint(equalTo: button.centerYAnchor, constant: -2)
+		])
 		
 		label.transform = label.transform.rotated(by: 4.2)
 		
 		button.translatesAutoresizingMaskIntoConstraints = false
-		let widthConstraint = button.widthAnchor.constraint(equalToConstant: 150)
-		let heightConstraint = button.heightAnchor.constraint(equalToConstant: 150)
-		let horizontalConstraint = button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 112)
-		let verticalConstraint = button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -48.5)
-		NSLayoutConstraint.activate([widthConstraint, heightConstraint, horizontalConstraint, verticalConstraint])
+		NSLayoutConstraint.activate([
+			button.widthAnchor.constraint(equalToConstant: 150),
+			button.heightAnchor.constraint(equalToConstant: 150),
+			button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 112),
+			button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -48.5)
+		])
 		
 		button.transform = button.transform.rotated(by: 14.908)
 		
@@ -103,20 +110,22 @@ class MainScreenController: UIViewController {
 		button.addSubview(label)
 		
 		label.translatesAutoresizingMaskIntoConstraints = false
-		let labelWidthConstraint = label.widthAnchor.constraint(equalToConstant: 150)
-		let labelHeightConstraint = label.heightAnchor.constraint(equalToConstant: 40)
-		let labelHorizontalConstraint = label.centerXAnchor.constraint(equalTo: button.centerXAnchor, constant: -30)
-		let labelVerticalConstraint = label.centerYAnchor.constraint(equalTo: button.centerYAnchor, constant: -2)
-		NSLayoutConstraint.activate([labelWidthConstraint, labelHeightConstraint, labelHorizontalConstraint, labelVerticalConstraint])
+		NSLayoutConstraint.activate([
+			label.widthAnchor.constraint(equalToConstant: 150),
+			label.heightAnchor.constraint(equalToConstant: 40),
+			label.centerXAnchor.constraint(equalTo: button.centerXAnchor, constant: -30),
+			label.centerYAnchor.constraint(equalTo: button.centerYAnchor, constant: -2)
+		])
 		
 		label.transform = label.transform.rotated(by: 4)
 		
 		button.translatesAutoresizingMaskIntoConstraints = false
-		let widthConstraint = button.widthAnchor.constraint(equalToConstant: 150)
-		let heightConstraint = button.heightAnchor.constraint(equalToConstant: 150)
-		let horizontalConstraint = button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 6.5)
-		let verticalConstraint = button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 60)
-		NSLayoutConstraint.activate([widthConstraint, heightConstraint, horizontalConstraint, verticalConstraint])
+		NSLayoutConstraint.activate([
+			button.widthAnchor.constraint(equalToConstant: 150),
+			button.heightAnchor.constraint(equalToConstant: 150),
+			button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 6.5),
+			button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 60)
+		])
 		
 		button.transform = button.transform.rotated(by: 14.908)
 		

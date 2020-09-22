@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 class ChatCell: UITableViewCell {
     
     let chatBubble = UIView()
@@ -38,13 +37,11 @@ class ChatCell: UITableViewCell {
             ChatCell.isPlayer = !ChatCell.isPlayer
             chatBubble.backgroundColor = .lightGreen
             
-        }else {
+        } else {
             ChatCell.isPlayer = !ChatCell.isPlayer
             chatBubble.backgroundColor = .orangeChat
             
         }
-        
-        
     }
     
     func organizeMessage() {
@@ -60,8 +57,7 @@ class ChatCell: UITableViewCell {
         chatBubble.layer.cornerRadius = 18
         
     }
-    
-    
+
     func bubbleConstraints() {
         
         chatBubble.translatesAutoresizingMaskIntoConstraints = false
@@ -72,13 +68,11 @@ class ChatCell: UITableViewCell {
             NSLayoutConstraint.activate([
             chatBubble.heightAnchor.constraint(equalToConstant: 50),
             chatBubble.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            chatBubble.leadingAnchor.constraint(equalTo: self.centerXAnchor,constant: -30),
-            chatBubble.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -15)
+            chatBubble.leadingAnchor.constraint(equalTo: self.centerXAnchor, constant: -30),
+            chatBubble.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15)
             ])
             
-            
-            
-        }else {
+        } else {
             
             ChatCell.isOponent = !ChatCell.isOponent
             
@@ -90,12 +84,9 @@ class ChatCell: UITableViewCell {
             ])
             
         }
-        
-        
-        
     }
     
-    func messageConstraints(){
+    func messageConstraints() {
    
         message.translatesAutoresizingMaskIntoConstraints = false
         
@@ -105,17 +96,9 @@ class ChatCell: UITableViewCell {
             message.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             message.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
-            
-        
     }
-    
-    
-    
-    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
 }
