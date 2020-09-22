@@ -97,10 +97,9 @@ class ChatGame: UIView {
         tableView.backgroundColor = .backgroundColor
         buttonSendText.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         keyboardActions()
+    
         
-        
-        
-        let circle = UIBezierPath.init(arcCenter: CGPoint(x: shapeTop.frame.midX, y: shapeTop.frame.midY), radius: 25, startAngle: 0, endAngle: 360, clockwise: true)
+        let circle = UIBezierPath.init(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: shapeTop.frame.size.height/2), radius: 25, startAngle: 0, endAngle: 360, clockwise: true)
         let circleShape = CAShapeLayer()
         circleShape.path = circle.cgPath
         circleShape.fillColor = UIColor.myLightRed.cgColor
