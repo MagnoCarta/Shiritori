@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 class ChatGame: UIView {
     
     var firstResponder = false
@@ -57,11 +56,6 @@ class ChatGame: UIView {
     
     override init(frame: CGRect) {
         
-        
-        
-        
-        
-        
         super.init(frame: frame)
         self.backgroundColor = .backgroundColor
         shape.backgroundColor = .seriousPurple
@@ -98,17 +92,12 @@ class ChatGame: UIView {
         buttonSendText.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         keyboardActions()
     
-        
         let circle = UIBezierPath.init(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: shapeTop.frame.size.height/2), radius: 25, startAngle: 0, endAngle: 360, clockwise: true)
         let circleShape = CAShapeLayer()
         circleShape.path = circle.cgPath
         circleShape.fillColor = UIColor.lightRed.cgColor
         self.layer.addSublayer(circleShape)
     }
-    
-    
-   
-    
     
     func keyboardActions() {
         
@@ -125,12 +114,9 @@ class ChatGame: UIView {
         
     }
     
-
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     @objc func dismissKeyboard() {
         
@@ -159,9 +145,7 @@ class ChatGame: UIView {
             firstResponder = !firstResponder
         }
     
-    
 }
-    
     
     @objc func sendMessage() {
         //Muitas verificacoes pra depois, lembre-se
@@ -170,19 +154,8 @@ class ChatGame: UIView {
         mensagemMockada.append(textSent)
         tableView.reloadData()
         
-        
-        
     }
-    
-    
-    
-    
-    
-   
-
 }
-
-
 
 extension ChatGame: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -195,7 +168,4 @@ extension ChatGame: UITableViewDataSource, UITableViewDelegate {
         cell.set(message: messages)
         return cell
     }
-    
-    
-    
 }

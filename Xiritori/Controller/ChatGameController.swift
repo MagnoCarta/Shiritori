@@ -13,27 +13,11 @@ class ChatGameController: UIViewController {
     
     let viewChat = ChatGame()
     
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         self.view = viewChat
-        
-        
-        
-       
-        
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    }
-    
 
+	}
+	
+}
