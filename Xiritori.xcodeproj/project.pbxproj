@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		DE3201922514EFF600346B9D /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3201912514EFF600346B9D /* ColorExt.swift */; };
 		DE32019425153E7300346B9D /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE32019325153E7300346B9D /* FriendsTableViewCell.swift */; };
 		DE6952A72518D4AD00F9648F /* AddFriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6952A62518D4AC00F9648F /* AddFriendController.swift */; };
 		DE6952A92518D4D000F9648F /* AddFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6952A82518D4D000F9648F /* AddFriend.swift */; };
 		DE6952AB2518EA4100F9648F /* FriendsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6952AA2518EA4100F9648F /* FriendsTableView.swift */; };
 		DE6952AD2518EB9700F9648F /* UISearchBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6952AC2518EB9700F9648F /* UISearchBarExtension.swift */; };
+		DE3201902514DB0D00346B9D /* UIVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE32018F2514DB0D00346B9D /* UIVIewExtension.swift */; };
+
 		DE7726C2250E8950002E6EA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C1250E8950002E6EA7 /* AppDelegate.swift */; };
 		DE7726C4250E8950002E6EA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C3250E8950002E6EA7 /* SceneDelegate.swift */; };
-		DE7726C6250E8950002E6EA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C5250E8950002E6EA7 /* ViewController.swift */; };
+		DE7726C6250E8950002E6EA7 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726C5250E8950002E6EA7 /* LoginController.swift */; };
 		DE7726CB250E8952002E6EA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE7726CA250E8952002E6EA7 /* Assets.xcassets */; };
 		DE7726CE250E8952002E6EA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE7726CC250E8952002E6EA7 /* LaunchScreen.storyboard */; };
 		DE7726D9250E8952002E6EA7 /* XiritoriTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726D8250E8952002E6EA7 /* XiritoriTests.swift */; };
@@ -24,8 +27,17 @@
 		DE7726F9250E8A1E002E6EA7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726F8250E8A1E002E6EA7 /* Extension.swift */; };
 		DE7726FB250E8A2A002E6EA7 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7726FA250E8A2A002E6EA7 /* Utility.swift */; };
 		DE7726FE250EE4E8002E6EA7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = DE7726FD250EE4E8002E6EA7 /* .swiftlint.yml */; };
+
 		DECEF85B2513AD9B009AF56D /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEF85A2513AD9B009AF56D /* FriendsController.swift */; };
 		DECEF85D2513ADB0009AF56D /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECEF85C2513ADB0009AF56D /* FriendsView.swift */; };
+
+		DEB4EDBA2510DFD9009F744F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDB92510DFD9009F744F /* LoginView.swift */; };
+		DEB4EDBC2510FF4E009F744F /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDBB2510FF4E009F744F /* Separator.swift */; };
+		DEB4EDBE25123E21009F744F /* SigninController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDBD25123E21009F744F /* SigninController.swift */; };
+		DEB4EDC0251244E5009F744F /* LoginViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDBF251244E5009F744F /* LoginViewExtension.swift */; };
+		DEB4EDC225124C94009F744F /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDC125124C94009F744F /* SigninView.swift */; };
+		DEB4EDC425124CD0009F744F /* SigninViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDC325124CD0009F744F /* SigninViewExtension.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,16 +58,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+
 		DE3201912514EFF600346B9D /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
 		DE32019325153E7300346B9D /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		DE6952A62518D4AC00F9648F /* AddFriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendController.swift; sourceTree = "<group>"; };
 		DE6952A82518D4D000F9648F /* AddFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriend.swift; sourceTree = "<group>"; };
 		DE6952AA2518EA4100F9648F /* FriendsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableView.swift; sourceTree = "<group>"; };
 		DE6952AC2518EB9700F9648F /* UISearchBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarExtension.swift; sourceTree = "<group>"; };
+
+		DE32018F2514DB0D00346B9D /* UIVIewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewExtension.swift; sourceTree = "<group>"; };
+
 		DE7726BE250E8950002E6EA7 /* Xiritori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xiritori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE7726C1250E8950002E6EA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE7726C3250E8950002E6EA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DE7726C5250E8950002E6EA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE7726C5250E8950002E6EA7 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		DE7726CA250E8952002E6EA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE7726CD250E8952002E6EA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE7726CF250E8952002E6EA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,8 +85,17 @@
 		DE7726F8250E8A1E002E6EA7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		DE7726FA250E8A2A002E6EA7 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		DE7726FD250EE4E8002E6EA7 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+
 		DECEF85A2513AD9B009AF56D /* FriendsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
 		DECEF85C2513ADB0009AF56D /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
+
+		DEB4EDB92510DFD9009F744F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DEB4EDBB2510FF4E009F744F /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
+		DEB4EDBD25123E21009F744F /* SigninController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninController.swift; sourceTree = "<group>"; };
+		DEB4EDBF251244E5009F744F /* LoginViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewExtension.swift; sourceTree = "<group>"; };
+		DEB4EDC125124C94009F744F /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
+		DEB4EDC325124CD0009F744F /* SigninViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewExtension.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,9 +180,14 @@
 		DE7726F1250E8974002E6EA7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+
 				DE7726C5250E8950002E6EA7 /* ViewController.swift */,
 				DECEF85A2513AD9B009AF56D /* FriendsController.swift */,
 				DE6952A62518D4AC00F9648F /* AddFriendController.swift */,
+
+				DE7726C5250E8950002E6EA7 /* LoginController.swift */,
+				DEB4EDBD25123E21009F744F /* SigninController.swift */,
+
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -174,8 +204,14 @@
 			isa = PBXGroup;
 			children = (
 				DE7726F8250E8A1E002E6EA7 /* Extension.swift */,
+
 				DE3201912514EFF600346B9D /* ColorExt.swift */,
 				DE6952AC2518EB9700F9648F /* UISearchBarExtension.swift */,
+
+				DEB4EDBF251244E5009F744F /* LoginViewExtension.swift */,
+				DEB4EDC325124CD0009F744F /* SigninViewExtension.swift */,
+				DE32018F2514DB0D00346B9D /* UIVIewExtension.swift */,
+
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -184,6 +220,9 @@
 			isa = PBXGroup;
 			children = (
 				DE7726CA250E8952002E6EA7 /* Assets.xcassets */,
+				DEB4EDC525139678009F744F /* Components */,
+				DEB4EDB92510DFD9009F744F /* LoginView.swift */,
+				DEB4EDC125124C94009F744F /* SigninView.swift */,
 				DE7726CC250E8952002E6EA7 /* LaunchScreen.storyboard */,
 				DE32019325153E7300346B9D /* FriendsTableViewCell.swift */,
 				DECEF85C2513ADB0009AF56D /* FriendsView.swift */,
@@ -199,6 +238,14 @@
 				DE7726FA250E8A2A002E6EA7 /* Utility.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		DEB4EDC525139678009F744F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DEB4EDBB2510FF4E009F744F /* Separator.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,7 +400,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE3201902514DB0D00346B9D /* UIVIewExtension.swift in Sources */,
+				DEB4EDC425124CD0009F744F /* SigninViewExtension.swift in Sources */,
 				DE7726F9250E8A1E002E6EA7 /* Extension.swift in Sources */,
+
 				DE6952A72518D4AD00F9648F /* AddFriendController.swift in Sources */,
 				DE3201922514EFF600346B9D /* ColorExt.swift in Sources */,
 				DE6952A92518D4D000F9648F /* AddFriend.swift in Sources */,
@@ -364,6 +414,14 @@
 				DE7726C2250E8950002E6EA7 /* AppDelegate.swift in Sources */,
 				DE7726C4250E8950002E6EA7 /* SceneDelegate.swift in Sources */,
 				DECEF85B2513AD9B009AF56D /* FriendsController.swift in Sources */,
+
+				DEB4EDBA2510DFD9009F744F /* LoginView.swift in Sources */,
+				DEB4EDC225124C94009F744F /* SigninView.swift in Sources */,
+				DE7726C6250E8950002E6EA7 /* LoginController.swift in Sources */,
+				DEB4EDBC2510FF4E009F744F /* Separator.swift in Sources */,
+				DEB4EDC0251244E5009F744F /* LoginViewExtension.swift in Sources */,
+				DEB4EDBE25123E21009F744F /* SigninController.swift in Sources */,
+
 				DE7726F7250E8A0F002E6EA7 /* Model.swift in Sources */,
 				DE6952AB2518EA4100F9648F /* FriendsTableView.swift in Sources */,
 				DE6952AD2518EB9700F9648F /* UISearchBarExtension.swift in Sources */,
