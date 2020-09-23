@@ -11,10 +11,7 @@ import UIKit
 
 
 extension ChatGame {
-    
-    
-    func addConstraintTextField(){
-        
+    func addConstraintTextField() {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textBottomAnchor = textField.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant:  -20)
         NSLayoutConstraint.activate([
@@ -76,21 +73,6 @@ extension ChatGame {
     
     
     
-    func addConstraintGiveUp() {
-        
-
-        buttonGiveUp.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            buttonGiveUp.bottomAnchor.constraint(equalTo: shapeTop.bottomAnchor,constant:  -52),
-            buttonGiveUp.heightAnchor.constraint(equalToConstant: 30),
-            buttonGiveUp.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 32),
-            buttonGiveUp.trailingAnchor.constraint(equalTo: self.leadingAnchor, constant: 62)
-        ])
-        
-    }
-    
-    
-    
     
     func addConstraintTableView() {
         addSubview(tableView)
@@ -102,7 +84,6 @@ extension ChatGame {
             tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
-        
         
         
     }
@@ -162,5 +143,49 @@ extension ChatGame {
 }
 
 
+extension UIAlertController {
 
+  //Set background color of UIAlertController
+  func setBackgroudColor(color: UIColor) {
+    if let bgView = self.view.subviews.first,
+      let groupView = bgView.subviews.first,
+      let contentView = groupView.subviews.first {
+      contentView.backgroundColor = color
+    }
+  }
 
+  //Set title font and title color
+  func setTitle(font: UIFont?, color: UIColor?) {
+    guard let title = self.title else { return }
+    let attributeString = NSMutableAttributedString(string: title)//1
+    if let titleFont = font {
+      attributeString.addAttributes([NSAttributedString.Key.font : titleFont],//2
+        range: NSMakeRange(0, title.utf8.count))
+    }
+    if let titleColor = color {
+      attributeString.addAttributes([NSAttributedString.Key.foregroundColor : titleColor],//3
+        range: NSMakeRange(0, title.utf8.count))
+    }
+    self.setValue(attributeString, forKey: "attributedTitle")//4
+  }
+
+  //Set message font and message color
+  func setMessage(font: UIFont?, color: UIColor?) {
+    guard let title = self.message else {
+      return
+    }
+    let attributedString = NSMutableAttributedString(string: title)
+    if let titleFont = font {
+      attributedString.addAttributes([NSAttributedString.Key.font : titleFont], range: NSMakeRange(0, title.utf8.count))
+    }
+    if let titleColor = color {
+      attributedString.addAttributes([NSAttributedString.Key.foregroundColor : titleColor], range: NSMakeRange(0, title.utf8.count))
+    }
+    self.setValue(attributedString, forKey: "attributedMessage")//4
+  }
+
+  //Set tint color of UIAlertController
+  func setTint(color: UIColor) {
+    self.view.tintColor = color
+  }
+}
