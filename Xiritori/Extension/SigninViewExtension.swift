@@ -9,12 +9,8 @@
 import UIKit
 
 extension SigninView {
-    func setupAllViews() {
-        self.setupTextFields()
-        self.setupButtons()
-    }
     
-    private func setupTextFields() {
+    func setupTextFields() {
         // Username TextField Constraints
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -49,7 +45,7 @@ extension SigninView {
         ])
     }
     
-    private func setupButtons() {
+    func setupButtons() {
         // Signin TextField Constraints
         signinButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

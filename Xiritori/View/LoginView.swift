@@ -129,14 +129,17 @@ class LoginView: UIView {
             signinButton,
             guestButton
         )
-        self.setupAllViews()
+        self.setupLogin()
+        self.setupSeparator()
+        self.setupOptionButtons()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-// MARK: - FUNC
+// MARK: - FUNCS
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         emailTextField.layer.cornerRadius = emailTextField.frame.height / 2

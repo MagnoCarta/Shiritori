@@ -10,17 +10,11 @@ import UIKit
 
 extension LoginView {
     
-    func setupAllViews() {
-        self.setupLogin()
-        self.setupSeparator()
-        self.setupOptionButtons()
-    }
-    
-    private func setupLogin() {
+    func setupLogin() {
         // Logo Constraints
         logo.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            logo.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
+            logo.topAnchor.constraint(equalTo: self.topAnchor, constant: 90),
             logo.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             logo.widthAnchor.constraint(equalToConstant: 126),
             logo.heightAnchor.constraint(equalTo: logo.widthAnchor)
@@ -51,7 +45,7 @@ extension LoginView {
         ])
     }
     
-    private func setupSeparator() {
+    func setupSeparator() {
         // Separator
         separator.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -61,7 +55,7 @@ extension LoginView {
         ])
     }
     
-    private func setupOptionButtons() {
+    func setupOptionButtons() {
         // Apple Authorization Button
         autoriztionAppleButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

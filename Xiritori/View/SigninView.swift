@@ -9,6 +9,9 @@
 import UIKit
 
 class SigninView: UIView {
+    
+// MARK: - VIEWS
+    
     // Username TextField.
     lazy var usernameTextField: UITextField = {
         let textField = UITextField()
@@ -74,9 +77,12 @@ class SigninView: UIView {
     }()
     
 // MARK: - ACTIONS
+    
     // SignIn Button Action
     var signinAction: (() -> Void)!
-    @objc func signin(sender: UIButton!) { print("Cad Teste!") }
+    @objc func signin(sender: UIButton!) {
+        signinAction()
+    }
 
 // MARK: - INIT
     
@@ -90,14 +96,15 @@ class SigninView: UIView {
             repeatPasswordTextField,
             signinButton
         )
-        self.setupAllViews()
+        self.setupTextFields()
+        self.setupButtons()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-// MARK: - FUNC
+// MARK: - FUNCS
     
     override func layoutSubviews() {
         super.layoutSubviews()

@@ -9,6 +9,10 @@
 import UIKit
 
 class FriendsTableViewCell: UITableViewCell {
+
+// MARK: - VIEWS
+    
+    // Image Character.
     lazy var imageViewCell: UIImageView = {
         let image = UIImageView(image: UIImage(named: "bart"))
         image.layer.borderColor = UIColor.gray.cgColor
@@ -19,14 +23,15 @@ class FriendsTableViewCell: UITableViewCell {
         return image
         
     }()
-    
+    // Label Name.
     lazy var labelName: UILabel = {
         let label = UILabel()
         label.text = "Amigo1#93493"
         label.font = UIFont(name: "Comfortaa", size: 17)
+        label.textColor = .blazingBlack
         return label
     }()
-    
+    // Button to remove friend.
     lazy var buttonRemove: UIButton = {
         let button = UIButton()
         button.setTitle("Remover", for: .normal)
@@ -36,11 +41,11 @@ class FriendsTableViewCell: UITableViewCell {
         button.layer.cornerRadius = 15
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 20)
-        //button.addTarget(self, action: #selector(test), for: .touchDown)
+        button.addTarget(self, action: #selector(removeAction), for: .touchDown)
         return button
     }()
-    
-    lazy var buttonVS: UIButton = {
+    // Button to play with.
+    lazy var buttonPlusVS: UIButton = {
         let button = UIButton()
         button.setTitle("VS", for: .normal)
         button.backgroundColor = .lightGreen
@@ -49,19 +54,21 @@ class FriendsTableViewCell: UITableViewCell {
         button.layer.cornerRadius = 15
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 25)
-        button.addTarget(self, action: #selector(test2), for: .touchUpInside)
+        button.addTarget(self, action: #selector(vsPlusAction), for: .touchUpInside)
         return button
     }()
+
+// MARK: - INIT
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.backgroundColor = .backgroundColor
-        
-        self.contentView.addSubview(imageViewCell)
-        self.contentView.addSubview(labelName)
-        self.contentView.addSubview(buttonRemove)
-        self.contentView.addSubview(buttonVS)
-        
+        self.contentView.addSubviews(
+            imageViewCell,
+            labelName,
+            buttonRemove,
+            buttonPlusVS
+        )
         self.setupLayout()
     }
     
@@ -69,22 +76,28 @@ class FriendsTableViewCell: UITableViewCell {
        super.init(coder: aDecoder)
     }
     
-    func setupWhithoutButton() {
+ // MARK: - ACTIONS
+    
+    var buttonVsPlusAction: (() -> Void)!
+    @objc func vsPlusAction() {
+        buttonVsPlusAction()
+    }
+    
+    var buttonRemoveAction: (() -> Void)!
+    @objc func removeAction() {
+        buttonRemoveAction()
+    }
+    
+// MARK: - FUNCS
+    
+    func setupCellForAddFriend() {
         buttonRemove.removeFromSuperview()
         labelName.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        buttonVS.setTitle("+", for: .normal)
-        buttonVS.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 40)
-        buttonVS.removeTarget(self, action: #selector(test2), for: .touchUpInside)
-        buttonVS.addTarget(self, action: #selector(test1), for: .touchUpInside)
+        buttonPlusVS.setTitle("+", for: .normal)
+        buttonPlusVS.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 40)
     }
-    
-    @objc func test1() {
-        print("Test 01")
-    }
-    
-    @objc func test2() {
-        print("Test 02")
-    }
+
+// MARK: - CONSTRAINTS
     
     func setupLayout() {
         imageViewCell.translatesAutoresizingMaskIntoConstraints = false
@@ -99,7 +112,7 @@ class FriendsTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             labelName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 17.5),
             labelName.leftAnchor.constraint(equalTo: imageViewCell.rightAnchor, constant: 17.5),
-            labelName.rightAnchor.constraint(equalTo: buttonVS.leftAnchor, constant: -17.5)
+            labelName.rightAnchor.constraint(equalTo: buttonPlusVS.leftAnchor, constant: -17.5)
         ])
         
         buttonRemove.translatesAutoresizingMaskIntoConstraints = false
@@ -110,13 +123,12 @@ class FriendsTableViewCell: UITableViewCell {
             buttonRemove.widthAnchor.constraint(equalToConstant: 120)
         ])
         
-        buttonVS.translatesAutoresizingMaskIntoConstraints = false
+        buttonPlusVS.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            buttonVS.heightAnchor.constraint(equalToConstant: 60),
-            buttonVS.widthAnchor.constraint(equalToConstant: 75),
-            buttonVS.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -17.5),
-            buttonVS.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+            buttonPlusVS.heightAnchor.constraint(equalToConstant: 60),
+            buttonPlusVS.widthAnchor.constraint(equalToConstant: 75),
+            buttonPlusVS.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -17.5),
+            buttonPlusVS.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
     }
-
 }

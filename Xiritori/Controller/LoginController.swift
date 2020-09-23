@@ -10,6 +10,8 @@ import UIKit
 
 class LoginController: UIViewController {
 // MARK: - VIEW
+    
+    // View Content
     lazy var loginView: LoginView = {
         let view = LoginView()
         view.submitAction = { self.login() }
@@ -19,6 +21,7 @@ class LoginController: UIViewController {
     }()
     
 // MARK: - APP CYCLE
+    
     override func loadView() {
         super.loadView()
         self.view = loginView
@@ -33,6 +36,7 @@ class LoginController: UIViewController {
     }
     
 // MARK: - ACTIONS
+    
     func login() { // login action.
         print("Logar!")
     }

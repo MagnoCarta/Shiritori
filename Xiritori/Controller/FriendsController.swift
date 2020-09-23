@@ -9,13 +9,15 @@
 import UIKit
 
 class FriendsController: UIViewController {
-// MARK: - VIEW
+// MARK: - VIEWS
+    
+    // View Content
     let friendsView = FriendsView()
     
     // nav bar add button.
     lazy var barButton: UIBarButtonItem = {
         let icon = UIImage(systemName: "plus.circle.fill")
-        let iconSize = CGRect(origin: CGPoint.zero, size: CGSize(width: 32, height: 30))
+        let iconSize = CGRect(origin: CGPoint.zero, size: CGSize(width: 37, height: 35))
         let iconButton = UIButton(frame: iconSize)
         iconButton.setBackgroundImage(icon, for: .normal)
         iconButton.tintColor = .lightGreen
@@ -25,6 +27,7 @@ class FriendsController: UIViewController {
     }()
     
 // MARK: - VIEW CYCLE
+    
     override func loadView() {
         super.loadView()
         self.view = friendsView
@@ -32,49 +35,65 @@ class FriendsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.configureNavBar()
+        // TableView delegate and data source.
         friendsView.tableView.delegate = self
         friendsView.tableView.dataSource = self
-        self.configureNavBar()
-        
+        // Register the cell on tableview.
         self.friendsView.tableView.register(FriendsTableViewCell.self, forCellReuseIdentifier: "FriendCell")
-        
+        // Add tap gesture.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         friendsView.addGestureRecognizer(tap)
     }
     
 // MARK: - ACTIONS
-    @objc func addFriend() {
+    
+    @objc func addFriend() { // Plus button action.
         let addFriendController = AddFriendController()
-        //let navController = UINavigationController(rootViewController: addFriendController)
         navigationController?.present(addFriendController, animated: true, completion: nil)
     }
     
-// MARK: - FUNCS
-    private func configureNavBar() {
-        navigationItem.title = "Lista de Amigos"
-        navigationController?.overrideUserInterfaceStyle = .light
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.backgroundColor = .clear
-        navigationController?.navigationBar.topItem?.rightBarButtonItem = barButton
+    func vsAction() { // Action to button vs.
+        print("VS")
+    }
     
+    func removeFriend() { // Action to remove a friend.
+        print("Remove Friend!")
+    }
+    
+// MARK: - FUNCS
+    
+    private func configureNavBar() {
+        self.navigationItem.title = "Lista de Amigos"
+        self.navigationController?.overrideUserInterfaceStyle = .light
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = barButton
+        
+        // SerchBar.
         let searchBarController = UISearchController()
         searchBarController.searchBar.setUpSearchBar()
         navigationItem.searchController = searchBarController
         navigationItem.hidesSearchBarWhenScrolling = false
-        
-        navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 40)!,
-        NSAttributedString.Key.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 20)!,
-        NSAttributedString.Key.foregroundColor: UIColor.white]
+        // Font.
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [
+            NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 40)!,
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 20)!,
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
     }
-    
+    // Func to dismiss the keyboard.
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
 }
 
-// MARK: - UITableView Delegate and DataSource
+// MARK: - TableView Delegate and DataSource
 
 extension FriendsController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,9 +101,9 @@ extension FriendsController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as? FriendsTableViewCell
-        
+        cell?.buttonVsPlusAction = self.vsAction
+        cell?.buttonRemoveAction = self.removeFriend
         return cell!
     }
 }

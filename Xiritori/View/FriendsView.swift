@@ -24,7 +24,7 @@ class FriendsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // Constraints
+// MARK: - CONSTRAINTS
     
     func setupTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false

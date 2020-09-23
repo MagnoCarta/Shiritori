@@ -9,21 +9,24 @@
 import UIKit
 
 class Separator: UIView {
-    // Views
+
+// MARK: - VIEWS
+    
+    // Line Left
     lazy var lineL: UIView = {
         let view = UIView()
         view.backgroundColor = .gray
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+    // Line Right
     lazy var lineR: UIView = {
         let view = UIView()
         view.backgroundColor = .gray
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+    // Label OR
     lazy var labelOr: UILabel = {
         let label = UILabel()
         label.text = "OU"
@@ -34,9 +37,12 @@ class Separator: UIView {
         return label
     }()
     
-    // Inits
+// MARK: - INIT
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.addSubview(lineL)
+        self.addSubview(labelOr)
+        self.addSubview(lineR)
         self.setupLayout()
     }
     
@@ -44,12 +50,9 @@ class Separator: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // Constraints
+// MARK: - CONSTRAINTS
+    
     private func setupLayout() {
-        self.addSubview(lineL)
-        self.addSubview(labelOr)
-        self.addSubview(lineR)
-        
         // Label
         NSLayoutConstraint.activate([
             labelOr.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
@@ -71,5 +74,4 @@ class Separator: UIView {
             lineR.heightAnchor.constraint(equalToConstant: 2.0)
         ])
     }
-    
 }

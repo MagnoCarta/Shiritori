@@ -9,27 +9,31 @@
 import UIKit
 
 class AddFriend: UIView {
+    
+// MARK: - VIEWS
+    
     // TableView
     let tableView = FriendsTableView(frame: .zero, style: .plain)
-    
     // SearchBar
     let friendSearchBar = UISearchBar()
 
+// MARK: - INIT
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .seriousPurple
-        self.addSubview(tableView)
-        self.addSubview(friendSearchBar)
+        self.addSubviews(tableView, friendSearchBar)
         friendSearchBar.setUpSearchBar()
-        self.septupSearchBar()
+        self.septupLayout()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // Constraints
-    func septupSearchBar() {
+// MARK: - CONSTRAINTS
+    
+    func septupLayout() {
         friendSearchBar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             friendSearchBar.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
