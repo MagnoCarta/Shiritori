@@ -11,6 +11,8 @@ import UIKit
 class FriendsTableViewCell: UITableViewCell {
     lazy var imageViewCell: UIImageView = {
         let image = UIImageView(image: UIImage(named: "bart"))
+        image.layer.borderColor = UIColor.gray.cgColor
+        image.layer.borderWidth = 0.5
         image.contentMode = .scaleAspectFit
         image.layer.cornerRadius = 30
         image.clipsToBounds = true
@@ -21,15 +23,19 @@ class FriendsTableViewCell: UITableViewCell {
     lazy var labelName: UILabel = {
         let label = UILabel()
         label.text = "Amigo1#93493"
+        label.font = UIFont(name: "Comfortaa", size: 17)
         return label
     }()
     
     lazy var buttonRemove: UIButton = {
         let button = UIButton()
         button.setTitle("Remover", for: .normal)
-        button.backgroundColor = .gray
+        button.backgroundColor = .lightRed
+        button.layer.borderColor = UIColor.gray.cgColor
+        button.layer.borderWidth = 0.5
         button.layer.cornerRadius = 15
         button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 20)
         //button.addTarget(self, action: #selector(test), for: .touchDown)
         return button
     }()
@@ -37,17 +43,19 @@ class FriendsTableViewCell: UITableViewCell {
     lazy var buttonVS: UIButton = {
         let button = UIButton()
         button.setTitle("VS", for: .normal)
-        button.backgroundColor = .gray
+        button.backgroundColor = .lightGreen
+        button.layer.borderColor = UIColor.gray.cgColor
+        button.layer.borderWidth = 0.5
         button.layer.cornerRadius = 15
         button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 17)
+        button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 25)
         button.addTarget(self, action: #selector(test2), for: .touchUpInside)
         return button
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = .white
+        self.backgroundColor = .backgroundColor
         
         self.contentView.addSubview(imageViewCell)
         self.contentView.addSubview(labelName)
@@ -98,7 +106,7 @@ class FriendsTableViewCell: UITableViewCell {
             buttonRemove.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: 8),
             buttonRemove.leftAnchor.constraint(equalTo: imageViewCell.rightAnchor, constant: 17.5),
             buttonRemove.heightAnchor.constraint(equalToConstant: 30),
-            buttonRemove.widthAnchor.constraint(equalToConstant: 100)
+            buttonRemove.widthAnchor.constraint(equalToConstant: 120)
         ])
         
         buttonVS.translatesAutoresizingMaskIntoConstraints = false
