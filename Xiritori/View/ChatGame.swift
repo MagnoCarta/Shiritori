@@ -38,6 +38,16 @@ class ChatGame: UIView {
         button.layer.cornerRadius = 13
        return button
     }()
+    
+    let buttonGiveUp: UIButton = {
+        let button = UIButton(type: .roundedRect)
+        button.backgroundColor = .gray
+        button.layer.cornerRadius = 15
+        
+        return button
+    }()
+    
+    
     var buttonSenTextBottom = NSLayoutConstraint()
     
     var tamanhoTextField = CGFloat(300)
@@ -79,6 +89,7 @@ class ChatGame: UIView {
         addSubview(shapeOrangePoints)
         addSubview(greenPoints)
         addSubview(orangePoints)
+        addSubview(buttonGiveUp)
         
         addConstraintTextField()
         addConstraintShape()
@@ -89,6 +100,7 @@ class ChatGame: UIView {
         addConstraintShapeOPoints()
         addConstraintGPoints()
         addConstraintOPoints()
+        addConstraintGiveUp()
         
         delegates()
         tableView.rowHeight = 80
@@ -99,16 +111,43 @@ class ChatGame: UIView {
         keyboardActions()
     
         
-        let circle = UIBezierPath.init(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: shapeTop.frame.size.height/2), radius: 25, startAngle: 0, endAngle: 360, clockwise: true)
-        let circleShape = CAShapeLayer()
-        circleShape.path = circle.cgPath
-        circleShape.fillColor = UIColor.myLightRed.cgColor
-        self.layer.addSublayer(circleShape)
+      
+        clockTime()
+        
     }
     
     
    
-    
+    func clockTime() {
+        
+        var tempo: Double = 0
+        var inversalTime: Double = 6.18
+        Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
+            tempo += 0.01
+            inversalTime -= 0.01
+            
+         //   circle.move(to: .zero)
+            var circle = UIBezierPath.init(arcCenter:  CGPoint(x: UIScreen.main.bounds.width/2, y: 90), radius: 35, startAngle: 0, endAngle: CGFloat(inversalTime), clockwise: true)
+            let circleShape = CAShapeLayer()
+            circleShape.path = circle.cgPath
+            circleShape.fillColor = UIColor.myLightRed.cgColor
+            self.layer.addSublayer(circleShape)
+            var tempoEspera: Double = 0
+            Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { etimer in
+                tempoEspera += 0.01
+                if tempoEspera > 0.02 {
+                    circleShape.removeFromSuperlayer()
+                    etimer.invalidate()
+                }
+                
+            }
+            if tempo > 6.18 {
+                timer.invalidate()
+                
+            }
+        }
+        
+    }
     
     func keyboardActions() {
         

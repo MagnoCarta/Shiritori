@@ -76,10 +76,16 @@ extension ChatGame {
     
     
     
-    func addConstraintRelogio() {
+    func addConstraintGiveUp() {
         
 
-        
+        buttonGiveUp.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            buttonGiveUp.bottomAnchor.constraint(equalTo: shapeTop.bottomAnchor,constant:  -52),
+            buttonGiveUp.heightAnchor.constraint(equalToConstant: 30),
+            buttonGiveUp.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 32),
+            buttonGiveUp.trailingAnchor.constraint(equalTo: self.leadingAnchor, constant: 62)
+        ])
         
     }
     
