@@ -27,6 +27,7 @@ class Separator: UIView {
     lazy var labelOr: UILabel = {
         let label = UILabel()
         label.text = "OU"
+        label.textColor = .gray
         label.backgroundColor = .clear
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -60,14 +61,14 @@ class Separator: UIView {
             lineL.centerYAnchor.constraint(equalTo: labelOr.centerYAnchor),
             lineL.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
             lineL.rightAnchor.constraint(equalTo: labelOr.leftAnchor, constant: 0),
-            lineL.heightAnchor.constraint(equalToConstant: 1.0)
+            lineL.heightAnchor.constraint(equalToConstant: 2.0)
         ])
         // LineR
         NSLayoutConstraint.activate([
             lineR.centerYAnchor.constraint(equalTo: labelOr.centerYAnchor),
             lineR.leftAnchor.constraint(equalTo: labelOr.rightAnchor, constant: 0),
             lineR.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0),
-            lineR.heightAnchor.constraint(equalToConstant: 1.0)
+            lineR.heightAnchor.constraint(equalToConstant: 2.0)
         ])
     }
     
