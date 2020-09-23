@@ -66,7 +66,7 @@ class FriendsController: UIViewController {
         navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 40)!,
         NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 20)!,
-        NSAttributedString.Key.foregroundColor: UIColor.blazingBlack]
+        NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     @objc func dismissKeyboard() {

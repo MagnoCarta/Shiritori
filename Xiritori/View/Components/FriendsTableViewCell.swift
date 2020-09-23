@@ -73,6 +73,7 @@ class FriendsTableViewCell: UITableViewCell {
         buttonRemove.removeFromSuperview()
         labelName.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         buttonVS.setTitle("+", for: .normal)
+        buttonVS.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 40)
         buttonVS.removeTarget(self, action: #selector(test2), for: .touchUpInside)
         buttonVS.addTarget(self, action: #selector(test1), for: .touchUpInside)
     }

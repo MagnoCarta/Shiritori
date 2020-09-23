@@ -17,7 +17,7 @@ class AddFriend: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        self.backgroundColor = .seriousPurple
         self.addSubview(tableView)
         self.addSubview(friendSearchBar)
         friendSearchBar.setUpSearchBar()
