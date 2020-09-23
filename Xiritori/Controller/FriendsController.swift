@@ -32,6 +32,7 @@ class FriendsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         friendsView.tableView.delegate = self
         friendsView.tableView.dataSource = self
         self.configureNavBar()
@@ -40,10 +41,6 @@ class FriendsController: UIViewController {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         friendsView.addGestureRecognizer(tap)
-        
-        // Temporaly
-//        let addFriendController = AddFriendController()
-//        navigationController?.present(addFriendController, animated: true, completion: nil)
     }
     
 // MARK: - ACTIONS
@@ -56,17 +53,20 @@ class FriendsController: UIViewController {
 // MARK: - FUNCS
     private func configureNavBar() {
         navigationItem.title = "Lista de Amigos"
-        // Always use Light Mode.
         navigationController?.overrideUserInterfaceStyle = .light
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.standardAppearance.configureWithTransparentBackground()
+        navigationController?.navigationBar.backgroundColor = .clear
         navigationController?.navigationBar.topItem?.rightBarButtonItem = barButton
-        
+    
         let searchBarController = UISearchController()
         searchBarController.searchBar.setUpSearchBar()
         navigationItem.searchController = searchBarController
-        
         navigationItem.hidesSearchBarWhenScrolling = false
+        
+        navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 40)!,
+        NSAttributedString.Key.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 20)!,
+        NSAttributedString.Key.foregroundColor: UIColor.blazingBlack]
     }
     
     @objc func dismissKeyboard() {
@@ -78,19 +78,12 @@ class FriendsController: UIViewController {
 
 extension FriendsController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as? FriendsTableViewCell
-        
-//        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        
-//        cell.selectionStyle = .none
-//        cell.backgroundColor = .clear
-//        cell.textLabel?.text = "Title \(indexPath.row)"
-//        cell.detailTextLabel?.text = "Body \(indexPath.row)"
         
         return cell!
     }

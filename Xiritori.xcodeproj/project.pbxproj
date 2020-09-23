@@ -222,10 +222,10 @@
 			isa = PBXGroup;
 			children = (
 				DE7726CA250E8952002E6EA7 /* Assets.xcassets */,
+				DE7726CC250E8952002E6EA7 /* LaunchScreen.storyboard */,
 				DEB4EDC525139678009F744F /* Components */,
 				DEB4EDB92510DFD9009F744F /* LoginView.swift */,
 				DEB4EDC125124C94009F744F /* SigninView.swift */,
-				DE7726CC250E8952002E6EA7 /* LaunchScreen.storyboard */,
 				0F79F51D25123F720086F6EF /* ChatGame.swift */,
 				DECEF85C2513ADB0009AF56D /* FriendsView.swift */,
 				DE6952A82518D4D000F9648F /* AddFriend.swift */,

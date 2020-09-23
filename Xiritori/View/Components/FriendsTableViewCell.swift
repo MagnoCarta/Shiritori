@@ -40,6 +40,7 @@ class FriendsTableViewCell: UITableViewCell {
         button.backgroundColor = .gray
         button.layer.cornerRadius = 15
         button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 17)
         button.addTarget(self, action: #selector(test2), for: .touchUpInside)
         return button
     }()
