@@ -13,6 +13,8 @@ class PlayScreenView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 		self.backgroundColor = .seriousPurple
+		
+		setupBackgroundImage()
     }
     
     required init?(coder: NSCoder) {
