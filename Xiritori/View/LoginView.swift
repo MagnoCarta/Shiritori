@@ -24,6 +24,7 @@ class LoginView: UIView {
         let textField = UITextField()
         textField.placeholder = "Email ou Apelido"
         textField.font = UIFont(name: "Comfortaa", size: 17)
+        textField.textColor = .blazingBlack
         textField.layer.borderWidth = 1.0
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.borderStyle = UITextField.BorderStyle.roundedRect

@@ -55,7 +55,7 @@ extension LoginView {
         // Separator
         separator.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            separator.topAnchor.constraint(equalTo: submitButton.bottomAnchor, constant: 40),
+            separator.topAnchor.constraint(equalTo: submitButton.bottomAnchor, constant: 30),
             separator.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 40),
             separator.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -40)
         ])
@@ -65,7 +65,7 @@ extension LoginView {
         // Apple Authorization Button
         autoriztionAppleButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            autoriztionAppleButton.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 55),
+            autoriztionAppleButton.topAnchor.constraint(equalTo: separator.bottomAnchor, constant: 45),
             autoriztionAppleButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 40),
             autoriztionAppleButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -40),
             autoriztionAppleButton.heightAnchor.constraint(equalToConstant: 45)

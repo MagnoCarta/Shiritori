@@ -21,7 +21,7 @@ extension SigninView {
             usernameTextField.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20),
             usernameTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
             usernameTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
-            usernameTextField.heightAnchor.constraint(equalToConstant: 50)
+            usernameTextField.heightAnchor.constraint(equalToConstant: 45)
         ])
         // Email TextField Constraints
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +29,7 @@ extension SigninView {
             emailTextField.topAnchor.constraint(equalTo: usernameTextField.bottomAnchor, constant: 10),
             emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
             emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
-            emailTextField.heightAnchor.constraint(equalToConstant: 50)
+            emailTextField.heightAnchor.constraint(equalToConstant: 45)
         ])
         // Password TextField Constraints
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +37,7 @@ extension SigninView {
             passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 10),
             passwordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
             passwordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 50)
+            passwordTextField.heightAnchor.constraint(equalToConstant: 45)
         ])
         // RepeatPassword TextField Constraints
         repeatPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +45,7 @@ extension SigninView {
             repeatPasswordTextField.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10),
             repeatPasswordTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
             repeatPasswordTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
-            repeatPasswordTextField.heightAnchor.constraint(equalToConstant: 50)
+            repeatPasswordTextField.heightAnchor.constraint(equalToConstant: 45)
         ])
     }
     
@@ -56,7 +56,7 @@ extension SigninView {
             signinButton.topAnchor.constraint(equalTo: repeatPasswordTextField.bottomAnchor, constant: 20),
             signinButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 40),
             signinButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
-            signinButton.heightAnchor.constraint(equalToConstant: 50)
+            signinButton.heightAnchor.constraint(equalToConstant: 45)
         ])
     }
 }

@@ -26,9 +26,10 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.standardAppearance.configureWithTransparentBackground()
-        // Always use Light Mode.
         self.navigationController?.overrideUserInterfaceStyle = .light
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
     }
     
 // MARK: - ACTIONS

@@ -13,6 +13,7 @@ class SigninView: UIView {
     lazy var usernameTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Username"
+        textField.font = UIFont(name: "Comfortaa", size: 17)
         textField.layer.borderWidth = 1.0
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.borderStyle = UITextField.BorderStyle.roundedRect
@@ -24,6 +25,7 @@ class SigninView: UIView {
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Email"
+        textField.font = UIFont(name: "Comfortaa", size: 17)
         textField.layer.borderWidth = 1.0
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.borderStyle = UITextField.BorderStyle.roundedRect
@@ -36,6 +38,7 @@ class SigninView: UIView {
     lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Senha"
+        textField.font = UIFont(name: "Comfortaa", size: 17)
         textField.layer.borderWidth = 1.0
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.borderStyle = UITextField.BorderStyle.roundedRect
@@ -48,6 +51,7 @@ class SigninView: UIView {
     lazy var repeatPasswordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Confirmar Senha"
+        textField.font = UIFont(name: "Comfortaa", size: 17)
         textField.layer.borderWidth = 1.0
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.borderStyle = UITextField.BorderStyle.roundedRect
@@ -60,12 +64,15 @@ class SigninView: UIView {
     lazy var signinButton: UIButton = {
         let button = UIButton()
         button.setTitle("Cadastrar", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
+        button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 30)
+        button.setTitleColor(.blazingBlack, for: .normal)
+        button.backgroundColor = .lightGreen
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.gray.cgColor
         button.addTarget(self, action: #selector(signin), for: .touchUpInside)
         return button
     }()
+    
 // MARK: - ACTIONS
     // SignIn Button Action
     var signinAction: (() -> Void)!
@@ -75,7 +82,7 @@ class SigninView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        self.backgroundColor = .seriousPurple
         self.addSubviews(
             usernameTextField,
             emailTextField,

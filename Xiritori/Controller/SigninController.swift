@@ -26,9 +26,11 @@ class SigninController: UIViewController {
 // MARK: - FUNC
     private func configureNavBar() {
         let backItem = UIBarButtonItem(title: "Login", style: .plain, target: nil, action: nil)
+        backItem.tintColor = .backgroundColor
         navigationItem.title = "Cadastrar"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.standardAppearance.configureWithTransparentBackground()
         navigationController?.navigationBar.topItem?.backBarButtonItem = backItem
+        navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 40)!,
+        NSAttributedString.Key.foregroundColor: UIColor.white]
     }
 }
