@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 class ChatGame: UIView {
     
     var firstResponder = false
@@ -56,6 +55,7 @@ class ChatGame: UIView {
     var path: UIBezierPath!
     
     override init(frame: CGRect) {
+
         super.init(frame: frame)
         self.backgroundColor = .backgroundColor
         shape.backgroundColor = .seriousPurple
@@ -94,6 +94,7 @@ class ChatGame: UIView {
         buttonSendText.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         
         keyboardActions()
+
         clockTime()
         
     }
@@ -109,7 +110,7 @@ class ChatGame: UIView {
             let circle = UIBezierPath.init(arcCenter:  CGPoint(x: UIScreen.main.bounds.width/2, y: 90), radius: 35, startAngle: 0, endAngle: CGFloat(inversalTime), clockwise: true)
             let circleShape = CAShapeLayer()
             circleShape.path = circle.cgPath
-            circleShape.fillColor = UIColor.myLightRed.cgColor
+            circleShape.fillColor = UIColor.lightRed.cgColor
             self.layer.addSublayer(circleShape)
             var tempoEspera: Double = 0
             Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { etimer in
@@ -125,6 +126,7 @@ class ChatGame: UIView {
             }
         }
         
+
     }
     
     func keyboardActions() {
@@ -139,9 +141,11 @@ class ChatGame: UIView {
         tableView.dataSource = self
         
     }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
     @objc func dismissKeyboard() {
         
          self.endEditing(true)
@@ -168,13 +172,16 @@ class ChatGame: UIView {
         }
             firstResponder = !firstResponder
         }
+
 }
+
     @objc func sendMessage() {
         //Muitas verificacoes pra depois, lembre-se
         
         guard let textSent = textField.text else { return  }
         mensagemMockada.append(textSent)
         tableView.reloadData()
+
     }
     
     @objc func  giveUp() {
@@ -184,6 +191,7 @@ class ChatGame: UIView {
 
     }
 }
+
 extension ChatGame: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         mensagemMockada.count

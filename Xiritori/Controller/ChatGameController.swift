@@ -12,6 +12,7 @@ import UIKit
 class ChatGameController: UIViewController {
     
     let viewChat = ChatGame()
+
     let buttonGiveUp: UIButton = {
         let button = UIButton(type: .roundedRect)
         button.backgroundColor = .gray
@@ -73,4 +74,5 @@ override func viewDidLoad() {
         dialogMessage.setMessage(font: UIFont(name: "Comfortaa", size: 18), color: .black)
         dialogMessage.setTitle(font: UIFont(name: "Comfortaa-Bold", size: 20), color: .black)
     }
+
 }
