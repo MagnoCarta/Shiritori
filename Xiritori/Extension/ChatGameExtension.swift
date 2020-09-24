@@ -9,18 +9,16 @@
 import Foundation
 import UIKit
 
-
 extension ChatGame {
     
-    
-    func addConstraintTextField(){
+    func addConstraintTextField() {
         
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textBottomAnchor = textField.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant:  -20)
+        textBottomAnchor = textField.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20)
         NSLayoutConstraint.activate([
-       textBottomAnchor,
-        textField.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -70),
-        textField.leadingAnchor.constraint(equalTo: self.leadingAnchor,constant: 30),
+			textBottomAnchor,
+			textField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -70),
+			textField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30)
        // textField.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
@@ -28,17 +26,21 @@ extension ChatGame {
     func addConstraintShape() {
         addSubview(whiteBlueLineBot)
         shape.translatesAutoresizingMaskIntoConstraints = false
-        shapeBottomAnchor = shape.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant: 0)
-        NSLayoutConstraint.activate([shapeBottomAnchor,shape.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-                                     shape.trailingAnchor.constraint(equalTo: self.trailingAnchor), shape.heightAnchor.constraint(equalToConstant: 70)
+        shapeBottomAnchor = shape.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
+        NSLayoutConstraint.activate([
+			shapeBottomAnchor,
+			shape.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+			shape.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+			shape.heightAnchor.constraint(equalToConstant: 70)
         ])
         whiteBlueLineBot.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-        whiteBlueLineBot.topAnchor.constraint(equalTo: shape.topAnchor),whiteBlueLineBot.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-        whiteBlueLineBot.trailingAnchor.constraint(equalTo: self.trailingAnchor),whiteBlueLineBot.heightAnchor.constraint(equalToConstant: 3)
+			whiteBlueLineBot.topAnchor.constraint(equalTo: shape.topAnchor),
+			whiteBlueLineBot.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+			whiteBlueLineBot.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+			whiteBlueLineBot.heightAnchor.constraint(equalToConstant: 3)
         ])
         
-    
     }
     
     func addConstraintButton() {
@@ -51,40 +53,28 @@ extension ChatGame {
             buttonSendText.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15),
             buttonSendText.heightAnchor.constraint(equalToConstant: 30)
         ])
-        
-        
+	
     }
-    
-    
+
     func addConstraintShapeTop() {
         addSubview(whiteBlueLineTop)
          
         shapeTop.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([shapeTop.topAnchor.constraint(equalTo: self.topAnchor,constant: 0),shapeTop.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-                                     shapeTop.trailingAnchor.constraint(equalTo: self.trailingAnchor), shapeTop.heightAnchor.constraint(equalToConstant: 150)])
+        NSLayoutConstraint.activate([
+			shapeTop.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+			shapeTop.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+			shapeTop.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+			shapeTop.heightAnchor.constraint(equalToConstant: 150)])
         whiteBlueLineTop.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-        whiteBlueLineTop.bottomAnchor.constraint(equalTo: shapeTop.bottomAnchor),whiteBlueLineTop.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-        whiteBlueLineTop.trailingAnchor.constraint(equalTo: self.trailingAnchor),whiteBlueLineTop.heightAnchor.constraint(equalToConstant: 3)
+			whiteBlueLineTop.bottomAnchor.constraint(equalTo: shapeTop.bottomAnchor),
+			whiteBlueLineTop.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+			whiteBlueLineTop.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+			whiteBlueLineTop.heightAnchor.constraint(equalToConstant: 3)
         ])
         
-        
-        
     }
-    
-    
-    
-    
-    func addConstraintRelogio() {
-        
-
-        
-        
-    }
-    
-    
-    
     
     func addConstraintTableView() {
         addSubview(tableView)
@@ -96,37 +86,34 @@ extension ChatGame {
             tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
-        
-        
-        
+	
     }
-    
-    
-    func addConstraintShapeGPoints(){
+
+    func addConstraintShapeGPoints() {
         shapeGreenPoints.translatesAutoresizingMaskIntoConstraints = false
         shapeGreenPoints.layer.cornerRadius = 13
         NSLayoutConstraint.activate([
         shapeGreenPoints.heightAnchor.constraint(equalToConstant: 30),
-        shapeGreenPoints.bottomAnchor.constraint(equalTo: shapeTop.bottomAnchor,constant: -15),
+        shapeGreenPoints.bottomAnchor.constraint(equalTo: shapeTop.bottomAnchor, constant: -15),
         shapeGreenPoints.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 15),
         shapeGreenPoints.leadingAnchor.constraint(equalTo: self.centerXAnchor, constant: 90)
         ])
         
     }
     
-    func addConstraintShapeOPoints(){
+    func addConstraintShapeOPoints() {
         shapeOrangePoints.translatesAutoresizingMaskIntoConstraints = false
         shapeOrangePoints.layer.cornerRadius = 13
         NSLayoutConstraint.activate([
         shapeOrangePoints.heightAnchor.constraint(equalToConstant: 30),
-        shapeOrangePoints.bottomAnchor.constraint(equalTo: shapeGreenPoints.bottomAnchor,constant: -38),
+        shapeOrangePoints.bottomAnchor.constraint(equalTo: shapeGreenPoints.bottomAnchor, constant: -38),
         shapeOrangePoints.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 15),
         shapeOrangePoints.leadingAnchor.constraint(equalTo: self.centerXAnchor, constant: 90)
         ])
         
     }
     
-    func addConstraintGPoints(){
+    func addConstraintGPoints() {
         greenPoints.text = "300"
         greenPoints.font = UIFont(name: "Comfortaa", size: 30)
         greenPoints.translatesAutoresizingMaskIntoConstraints = false
@@ -139,7 +126,7 @@ extension ChatGame {
         
     }
     
-    func addConstraintOPoints(){
+    func addConstraintOPoints() {
         orangePoints.text = "300"
         orangePoints.font = UIFont(name: "Comfortaa", size: 30)
         orangePoints.translatesAutoresizingMaskIntoConstraints = false
@@ -150,11 +137,5 @@ extension ChatGame {
                    orangePoints.centerYAnchor.constraint(equalTo: shapeOrangePoints.centerYAnchor)
                ])
     }
-    
-    
-    
+
 }
-
-
-
-
