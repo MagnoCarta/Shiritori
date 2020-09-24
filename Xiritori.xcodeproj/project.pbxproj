@@ -212,7 +212,6 @@
 		DE7726F2250E8984002E6EA7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				92C12B85251CC75B00E83F0B /* UIViewExtension.swift */,
 				DE7726F6250E8A0F002E6EA7 /* Model.swift */,
 			);
 			path = Model;
@@ -222,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				DE7726F8250E8A1E002E6EA7 /* ChatGameExtension.swift */,
+				92C12B85251CC75B00E83F0B /* UIViewExtension.swift */,
 				0F79F5252514EECF0086F6EF /* ColorExtension.swift */,
 				DE6952AC2518EB9700F9648F /* UISearchBarExtension.swift */,
 				DEB4EDBF251244E5009F744F /* LoginViewExtension.swift */,
