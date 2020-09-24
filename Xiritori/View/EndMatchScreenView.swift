@@ -16,7 +16,9 @@ class EndMatchScreenView: UIView {
 		super.init(frame: frame)
 		self.backgroundColor = .seriousPurple
 		
+		matchResults.allowsSelection = false
 		self.addSubview(matchResults)
+		
 		setupBackgroundImage()
 		setupMatchResults()
 	}
