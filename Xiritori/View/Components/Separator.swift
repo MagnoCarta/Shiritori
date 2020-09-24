@@ -9,26 +9,40 @@
 import UIKit
 
 class Separator: UIView {
-    // Views
-    lazy var line: UIView = {
+
+// MARK: - VIEWS
+    
+    // Line Left
+    lazy var lineL: UIView = {
         let view = UIView()
         view.backgroundColor = .gray
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+    // Line Right
+    lazy var lineR: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    // Label OR
     lazy var labelOr: UILabel = {
         let label = UILabel()
         label.text = "OU"
-        label.backgroundColor = .white
+        label.textColor = .gray
+        label.backgroundColor = .clear
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    // Inits
+// MARK: - INIT
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.addSubview(lineL)
+        self.addSubview(labelOr)
+        self.addSubview(lineR)
         self.setupLayout()
     }
     
@@ -36,24 +50,28 @@ class Separator: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // Constraints
+// MARK: - CONSTRAINTS
+    
     private func setupLayout() {
-        self.addSubview(line)
-        self.addSubview(labelOr)
-        
         // Label
         NSLayoutConstraint.activate([
             labelOr.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
             labelOr.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             labelOr.widthAnchor.constraint(equalToConstant: 40)
         ])
-        // Line
+        // LineL
         NSLayoutConstraint.activate([
-            line.centerYAnchor.constraint(equalTo: labelOr.centerYAnchor),
-            line.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
-            line.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0),
-            line.heightAnchor.constraint(equalToConstant: 1.0)
+            lineL.centerYAnchor.constraint(equalTo: labelOr.centerYAnchor),
+            lineL.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
+            lineL.rightAnchor.constraint(equalTo: labelOr.leftAnchor, constant: 0),
+            lineL.heightAnchor.constraint(equalToConstant: 2.0)
+        ])
+        // LineR
+        NSLayoutConstraint.activate([
+            lineR.centerYAnchor.constraint(equalTo: labelOr.centerYAnchor),
+            lineR.leftAnchor.constraint(equalTo: labelOr.rightAnchor, constant: 0),
+            lineR.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0),
+            lineR.heightAnchor.constraint(equalToConstant: 2.0)
         ])
     }
-    
 }
