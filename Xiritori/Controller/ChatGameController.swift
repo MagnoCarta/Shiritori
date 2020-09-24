@@ -20,14 +20,16 @@ class ChatGameController: UIViewController {
         
         return button
     }()
-override func viewDidLoad() {
+	
+	override func viewDidLoad() {
         
         super.viewDidLoad()
         self.view = viewChat
         buttonGiveUp.addTarget(self, action: #selector(giveUp), for: .touchUpInside)
-    self.view.addSubview(buttonGiveUp)
-    addConstraintGiveUp()
+		self.view.addSubview(buttonGiveUp)
+		addConstraintGiveUp()
     }
+	
     func addConstraintGiveUp() {
         
 
@@ -59,7 +61,11 @@ override func viewDidLoad() {
         
         // Create OK button with action handler
         let ok = UIAlertAction(title: "Sim", style: .default, handler: { (action) -> Void in
-            
+			self.navigationController?.navigationBar.isHidden = false
+			let endMatchController = EndMatchScreenController()
+			endMatchController.modalPresentationStyle = .fullScreen
+			self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+			self.navigationController?.pushViewController(endMatchController, animated: true)
         })
         // Create Cancel button with action handlder
         let cancel = UIAlertAction(title: "Não", style: .cancel) { (action) -> Void in

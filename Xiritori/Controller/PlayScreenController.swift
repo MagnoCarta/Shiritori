@@ -82,10 +82,6 @@ class PlayScreenController: UIViewController {
 	
 	@objc func pressedPlayer() {
 		
-		let endMatchController = EndMatchScreenController()
-		endMatchController.modalPresentationStyle = .fullScreen
-		self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-		self.navigationController?.pushViewController(endMatchController, animated: true)
 	}
 
 }
