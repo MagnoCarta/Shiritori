@@ -31,7 +31,8 @@ class SigninController: UIViewController {
 // MARK: - ACTIONS
     
     func signin() { // signin action
-        print("SignIn")
+        let repositoy = UserRepository()
+        repositoy.create(username: "EliasNexo", email: "eliasnexo@gmail.com", password: "123")
     }
     
 // MARK: - FUNCS
