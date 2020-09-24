@@ -195,10 +195,10 @@
 			children = (
 				92E585F92518CBEC00998AAC /* MainScreenController.swift */,
 				0F79F51B250F99410086F6EF /* ChatGameController.swift */,
-				DECEF85A2513AD9B009AF56D /* FriendsController.swift */,
-				DE6952A62518D4AC00F9648F /* AddFriendController.swift */,
 				DE7726C5250E8950002E6EA7 /* LoginController.swift */,
 				DEB4EDBD25123E21009F744F /* SigninController.swift */,
+				DECEF85A2513AD9B009AF56D /* FriendsController.swift */,
+				DE6952A62518D4AC00F9648F /* AddFriendController.swift */,
 				92C5FB76251A48A400A12A00 /* PlayScreenController.swift */,
 			);
 			path = Controller;
@@ -217,6 +217,7 @@
 			children = (
 				DE7726F8250E8A1E002E6EA7 /* ChatGameExtension.swift */,
 				0F79F5252514EECF0086F6EF /* ColorExtension.swift */,
+				DE32018F2514DB0D00346B9D /* UIViewExtension.swift */,
 				DE6952AC2518EB9700F9648F /* UISearchBarExtension.swift */,
 				DEB4EDBF251244E5009F744F /* LoginViewExtension.swift */,
 				DEB4EDC325124CD0009F744F /* SigninViewExtension.swift */,
@@ -228,11 +229,11 @@
 		DE7726F4250E899E002E6EA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DE7726CA250E8952002E6EA7 /* Assets.xcassets */,
 				DEB4EDC525139678009F744F /* Components */,
+				DE7726CA250E8952002E6EA7 /* Assets.xcassets */,
+				DE7726CC250E8952002E6EA7 /* LaunchScreen.storyboard */,
 				DEB4EDB92510DFD9009F744F /* LoginView.swift */,
 				DEB4EDC125124C94009F744F /* SigninView.swift */,
-				DE7726CC250E8952002E6EA7 /* LaunchScreen.storyboard */,
 				0F79F51D25123F720086F6EF /* ChatGame.swift */,
 				DECEF85C2513ADB0009AF56D /* FriendsView.swift */,
 				DE6952A82518D4D000F9648F /* AddFriend.swift */,

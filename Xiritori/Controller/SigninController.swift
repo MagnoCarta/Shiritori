@@ -10,7 +10,13 @@ import UIKit
 
 class SigninController: UIViewController {
 // MARK: - VIEW
-    let signinView = SigninView()
+    
+    // View Cotent
+    lazy var signinView: SigninView = {
+        let view = SigninView()
+        view.signinAction = { self.signin() }
+        return view
+    }()
 
 // MARK: - APP CYCLE
     override func loadView() {
@@ -22,13 +28,23 @@ class SigninController: UIViewController {
         super.viewDidLoad()
         self.configureNavBar()
     }
+// MARK: - ACTIONS
     
-// MARK: - FUNC
+    func signin() { // signin action
+        print("SignIn")
+    }
+    
+// MARK: - FUNCS
+    
     private func configureNavBar() {
         let backItem = UIBarButtonItem(title: "Login", style: .plain, target: nil, action: nil)
+        backItem.tintColor = .backgroundColor
         navigationItem.title = "Cadastrar"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.standardAppearance.configureWithTransparentBackground()
         navigationController?.navigationBar.topItem?.backBarButtonItem = backItem
+        navigationController?.navigationBar.largeTitleTextAttributes = [
+            NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 40)!,
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
     }
 }

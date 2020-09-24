@@ -10,12 +10,15 @@ import UIKit
 
 class AddFriendController: UIViewController {
 // MARK: - VIEW
+    
     lazy var addFriendView: AddFriend = {
         let addFriend = AddFriend()
         addFriend.tableView.delegate = self
         addFriend.tableView.dataSource = self
         return addFriend
     }()
+    
+// MARK: - VIEW CYCLE
 
     override func loadView() {
         super.loadView()
@@ -24,40 +27,40 @@ class AddFriendController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Register the cell on tableview.
         self.addFriendView.tableView.register(FriendsTableViewCell.self, forCellReuseIdentifier: "AddFriendCell")
-        
+        // Add tap gesture.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         addFriendView.addGestureRecognizer(tap)
     }
+
+// MARK: - FUNCS
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+
+// MARK: - ACTIONS
+    
+    func plusAction() {
+        print("+")
+    }
 }
 
-// MARK: - UITableView Delegate and DataSource
+// MARK: - TableView Delegate and DataSource
 
 extension AddFriendController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "AddFriendCell",
             for: indexPath
         ) as? FriendsTableViewCell
-        
-        cell?.setupWhithoutButton()
-//        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
-        
-//        cell.selectionStyle = .none
-//        cell.backgroundColor = .clear
-//        cell.textLabel?.text = "Title \(indexPath.row)"
-//        cell.detailTextLabel?.text = "Body \(indexPath.row)"
-        
+        cell?.setupCellForAddFriend()
+        cell?.buttonVsPlusAction = self.plusAction
         return cell!
     }
 }
