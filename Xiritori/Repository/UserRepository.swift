@@ -43,7 +43,8 @@ class UserRepository {
                 if let answer = try? JSONDecoder().decode(UserAuth.self, from: data) {
                     print(answer)
                 } else {
-                    print("Erro no decode")
+                    let err = try? JSONDecoder().decode(Error.self, from: data)
+                    print(err!.reason)
                     //completion([])
                 }
             }

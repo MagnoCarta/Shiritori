@@ -37,6 +37,7 @@
 		DE99C0FE251CD689003FC387 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C0FD251CD689003FC387 /* User.swift */; };
 		DE99C107251CDA27003FC387 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C106251CDA27003FC387 /* UserRepository.swift */; };
 		DE99C10F251CE39F003FC387 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C10E251CE39F003FC387 /* UserAuth.swift */; };
+		DE99C11A251CE8D8003FC387 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C119251CE8D8003FC387 /* Error.swift */; };
 		DEB4EDBA2510DFD9009F744F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDB92510DFD9009F744F /* LoginView.swift */; };
 		DEB4EDBC2510FF4E009F744F /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDBB2510FF4E009F744F /* Separator.swift */; };
 		DEB4EDBE25123E21009F744F /* SigninController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDBD25123E21009F744F /* SigninController.swift */; };
@@ -99,6 +100,7 @@
 		DE99C0FD251CD689003FC387 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DE99C106251CDA27003FC387 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		DE99C10E251CE39F003FC387 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		DE99C119251CE8D8003FC387 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		DEB4EDB92510DFD9009F744F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DEB4EDBB2510FF4E009F744F /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
 		DEB4EDBD25123E21009F744F /* SigninController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				DE7726F6250E8A0F002E6EA7 /* Model.swift */,
 				DE99C0FD251CD689003FC387 /* User.swift */,
 				DE99C10E251CE39F003FC387 /* UserAuth.swift */,
+				DE99C119251CE8D8003FC387 /* Error.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 				DE7726C6250E8950002E6EA7 /* LoginController.swift in Sources */,
 				DEB4EDBC2510FF4E009F744F /* Separator.swift in Sources */,
 				DEB4EDC0251244E5009F744F /* LoginViewExtension.swift in Sources */,
+				DE99C11A251CE8D8003FC387 /* Error.swift in Sources */,
 				DEB4EDBE25123E21009F744F /* SigninController.swift in Sources */,
 				92FC12D9251A40120059BBC8 /* MainScreenView.swift in Sources */,
 				92FC12DB251A42C60059BBC8 /* PlayScreenView.swift in Sources */,
