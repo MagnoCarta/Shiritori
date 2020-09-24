@@ -100,7 +100,13 @@ class MainScreenController: UIViewController {
 	}
 	
 	@objc func pressedFriends() {
-		self.view.backgroundColor = .systemOrange
+		let backButton = UIBarButtonItem()
+		backButton.title = "Voltar"
+		navigationItem.backBarButtonItem = backButton
+		
+		let friendsController = FriendsController()
+		friendsController.modalPresentationStyle = .fullScreen
+		self.navigationController?.pushViewController(friendsController, animated: true)
 	}
 	
 	func setupOptionsButton() {
