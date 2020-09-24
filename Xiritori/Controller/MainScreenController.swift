@@ -14,13 +14,16 @@ class MainScreenController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+		self.navigationController?.navigationBar.shadowImage = UIImage()
+		self.navigationController?.navigationBar.isTranslucent = true
 		self.view = mainView
-		
+			
 		setupPlayButton()
 		setupOptionsButton()
 		setupFriendsButton()
     }
-    
+	
 	func setupPlayButton() {
 		
 		let button = UIButton()
@@ -48,6 +51,10 @@ class MainScreenController: UIViewController {
 	}
 	
 	@objc func pressedPlay() {
+		let backButton = UIBarButtonItem()
+		backButton.title = "Voltar"
+		navigationItem.backBarButtonItem = backButton
+		
 		let playController = PlayScreenController()
 		playController.modalPresentationStyle = .fullScreen
 		self.navigationController?.pushViewController(playController, animated: true)
