@@ -85,7 +85,6 @@ class ChatGame: UIView {
         addConstraintGPoints()
         addConstraintOPoints()
        
-        
         delegates()
         tableView.rowHeight = 80
         tableView.separatorStyle = .none
@@ -126,7 +125,6 @@ class ChatGame: UIView {
             }
         }
         
-
     }
     
     func keyboardActions() {
@@ -187,8 +185,6 @@ class ChatGame: UIView {
     @objc func  giveUp() {
       
         //Codigo apos integracao
-        
-
     }
 }
 

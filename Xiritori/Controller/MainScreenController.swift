@@ -15,12 +15,12 @@ class MainScreenController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		setupNavigationController()
+		
+		mainView.playButton.addTarget(self, action: #selector(self.pressedPlay), for: .touchUpInside)
+		mainView.friendsButton.addTarget(self, action: #selector(self.pressedFriends), for: .touchUpInside)
+		mainView.optionsButton.addTarget(self, action: #selector(self.pressedOptions), for: .touchUpInside)
 		self.view = mainView
-			
-		setupPlayButton()
-		setupOptionsButton()
-		setupFriendsButton()
-    }
+	}
 	
 	func setupNavigationController() {
 		navigationItem.hidesBackButton = true
@@ -30,31 +30,7 @@ class MainScreenController: UIViewController {
 		self.navigationController?.navigationBar.isTranslucent = true
 	}
 	
-	func setupPlayButton() {
-		
-		let button = UIButton()
-		button.backgroundColor = .lightGreen
-		button.setTitleColor(.blazingBlack, for: .normal)
-		button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 64)
-		button.setTitle("JOGAR", for: .normal)
-		button.addTarget(self, action: #selector(self.pressedPlay), for: .touchUpInside)
-		self.view.addSubview(button)
-		
-		button.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([
-			button.widthAnchor.constraint(equalToConstant: 300),
-			button.heightAnchor.constraint(equalToConstant: 150),
-			button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: -50),
-			button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -100)
-		])
-		
-		button.transform = button.transform.rotated(by: 150)
-		
-		let circlePath = UIBezierPath.init(arcCenter: CGPoint(x: 150, y: 150), radius: 150, startAngle: CGFloat(Double.pi), endAngle: 0.0, clockwise: true)
-		let circleShape = CAShapeLayer()
-		circleShape.path = circlePath.cgPath
-		button.layer.mask = circleShape
-	}
+	// MARK: - Setup Button Actions
 	
 	@objc func pressedPlay(sender: UIButton) {
 		let backButton = UIBarButtonItem()
@@ -79,45 +55,6 @@ class MainScreenController: UIViewController {
 				self.navigationController?.pushViewController(playController, animated: true)
 			}
 		)
-	}
-	
-	func setupFriendsButton() {
-		
-		let button = UIButton()
-		button.backgroundColor = .orangeChat
-		button.addTarget(self, action: #selector(self.pressedFriends), for: .touchUpInside)
-		self.view.addSubview(button)
-		
-		let label = UILabel()
-		label.text = "AMIGOS"
-		label.textColor = .blazingBlack
-		label.font = UIFont(name: "MyMessyHandwriting", size: 32)
-		button.addSubview(label)
-		
-		label.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([
-			label.widthAnchor.constraint(equalToConstant: 150),
-			label.heightAnchor.constraint(equalToConstant: 40),
-			label.centerXAnchor.constraint(equalTo: button.centerXAnchor, constant: 10),
-			label.centerYAnchor.constraint(equalTo: button.centerYAnchor, constant: -2)
-		])
-		
-		label.transform = label.transform.rotated(by: 4.2)
-		
-		button.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([
-			button.widthAnchor.constraint(equalToConstant: 150),
-			button.heightAnchor.constraint(equalToConstant: 150),
-			button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 112),
-			button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -48.5)
-		])
-		
-		button.transform = button.transform.rotated(by: 14.908)
-		
-		let circlePath = UIBezierPath.init(arcCenter: CGPoint(x: 150, y: 150), radius: 150, startAngle: CGFloat(Double.pi/2), endAngle: 0.0, clockwise: true)
-		let circleShape = CAShapeLayer()
-		circleShape.path = circlePath.cgPath
-		button.layer.mask = circleShape
 	}
 	
 	@objc func pressedFriends(sender: UIButton) {
@@ -145,48 +82,10 @@ class MainScreenController: UIViewController {
 		)
 	}
 	
-	func setupOptionsButton() {
-		
-		let button = UIButton()
-		button.backgroundColor = .lightRed
-		button.addTarget(self, action: #selector(self.pressedOptions), for: .touchUpInside)
-		self.view.addSubview(button)
-		
-		let label = UILabel()
-		label.text = "OPÇÖES"
-		label.textColor = .blazingBlack
-		label.font = UIFont(name: "MyMessyHandwriting", size: 32)
-		button.addSubview(label)
-		
-		label.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([
-			label.widthAnchor.constraint(equalToConstant: 150),
-			label.heightAnchor.constraint(equalToConstant: 40),
-			label.centerXAnchor.constraint(equalTo: button.centerXAnchor, constant: -30),
-			label.centerYAnchor.constraint(equalTo: button.centerYAnchor, constant: -2)
-		])
-		
-		label.transform = label.transform.rotated(by: 4)
-		
-		button.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([
-			button.widthAnchor.constraint(equalToConstant: 150),
-			button.heightAnchor.constraint(equalToConstant: 150),
-			button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 6.5),
-			button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 60)
-		])
-		
-		button.transform = button.transform.rotated(by: 14.908)
-		
-		let circlePath = UIBezierPath.init(arcCenter: CGPoint(x: 0, y: 150), radius: 150, startAngle: CGFloat(Double.pi/2), endAngle: 0.0, clockwise: true)
-		let circleShape = CAShapeLayer()
-		circleShape.path = circlePath.cgPath
-		button.layer.mask = circleShape
-	}
-	
 	@objc func pressedOptions(sender: UIButton) {
 		let previousButtonShape = sender.transform
 		sender.transform = sender.transform.scaledBy(x: CGFloat(0.8), y: CGFloat(0.8))
+		self.mainView.optionsAnimation()
 		UIView.animate(
 			withDuration: 0.2,
 			delay: 0,
@@ -198,6 +97,9 @@ class MainScreenController: UIViewController {
 			},
 		   completion: { _
 				in()
+				let friendsController = FriendsController()
+				friendsController.modalPresentationStyle = .fullScreen
+				self.navigationController?.pushViewController(friendsController, animated: true)
 			}
 		)
 	}
