@@ -56,14 +56,29 @@ class MainScreenController: UIViewController {
 		button.layer.mask = circleShape
 	}
 	
-	@objc func pressedPlay() {
+	@objc func pressedPlay(sender: UIButton) {
 		let backButton = UIBarButtonItem()
 		backButton.title = "Voltar"
 		navigationItem.backBarButtonItem = backButton
 		
-		let playController = PlayScreenController()
-		playController.modalPresentationStyle = .fullScreen
-		self.navigationController?.pushViewController(playController, animated: true)
+		let previousButtonShape = sender.transform
+		sender.transform = sender.transform.scaledBy(x: CGFloat(0.8), y: CGFloat(0.8))
+		UIView.animate(
+			withDuration: 0.2,
+			delay: 0,
+			usingSpringWithDamping: CGFloat(0.3),
+			initialSpringVelocity: CGFloat(6.0),
+			options: [],
+			animations: {
+				sender.transform = previousButtonShape
+			},
+		   completion: { _
+				in()
+				let playController = PlayScreenController()
+				playController.modalPresentationStyle = .fullScreen
+				self.navigationController?.pushViewController(playController, animated: true)
+			}
+		)
 	}
 	
 	func setupFriendsButton() {
@@ -105,14 +120,29 @@ class MainScreenController: UIViewController {
 		button.layer.mask = circleShape
 	}
 	
-	@objc func pressedFriends() {
+	@objc func pressedFriends(sender: UIButton) {
 		let backButton = UIBarButtonItem()
 		backButton.title = "Voltar"
 		navigationItem.backBarButtonItem = backButton
 		
-		let friendsController = FriendsController()
-		friendsController.modalPresentationStyle = .fullScreen
-		self.navigationController?.pushViewController(friendsController, animated: true)
+		let previousButtonShape = sender.transform
+		sender.transform = sender.transform.scaledBy(x: CGFloat(0.8), y: CGFloat(0.8))
+		UIView.animate(
+			withDuration: 0.2,
+			delay: 0,
+			usingSpringWithDamping: CGFloat(0.3),
+			initialSpringVelocity: CGFloat(6.0),
+			options: [],
+			animations: {
+				sender.transform = previousButtonShape
+			},
+		   completion: { _
+				in()
+				let friendsController = FriendsController()
+				friendsController.modalPresentationStyle = .fullScreen
+				self.navigationController?.pushViewController(friendsController, animated: true)
+			}
+		)
 	}
 	
 	func setupOptionsButton() {
@@ -154,7 +184,21 @@ class MainScreenController: UIViewController {
 		button.layer.mask = circleShape
 	}
 	
-	@objc func pressedOptions() {
-		self.view.backgroundColor = .systemRed
+	@objc func pressedOptions(sender: UIButton) {
+		let previousButtonShape = sender.transform
+		sender.transform = sender.transform.scaledBy(x: CGFloat(0.8), y: CGFloat(0.8))
+		UIView.animate(
+			withDuration: 0.2,
+			delay: 0,
+			usingSpringWithDamping: CGFloat(0.3),
+			initialSpringVelocity: CGFloat(6.0),
+			options: [],
+			animations: {
+				sender.transform = previousButtonShape
+			},
+		   completion: { _
+				in()
+			}
+		)
 	}
 }
