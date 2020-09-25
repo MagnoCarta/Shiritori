@@ -46,12 +46,27 @@ class PlayScreenController: UIViewController {
 		button.layer.mask = circleShape
 	}
 	
-	@objc func pressedComputer() {
-		let gameController = ChatGameController()
-		gameController.modalPresentationStyle = .fullScreen
-		self.navigationController?.navigationBar.isHidden = true
-		self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-		self.navigationController?.pushViewController(gameController, animated: true)
+	@objc func pressedComputer(sender: UIButton) {
+		let previousButtonShape = sender.transform
+		sender.transform = sender.transform.scaledBy(x: CGFloat(0.8), y: CGFloat(0.8))
+		UIView.animate(
+			withDuration: 0.2,
+			delay: 0,
+			usingSpringWithDamping: CGFloat(0.3),
+			initialSpringVelocity: CGFloat(6.0),
+			options: [],
+			animations: {
+				sender.transform = previousButtonShape
+			},
+		   completion: { _
+				in()
+				let gameController = ChatGameController()
+				gameController.modalPresentationStyle = .fullScreen
+				self.navigationController?.navigationBar.isHidden = true
+				self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+				self.navigationController?.pushViewController(gameController, animated: true)
+			}
+		)
 	}
 	
 	func setupPlayerButton() {
@@ -80,8 +95,22 @@ class PlayScreenController: UIViewController {
 		button.layer.mask = circleShape
 	}
 	
-	@objc func pressedPlayer() {
-		
+	@objc func pressedPlayer(sender: UIButton) {
+		let previousButtonShape = sender.transform
+		sender.transform = sender.transform.scaledBy(x: CGFloat(0.8), y: CGFloat(0.8))
+		UIView.animate(
+			withDuration: 0.2,
+			delay: 0,
+			usingSpringWithDamping: CGFloat(0.3),
+			initialSpringVelocity: CGFloat(6.0),
+			options: [],
+			animations: {
+				sender.transform = previousButtonShape
+			},
+		   completion: { _
+				in()
+			}
+		)
 	}
 
 }
