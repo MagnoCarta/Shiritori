@@ -67,10 +67,7 @@ class FriendsController: UIViewController {
         self.navigationItem.title = "Lista de Amigos"
         self.navigationController?.overrideUserInterfaceStyle = .light
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = barButton
+        self.navigationItem.rightBarButtonItem = barButton
         
         // SerchBar.
         let searchBarController = UISearchController()
