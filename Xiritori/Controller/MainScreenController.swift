@@ -14,13 +14,22 @@ class MainScreenController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		setupNavigationController()
 		self.view = mainView
-		
+			
 		setupPlayButton()
 		setupOptionsButton()
 		setupFriendsButton()
     }
-    
+	
+	func setupNavigationController() {
+		navigationItem.hidesBackButton = true
+		self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+		self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+		self.navigationController?.navigationBar.shadowImage = UIImage()
+		self.navigationController?.navigationBar.isTranslucent = true
+	}
+	
 	func setupPlayButton() {
 		
 		let button = UIButton()
@@ -48,6 +57,10 @@ class MainScreenController: UIViewController {
 	}
 	
 	@objc func pressedPlay() {
+		let backButton = UIBarButtonItem()
+		backButton.title = "Voltar"
+		navigationItem.backBarButtonItem = backButton
+		
 		let playController = PlayScreenController()
 		playController.modalPresentationStyle = .fullScreen
 		self.navigationController?.pushViewController(playController, animated: true)
@@ -93,7 +106,13 @@ class MainScreenController: UIViewController {
 	}
 	
 	@objc func pressedFriends() {
-		self.view.backgroundColor = .systemOrange
+		let backButton = UIBarButtonItem()
+		backButton.title = "Voltar"
+		navigationItem.backBarButtonItem = backButton
+		
+		let friendsController = FriendsController()
+		friendsController.modalPresentationStyle = .fullScreen
+		self.navigationController?.pushViewController(friendsController, animated: true)
 	}
 	
 	func setupOptionsButton() {

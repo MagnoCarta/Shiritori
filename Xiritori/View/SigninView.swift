@@ -89,6 +89,7 @@ class SigninView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .seriousPurple
+        self.setupBackgroundImage()
         self.addSubviews(
             usernameTextField,
             emailTextField,

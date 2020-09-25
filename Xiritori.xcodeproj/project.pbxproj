@@ -13,11 +13,15 @@
 		0F79F5242514EA9F0086F6EF /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5232514EA9F0086F6EF /* ChatCell.swift */; };
 		0F79F5262514EECF0086F6EF /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5252514EECF0086F6EF /* ColorExtension.swift */; };
 		92112710251A283100ED9C07 /* MyMessyHandwriting.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9211270F251A283100ED9C07 /* MyMessyHandwriting.ttf */; };
+		92C12B7B251CBBCB00E83F0B /* EndMatchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C12B7A251CBBCB00E83F0B /* EndMatchScreenView.swift */; };
+		92C12B86251CC75B00E83F0B /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C12B85251CC75B00E83F0B /* UIViewExtension.swift */; };
+		92C12B8E251CC95500E83F0B /* EndMatchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C12B8D251CC95500E83F0B /* EndMatchTableView.swift */; };
+		92C12B96251CCD1600E83F0B /* EndMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C12B95251CCD1600E83F0B /* EndMatchCell.swift */; };
 		92C5FB77251A48A400A12A00 /* PlayScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C5FB76251A48A400A12A00 /* PlayScreenController.swift */; };
 		92E585FA2518CBEC00998AAC /* MainScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E585F92518CBEC00998AAC /* MainScreenController.swift */; };
+		92EE063F251B98690070BE10 /* EndMatchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EE063E251B98690070BE10 /* EndMatchScreenController.swift */; };
 		92FC12D9251A40120059BBC8 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC12D8251A40120059BBC8 /* MainScreenView.swift */; };
 		92FC12DB251A42C60059BBC8 /* PlayScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FC12DA251A42C60059BBC8 /* PlayScreenView.swift */; };
-		DE3201902514DB0D00346B9D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE32018F2514DB0D00346B9D /* UIViewExtension.swift */; };
 		DE32019425153E7300346B9D /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE32019325153E7300346B9D /* FriendsTableViewCell.swift */; };
 		DE6952A72518D4AD00F9648F /* AddFriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6952A62518D4AC00F9648F /* AddFriendController.swift */; };
 		DE6952A92518D4D000F9648F /* AddFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6952A82518D4D000F9648F /* AddFriend.swift */; };
@@ -72,11 +76,15 @@
 		0F79F5232514EA9F0086F6EF /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		0F79F5252514EECF0086F6EF /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		9211270F251A283100ED9C07 /* MyMessyHandwriting.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyMessyHandwriting.ttf; sourceTree = SOURCE_ROOT; };
+		92C12B7A251CBBCB00E83F0B /* EndMatchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndMatchScreenView.swift; sourceTree = "<group>"; };
+		92C12B85251CC75B00E83F0B /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		92C12B8D251CC95500E83F0B /* EndMatchTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndMatchTableView.swift; sourceTree = "<group>"; };
+		92C12B95251CCD1600E83F0B /* EndMatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndMatchCell.swift; sourceTree = "<group>"; };
 		92C5FB76251A48A400A12A00 /* PlayScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayScreenController.swift; sourceTree = "<group>"; };
 		92E585F92518CBEC00998AAC /* MainScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenController.swift; sourceTree = "<group>"; };
+		92EE063E251B98690070BE10 /* EndMatchScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndMatchScreenController.swift; sourceTree = "<group>"; };
 		92FC12D8251A40120059BBC8 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		92FC12DA251A42C60059BBC8 /* PlayScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayScreenView.swift; sourceTree = "<group>"; };
-		DE32018F2514DB0D00346B9D /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		DE32019325153E7300346B9D /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		DE6952A62518D4AC00F9648F /* AddFriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendController.swift; sourceTree = "<group>"; };
 		DE6952A82518D4D000F9648F /* AddFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriend.swift; sourceTree = "<group>"; };
@@ -209,6 +217,7 @@
 				DECEF85A2513AD9B009AF56D /* FriendsController.swift */,
 				DE6952A62518D4AC00F9648F /* AddFriendController.swift */,
 				92C5FB76251A48A400A12A00 /* PlayScreenController.swift */,
+				92EE063E251B98690070BE10 /* EndMatchScreenController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -228,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				DE7726F8250E8A1E002E6EA7 /* ChatGameExtension.swift */,
+				92C12B85251CC75B00E83F0B /* UIViewExtension.swift */,
 				0F79F5252514EECF0086F6EF /* ColorExtension.swift */,
 				DE32018F2514DB0D00346B9D /* UIViewExtension.swift */,
 				DE6952AC2518EB9700F9648F /* UISearchBarExtension.swift */,
@@ -250,6 +260,7 @@
 				DE6952A82518D4D000F9648F /* AddFriend.swift */,
 				92FC12D8251A40120059BBC8 /* MainScreenView.swift */,
 				92FC12DA251A42C60059BBC8 /* PlayScreenView.swift */,
+				92C12B7A251CBBCB00E83F0B /* EndMatchScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,6 +288,8 @@
 				0F79F5232514EA9F0086F6EF /* ChatCell.swift */,
 				DE6952AA2518EA4100F9648F /* FriendsTableView.swift */,
 				DEB4EDBB2510FF4E009F744F /* Separator.swift */,
+				92C12B8D251CC95500E83F0B /* EndMatchTableView.swift */,
+				92C12B95251CCD1600E83F0B /* EndMatchCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -345,7 +358,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Academy IFCE";
 				TargetAttributes = {
 					DE7726BD250E8950002E6EA7 = {
@@ -435,9 +448,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE3201902514DB0D00346B9D /* UIViewExtension.swift in Sources */,
 				DEB4EDC425124CD0009F744F /* SigninViewExtension.swift in Sources */,
+				92C12B8E251CC95500E83F0B /* EndMatchTableView.swift in Sources */,
 				DE7726F9250E8A1E002E6EA7 /* ChatGameExtension.swift in Sources */,
+				92EE063F251B98690070BE10 /* EndMatchScreenController.swift in Sources */,
 				0F79F51C250F99410086F6EF /* ChatGameController.swift in Sources */,
 				0F79F5242514EA9F0086F6EF /* ChatCell.swift in Sources */,
 				DE7726C6250E8950002E6EA7 /* LoginController.swift in Sources */,
@@ -446,19 +460,20 @@
 				DE99C0FE251CD689003FC387 /* User.swift in Sources */,
 				DE99C10F251CE39F003FC387 /* UserAuth.swift in Sources */,
 				DE6952A92518D4D000F9648F /* AddFriend.swift in Sources */,
+				92C12B86251CC75B00E83F0B /* UIViewExtension.swift in Sources */,
 				92C5FB77251A48A400A12A00 /* PlayScreenController.swift in Sources */,
-				DE7726C6250E8950002E6EA7 /* LoginController.swift in Sources */,
 				DE32019425153E7300346B9D /* FriendsTableViewCell.swift in Sources */,
 				DECEF85D2513ADB0009AF56D /* FriendsView.swift in Sources */,
 				DE99C107251CDA27003FC387 /* UserRepository.swift in Sources */,
 				DE7726FB250E8A2A002E6EA7 /* Utility.swift in Sources */,
 				92E585FA2518CBEC00998AAC /* MainScreenController.swift in Sources */,
+				92C12B7B251CBBCB00E83F0B /* EndMatchScreenView.swift in Sources */,
+				92C12B96251CCD1600E83F0B /* EndMatchCell.swift in Sources */,
 				DE7726C2250E8950002E6EA7 /* AppDelegate.swift in Sources */,
 				DE7726C4250E8950002E6EA7 /* SceneDelegate.swift in Sources */,
 				DECEF85B2513AD9B009AF56D /* FriendsController.swift in Sources */,
 				DEB4EDBA2510DFD9009F744F /* LoginView.swift in Sources */,
 				DEB4EDC225124C94009F744F /* SigninView.swift in Sources */,
-				DE7726C6250E8950002E6EA7 /* LoginController.swift in Sources */,
 				DEB4EDBC2510FF4E009F744F /* Separator.swift in Sources */,
 				DEB4EDC0251244E5009F744F /* LoginViewExtension.swift in Sources */,
 				DE99C11A251CE8D8003FC387 /* Error.swift in Sources */,
@@ -541,6 +556,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -601,6 +617,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

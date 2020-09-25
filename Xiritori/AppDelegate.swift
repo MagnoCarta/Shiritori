@@ -13,6 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+		
+		UINavigationBar.appearance().tintColor = .backgroundColor
+		
+		UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.backgroundColor, NSAttributedString.Key.font: UIFont(name: "Comfortaa", size: 18)!], for: .normal)
+		
         return true
     }
 
