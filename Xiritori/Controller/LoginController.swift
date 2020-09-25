@@ -39,10 +39,17 @@ class LoginController: UIViewController {
     
     func login() { // login action.
         print("Logar!")
+		
+		let mainScreenController = MainScreenController()
+		mainScreenController.modalPresentationStyle = .fullScreen
+		self.navigationController?.pushViewController(mainScreenController, animated: true)
     }
     
     private func guest() { // log as a guest.
         print("Convidado!")
+		let mainScreenController = MainScreenController()
+		mainScreenController.modalPresentationStyle = .fullScreen
+		self.navigationController?.pushViewController(mainScreenController, animated: true)
     }
     
     private func signin() { // goes to signin screen.

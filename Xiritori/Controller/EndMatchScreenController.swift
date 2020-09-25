@@ -25,7 +25,9 @@ class EndMatchScreenController: UIViewController {
 	}
     
 	@objc func pressedConfirm() {
-		self.navigationController?.popToRootViewController(animated: true)
+		let mainScreenController = MainScreenController()
+		mainScreenController.modalPresentationStyle = .fullScreen
+		self.navigationController?.pushViewController(mainScreenController, animated: true)
 	}
 
 	func setupNavigation() {
