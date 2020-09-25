@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0F235989251A2991003122E4 /* Comfortaa.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F235988251A2990003122E4 /* Comfortaa.ttf */; };
+		0F2359B7251CE952003122E4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2359B6251CE952003122E4 /* SettingsViewController.swift */; };
+		0F2359BC251CE9A9003122E4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2359BB251CE9A9003122E4 /* SettingsView.swift */; };
+		0F2359C1251E12B4003122E4 /* SettingsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2359C0251E12B4003122E4 /* SettingsExtension.swift */; };
 		0F79F51C250F99410086F6EF /* ChatGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F51B250F99410086F6EF /* ChatGameController.swift */; };
 		0F79F51E25123F720086F6EF /* ChatGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F51D25123F720086F6EF /* ChatGame.swift */; };
 		0F79F5242514EA9F0086F6EF /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5232514EA9F0086F6EF /* ChatCell.swift */; };
@@ -63,6 +66,9 @@
 
 /* Begin PBXFileReference section */
 		0F235988251A2990003122E4 /* Comfortaa.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Comfortaa.ttf; path = Xiritori/Fonts/Comfortaa.ttf; sourceTree = SOURCE_ROOT; };
+		0F2359B6251CE952003122E4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0F2359BB251CE9A9003122E4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0F2359C0251E12B4003122E4 /* SettingsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsExtension.swift; sourceTree = "<group>"; };
 		0F79F51B250F99410086F6EF /* ChatGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGameController.swift; sourceTree = "<group>"; };
 		0F79F51D25123F720086F6EF /* ChatGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGame.swift; sourceTree = "<group>"; };
 		0F79F5232514EA9F0086F6EF /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
@@ -200,6 +206,7 @@
 				DE7726C5250E8950002E6EA7 /* LoginController.swift */,
 				DEB4EDBD25123E21009F744F /* SigninController.swift */,
 				92C5FB76251A48A400A12A00 /* PlayScreenController.swift */,
+				0F2359B6251CE952003122E4 /* SettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -221,6 +228,7 @@
 				DEB4EDBF251244E5009F744F /* LoginViewExtension.swift */,
 				DEB4EDC325124CD0009F744F /* SigninViewExtension.swift */,
 				DE32018F2514DB0D00346B9D /* UIViewExtension.swift */,
+				0F2359C0251E12B4003122E4 /* SettingsExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -238,6 +246,7 @@
 				DE6952A82518D4D000F9648F /* AddFriend.swift */,
 				92FC12D8251A40120059BBC8 /* MainScreenView.swift */,
 				92FC12DA251A42C60059BBC8 /* PlayScreenView.swift */,
+				0F2359BB251CE9A9003122E4 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -428,6 +437,7 @@
 				DE7726C6250E8950002E6EA7 /* LoginController.swift in Sources */,
 				DE32019425153E7300346B9D /* FriendsTableViewCell.swift in Sources */,
 				DECEF85D2513ADB0009AF56D /* FriendsView.swift in Sources */,
+				0F2359C1251E12B4003122E4 /* SettingsExtension.swift in Sources */,
 				DE7726FB250E8A2A002E6EA7 /* Utility.swift in Sources */,
 				92E585FA2518CBEC00998AAC /* MainScreenController.swift in Sources */,
 				DE7726C2250E8950002E6EA7 /* AppDelegate.swift in Sources */,
@@ -435,10 +445,12 @@
 				DECEF85B2513AD9B009AF56D /* FriendsController.swift in Sources */,
 				DEB4EDBA2510DFD9009F744F /* LoginView.swift in Sources */,
 				DEB4EDC225124C94009F744F /* SigninView.swift in Sources */,
+				0F2359B7251CE952003122E4 /* SettingsViewController.swift in Sources */,
 				DE7726C6250E8950002E6EA7 /* LoginController.swift in Sources */,
 				DEB4EDBC2510FF4E009F744F /* Separator.swift in Sources */,
 				DEB4EDC0251244E5009F744F /* LoginViewExtension.swift in Sources */,
 				DEB4EDBE25123E21009F744F /* SigninController.swift in Sources */,
+				0F2359BC251CE9A9003122E4 /* SettingsView.swift in Sources */,
 				92FC12D9251A40120059BBC8 /* MainScreenView.swift in Sources */,
 				92FC12DB251A42C60059BBC8 /* PlayScreenView.swift in Sources */,
 				DE7726F7250E8A0F002E6EA7 /* Model.swift in Sources */,

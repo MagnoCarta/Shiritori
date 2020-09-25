@@ -30,7 +30,6 @@ override func viewDidLoad() {
     }
     func addConstraintGiveUp() {
         
-
         buttonGiveUp.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             buttonGiveUp.bottomAnchor.constraint(equalTo: viewChat.shapeTop.bottomAnchor,constant:  -52),
@@ -53,20 +52,20 @@ override func viewDidLoad() {
     }
     
     @objc func giveUp() {
-        
-                
-        var dialogMessage = UIAlertController(title: "Confirme", message: "Tem certeza que quer desistir?", preferredStyle: .alert)
+        let dialogMessage = UIAlertController(title: "Confirme", message: "Tem certeza que quer desistir?", preferredStyle: .alert)
         
         // Create OK button with action handler
-        let ok = UIAlertAction(title: "Sim", style: .default, handler: { (action) -> Void in
-            
+        let okay = UIAlertAction(title: "Sim", style: .default, handler: { (action) -> Void in
+            let main = MainScreenController()
+            main.modalPresentationStyle = .fullScreen
+          //  self.navigationController?.present(main, animated: true, completion: nil)
         })
         // Create Cancel button with action handlder
         let cancel = UIAlertAction(title: "Não", style: .cancel) { (action) -> Void in
             
         }
         //Add OK and Cancel button to an Alert object
-        dialogMessage.addAction(ok)
+        dialogMessage.addAction(okay)
         dialogMessage.addAction(cancel)
         // Present alert message to user
         self.present(dialogMessage, animated: true, completion: nil)

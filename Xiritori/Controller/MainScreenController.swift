@@ -137,5 +137,7 @@ class MainScreenController: UIViewController {
 	
 	@objc func pressedOptions() {
 		self.view.backgroundColor = .systemRed
+        let settings = SettingsViewController()
+        self.navigationController?.pushViewController(settings, animated: true)
 	}
 }
