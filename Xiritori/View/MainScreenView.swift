@@ -11,6 +11,13 @@ import UIKit
 class MainScreenView: UIView {
 	
 	let playButton = UIButton()
+	let compRosto = UIImageView(image: UIImage(named: "Comp Cabeca"))
+	let compBraco = UIImageView(image: UIImage(named: "Comp Bracos"))
+	let compFinal = UIImageView(image: UIImage(named: "Comp"))
+	let faceRight = UIImageView(image: UIImage(named: "Cara 1"))
+	let faceLeft = UIImageView(image: UIImage(named: "Cara 2 Sorrindo"))
+	let decorLeft = UIImageView(image: UIImage(named: "Group 3"))
+	let decorRight = UIImageView(image: UIImage(named: "Balao"))
 	
 	let friendsButton = UIButton()
 	let dog = UIImageView(image: UIImage(named: "dog"))
@@ -38,6 +45,10 @@ class MainScreenView: UIView {
 	}
 	
 	// MARK: - Setup Assets
+	func setupPlayAssets() {
+		
+	}
+	
 	func setupFriendsAssets() {
 		
 		self.addSubview(dog)
@@ -192,7 +203,7 @@ class MainScreenView: UIView {
 	}
 	
 	// MARK: - Asset Animation
-	func friendsAnimation() {
+	func friendsButtonAnimation() {
 		
 		self.dog.transform = self.dog.transform.scaledBy(x: 0.8, y: 0.8)
 		UIView.animate(
@@ -235,7 +246,7 @@ class MainScreenView: UIView {
 			})
 	}
 	
-	func optionsAnimation() {
+	func optionsButtonAnimation() {
 		
 		self.cog.transform = self.cog.transform.scaledBy(x: 0.8, y: 0.8)
 		UIView.animate(

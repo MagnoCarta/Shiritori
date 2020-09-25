@@ -74,7 +74,6 @@ class ChatGame: UIView {
         addSubview(greenPoints)
         addSubview(orangePoints)
         
-        
         addConstraintTextField()
         addConstraintShape()
         addConstraintButton()
@@ -106,7 +105,8 @@ class ChatGame: UIView {
             inversalTime -= 0.01
             
          //   circle.move(to: .zero)
-            let circle = UIBezierPath.init(arcCenter:  CGPoint(x: UIScreen.main.bounds.width/2, y: 90), radius: 35, startAngle: 0, endAngle: CGFloat(inversalTime), clockwise: true)
+            let circle = UIBezierPath.init(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: 90), radius: 35, startAngle: 0, endAngle:
+											CGFloat(inversalTime), clockwise: true)
             let circleShape = CAShapeLayer()
             circleShape.path = circle.cgPath
             circleShape.fillColor = UIColor.lightRed.cgColor

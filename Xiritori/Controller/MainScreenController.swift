@@ -31,7 +31,6 @@ class MainScreenController: UIViewController {
 	}
 	
 	// MARK: - Setup Button Actions
-	
 	@objc func pressedPlay(sender: UIButton) {
 		let backButton = UIBarButtonItem()
 		backButton.title = "Voltar"
@@ -64,7 +63,7 @@ class MainScreenController: UIViewController {
 		
 		let previousButtonShape = sender.transform
 		sender.transform = sender.transform.scaledBy(x: CGFloat(0.8), y: CGFloat(0.8))
-		self.mainView.friendsAnimation()
+		self.mainView.friendsButtonAnimation()
 		UIView.animate(
 			withDuration: 0.2,
 			delay: 0,
@@ -86,7 +85,7 @@ class MainScreenController: UIViewController {
 	@objc func pressedOptions(sender: UIButton) {
 		let previousButtonShape = sender.transform
 		sender.transform = sender.transform.scaledBy(x: CGFloat(0.8), y: CGFloat(0.8))
-		self.mainView.optionsAnimation()
+		self.mainView.optionsButtonAnimation()
 		UIView.animate(
 			withDuration: 0.2,
 			delay: 0,
