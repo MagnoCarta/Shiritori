@@ -11,7 +11,12 @@ import UIKit
 class MainScreenView: UIView {
 	
 	let playButton = UIButton()
+	
 	let friendsButton = UIButton()
+	let dog = UIImageView(image: UIImage(named: "dog"))
+	let cat = UIImageView(image: UIImage(named: "Asset 16"))
+	let chicken = UIImageView(image: UIImage(named: "Asset 17"))
+	
 	let optionsButton = UIButton()
 	let cog = UIImageView(image: UIImage(named: "Eng"))
 	let cogBraco = UIImageView(image: UIImage(named: "Eng Braco"))
@@ -21,16 +26,52 @@ class MainScreenView: UIView {
 		self.backgroundColor = .seriousPurple
 		
 		setupBackgroundImage()
-		setupOptionsInterface()
+		setupOptionsAssets()
+		setupFriendsAssets()
 		setupPlayButton()
 		setupFriendsButton()
+		setupOptionsButton()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
 	}
 	
-	func setupOptionsInterface() {
+	// MARK: - Setup Assets
+	func setupFriendsAssets() {
+		
+		self.addSubview(dog)
+		dog.translatesAutoresizingMaskIntoConstraints = false
+		dog.transform = dog.transform.rotated(by: -0.09)
+		NSLayoutConstraint.activate([
+			dog.widthAnchor.constraint(equalToConstant: 100),
+			dog.heightAnchor.constraint(equalToConstant: 100),
+			dog.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 128),
+			dog.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -110)
+		])
+		
+		self.addSubview(chicken)
+		chicken.translatesAutoresizingMaskIntoConstraints = false
+		chicken.transform = chicken.transform.rotated(by: -0.25)
+		NSLayoutConstraint.activate([
+			chicken.widthAnchor.constraint(equalToConstant: 100),
+			chicken.heightAnchor.constraint(equalToConstant: 100),
+			chicken.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 142),
+			chicken.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -55)
+		])
+		
+		self.addSubview(cat)
+		cat.translatesAutoresizingMaskIntoConstraints = false
+		cat.transform = cat.transform.rotated(by: -0.4)
+		NSLayoutConstraint.activate([
+			cat.widthAnchor.constraint(equalToConstant: 100),
+			cat.heightAnchor.constraint(equalToConstant: 100),
+			cat.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 135),
+			cat.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 15)
+		])
+	}
+	
+	func setupOptionsAssets() {
 		
 		self.addSubview(cog)
 		cog.translatesAutoresizingMaskIntoConstraints = false
@@ -49,8 +90,6 @@ class MainScreenView: UIView {
 			cogBraco.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -50),
 			cogBraco.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 60)
 		])
-		
-		setupOptionsButton()
 	}
 
 	// MARK: - Setup Buttons
@@ -153,6 +192,49 @@ class MainScreenView: UIView {
 	}
 	
 	// MARK: - Asset Animation
+	func friendsAnimation() {
+		
+		self.dog.transform = self.dog.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.dog.transform = self.dog.transform.scaledBy(x: 1.5, y: 1.5)
+				self.dog.center.x += 25
+				self.dog.center.y -= 10
+			},
+			completion: { _
+				in()
+				self.dog.transform = CGAffineTransform.identity
+			})
+		
+		let previousChickenTransform = self.chicken.transform
+		self.chicken.transform = self.chicken.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.chicken.transform = self.chicken.transform.scaledBy(x: 1.5, y: 1.5)
+				self.chicken.center.x += 30
+			},
+			completion: { _
+				in()
+				self.chicken.transform = previousChickenTransform
+			})
+		
+		let previousCatTransform = self.cat.transform
+		self.cat.transform = self.cat.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.cat.transform = self.cat.transform.scaledBy(x: 1.5, y: 1.5)
+				self.cat.center.x += 23
+				self.cat.center.y += 3
+			},
+			completion: { _
+				in()
+				self.cat.transform = previousCatTransform
+			})
+	}
+	
 	func optionsAnimation() {
 		
 		self.cog.transform = self.cog.transform.scaledBy(x: 0.8, y: 0.8)

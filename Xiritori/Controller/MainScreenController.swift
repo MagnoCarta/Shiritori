@@ -64,6 +64,7 @@ class MainScreenController: UIViewController {
 		
 		let previousButtonShape = sender.transform
 		sender.transform = sender.transform.scaledBy(x: CGFloat(0.8), y: CGFloat(0.8))
+		self.mainView.friendsAnimation()
 		UIView.animate(
 			withDuration: 0.2,
 			delay: 0,
