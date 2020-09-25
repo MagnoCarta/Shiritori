@@ -14,15 +14,16 @@ class MainScreenView: UIView {
 	let friendsButton = UIButton()
 	let optionsButton = UIButton()
 	let cog = UIImageView(image: UIImage(named: "Eng"))
+	let cogBraco = UIImageView(image: UIImage(named: "Eng Braco"))
 	
     override init(frame: CGRect) {
         super.init(frame: frame)
 		self.backgroundColor = .seriousPurple
 		
 		setupBackgroundImage()
+		setupOptionsInterface()
 		setupPlayButton()
 		setupFriendsButton()
-		setupOptionsInterface()
     }
     
     required init?(coder: NSCoder) {
@@ -38,6 +39,15 @@ class MainScreenView: UIView {
 			cog.heightAnchor.constraint(equalToConstant: 130),
 			cog.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 15),
 			cog.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 100)
+		])
+		
+		self.addSubview(cogBraco)
+		cogBraco.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			cogBraco.widthAnchor.constraint(equalToConstant: 130),
+			cogBraco.heightAnchor.constraint(equalToConstant: 130),
+			cogBraco.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -50),
+			cogBraco.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 60)
 		])
 		
 		setupOptionsButton()
@@ -155,6 +165,19 @@ class MainScreenView: UIView {
 			completion: { _
 				in()
 				self.cog.transform = CGAffineTransform.identity
+			})
+		
+		self.cogBraco.transform = self.cogBraco.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.cogBraco.transform = self.cogBraco.transform.scaledBy(x: 1.5, y: 1.5)
+				self.cogBraco.center.x -= 10
+				self.cogBraco.center.y += 35
+			},
+			completion: { _
+				in()
+				self.cogBraco.transform = CGAffineTransform.identity
 			})
 	}
 	
