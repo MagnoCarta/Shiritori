@@ -157,6 +157,41 @@ class PlayScreenView: UIView {
 	// MARK: - Asset Animation
 	func computerModeAnimation() {
 		
+		self.decorCompLeft.transform = self.decorCompLeft.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.decorCompLeft.transform = self.decorCompLeft.transform.scaledBy(x: 1.5, y: 1.5)
+				self.decorCompLeft.center.x -= 50
+			},
+			completion: { _
+				in()
+				self.decorCompLeft.transform = CGAffineTransform.identity
+		})
 		
+		self.decorCompRight.transform = self.decorCompRight.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.decorCompRight.transform = self.decorCompRight.transform.scaledBy(x: 1.5, y: 1.5)
+				self.decorCompRight.center.y -= 60
+			},
+			completion: { _
+				in()
+				self.decorCompRight.transform = CGAffineTransform.identity
+		})
+		
+		self.comp.transform = self.comp.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.comp.transform = self.comp.transform.scaledBy(x: 1.5, y: 1.5)
+				self.comp.center.x -= 35
+				self.comp.center.y -= 35
+			},
+			completion: { _
+				in()
+				self.comp.transform = CGAffineTransform.identity
+		})
 	}
 }
