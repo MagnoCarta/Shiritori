@@ -12,8 +12,8 @@ class PlayScreenView: UIView {
 
 	let computerButton = UIButton()
 	let comp = UIImageView(image: UIImage(named: "Comp"))
-	let faceRight = UIImageView(image: UIImage(named: "Cara 1"))
-	let faceLeft = UIImageView(image: UIImage(named: "Cara 2 Sorrindo"))
+	let faceLeft = UIImageView(image: UIImage(named: "Cara 1"))
+	let faceRight = UIImageView(image: UIImage(named: "Cara 2 Sorrindo"))
 	let decorCompLeft = UIImageView(image: UIImage(named: "Group 3"))
 	let decorCompRight = UIImageView(image: UIImage(named: "Group 3"))
 	let decorBalloon = UIImageView(image: UIImage(named: "Balao"))
@@ -74,7 +74,35 @@ class PlayScreenView: UIView {
 	
 	func setupPlayerAssets() {
 		
+		self.addSubview(faceRight)
+		faceRight.translatesAutoresizingMaskIntoConstraints = false
+		faceRight.image = faceRight.image?.withHorizontallyFlippedOrientation()
+		NSLayoutConstraint.activate([
+			faceRight.widthAnchor.constraint(equalToConstant: 90),
+			faceRight.heightAnchor.constraint(equalToConstant: 90),
+			faceRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 123), //123 > 150
+			faceRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0)
+		])
 		
+		self.addSubview(faceLeft)
+		faceLeft.translatesAutoresizingMaskIntoConstraints = false
+		faceLeft.transform = faceLeft.transform.rotated(by: 2.5)
+		NSLayoutConstraint.activate([
+			faceLeft.widthAnchor.constraint(equalToConstant: 105),
+			faceLeft.heightAnchor.constraint(equalToConstant: 105),
+			faceLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
+			faceLeft.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 105) //105 > 128
+		])
+		
+		self.addSubview(decorBalloon)
+		decorBalloon.translatesAutoresizingMaskIntoConstraints = false
+		decorBalloon.transform = decorBalloon.transform.rotated(by: 3)
+		NSLayoutConstraint.activate([
+			decorBalloon.widthAnchor.constraint(equalToConstant: 110),
+			decorBalloon.heightAnchor.constraint(equalToConstant: 110),
+			decorBalloon.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 45),
+			decorBalloon.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 40) //40 > 130
+		])
 	}
 	
 	// MARK: - Setup Buttons
@@ -126,4 +154,9 @@ class PlayScreenView: UIView {
 		playerButton.layer.mask = circleShape
 	}
 	
+	// MARK: - Asset Animation
+	func computerModeAnimation() {
+		
+		
+	}
 }

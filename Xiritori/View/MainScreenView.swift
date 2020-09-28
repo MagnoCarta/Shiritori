@@ -263,7 +263,7 @@ class MainScreenView: UIView {
 			completion: { _
 				in()
 				self.faceLeft.transform = CGAffineTransform.identity
-			})
+		})
 		
 		self.faceRight.transform = self.faceRight.transform.scaledBy(x: 0.8, y: 0.8)
 		UIView.animate(
@@ -276,7 +276,7 @@ class MainScreenView: UIView {
 			completion: { _
 				in()
 				self.faceRight.transform = CGAffineTransform.identity
-			})
+		})
 		
 		self.decorRight.transform = self.decorRight.transform.scaledBy(x: 0.8, y: 0.8)
 		UIView.animate(
@@ -288,7 +288,7 @@ class MainScreenView: UIView {
 			completion: { _
 				in()
 				self.decorRight.transform = CGAffineTransform.identity
-			})
+		})
 		
 		self.decorLeft.transform = self.decorLeft.transform.scaledBy(x: 0.8, y: 0.8)
 		UIView.animate(
@@ -300,7 +300,7 @@ class MainScreenView: UIView {
 			completion: { _
 				in()
 				self.decorLeft.transform = CGAffineTransform.identity
-			})
+		})
 		
 		let previousCompTransform = compFinal.transform
 		self.compFinal.transform = self.compFinal.transform.scaledBy(x: 0.8, y: 0.8)
@@ -314,7 +314,7 @@ class MainScreenView: UIView {
 			completion: { _
 				in()
 				self.compFinal.transform = previousCompTransform
-			})
+		})
 	}
 	
 	func friendsButtonAnimation() {
@@ -330,7 +330,7 @@ class MainScreenView: UIView {
 			completion: { _
 				in()
 				self.dog.transform = CGAffineTransform.identity
-			})
+		})
 		
 		let previousChickenTransform = self.chicken.transform
 		self.chicken.transform = self.chicken.transform.scaledBy(x: 0.8, y: 0.8)
@@ -343,7 +343,7 @@ class MainScreenView: UIView {
 			completion: { _
 				in()
 				self.chicken.transform = previousChickenTransform
-			})
+		})
 		
 		let previousCatTransform = self.cat.transform
 		self.cat.transform = self.cat.transform.scaledBy(x: 0.8, y: 0.8)
@@ -357,7 +357,7 @@ class MainScreenView: UIView {
 			completion: { _
 				in()
 				self.cat.transform = previousCatTransform
-			})
+		})
 	}
 	
 	func optionsButtonAnimation() {
@@ -372,7 +372,7 @@ class MainScreenView: UIView {
 			completion: { _
 				in()
 				self.cog.transform = CGAffineTransform.identity
-			})
+		})
 		
 		self.cogBraco.transform = self.cogBraco.transform.scaledBy(x: 0.8, y: 0.8)
 		UIView.animate(
@@ -385,7 +385,7 @@ class MainScreenView: UIView {
 			completion: { _
 				in()
 				self.cogBraco.transform = CGAffineTransform.identity
-			})
+		})
 	}
 	
 }
