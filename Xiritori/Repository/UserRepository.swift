@@ -12,9 +12,11 @@ class UserRepository {
     
     var url = ""
     // Create User
-    func create(username: String, email: String, password: String) {
+    func create(username: String, email: String, password: String) -> Bool {
         // Create URL
+        var reqAnser: Bool = false
         let url = URL(string: "http://127.0.0.1:8080/users")
+        //let url = URL(string: "http://192.168.1.101:8080/users")
         // Create URLRequest
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
@@ -41,15 +43,18 @@ class UserRepository {
         let getAnswerTask = session.dataTask(with: request) { (data, _, _) in
             if let data = data {
                 if let answer = try? JSONDecoder().decode(UserAuth.self, from: data) {
+                    reqAnser = true
                     print(answer)
                 } else {
                     let err = try? JSONDecoder().decode(Error.self, from: data)
                     print(err!.reason)
+                    reqAnser = false
                     //completion([])
                 }
             }
         }
         // Execute the task.
         getAnswerTask.resume()
+        return reqAnser
     }
 }

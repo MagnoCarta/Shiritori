@@ -32,7 +32,18 @@ class SigninController: UIViewController {
     
     func signin() { // signin action
         let repositoy = UserRepository()
-        repositoy.create(username: "EliasNexo", email: "eliasnexo@gmail.com", password: "123")
+        let username = String(self.signinView.usernameTextField.text!)
+        let email = String(self.signinView.emailTextField.text!)
+        let password = String(self.signinView.passwordTextField.text!)
+        let repeatPassword = String(self.signinView.repeatPasswordTextField.text!)
+        
+        if password == repeatPassword {
+            if !repositoy.create(username: username, email: email, password: password) {
+                print("Usuario ou email ja existem!")
+            }
+        } else {
+            print("Password should be same.")
+        }
     }
     
 // MARK: - FUNCS
