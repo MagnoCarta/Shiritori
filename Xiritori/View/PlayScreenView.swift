@@ -40,7 +40,36 @@ class PlayScreenView: UIView {
 	// MARK: - Setup Assets
 	func setupComputerAssets() {
 		
+		self.addSubview(decorCompLeft)
+		decorCompLeft.translatesAutoresizingMaskIntoConstraints = false
+		decorCompLeft.transform = decorCompLeft.transform.rotated(by: -0.45)
+		NSLayoutConstraint.activate([
+			decorCompLeft.widthAnchor.constraint(equalToConstant: 80),
+			decorCompLeft.heightAnchor.constraint(equalToConstant: 80),
+			decorCompLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -100), //-100 > -155
+			decorCompLeft.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -20)
+		])
 		
+		self.addSubview(decorCompRight)
+		decorCompRight.translatesAutoresizingMaskIntoConstraints = false
+		decorCompRight.image = decorCompRight.image?.withHorizontallyFlippedOrientation()
+		decorCompRight.transform = decorCompRight.transform.rotated(by: -0.85)
+		NSLayoutConstraint.activate([
+			decorCompRight.widthAnchor.constraint(equalToConstant: 95),
+			decorCompRight.heightAnchor.constraint(equalToConstant: 95),
+			decorCompRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 25),
+			decorCompRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -160) //-160 > -220
+		])
+		
+		self.addSubview(comp)
+		comp.translatesAutoresizingMaskIntoConstraints = false
+		comp.transform = comp.transform.rotated(by: -0.4)
+		NSLayoutConstraint.activate([
+			comp.widthAnchor.constraint(equalToConstant: 175),
+			comp.heightAnchor.constraint(equalToConstant: 175),
+			comp.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -100), //-100 > -135
+			comp.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -135) //-135 > -170
+		])
 	}
 	
 	func setupPlayerAssets() {
