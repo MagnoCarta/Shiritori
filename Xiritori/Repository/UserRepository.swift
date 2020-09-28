@@ -10,51 +10,27 @@ import Foundation
 
 class UserRepository {
     
-    var url = ""
     // Create User
-    func create(username: String, email: String, password: String) -> Bool {
-        // Create URL
-        var reqAnser: Bool = false
-        let url = URL(string: "http://127.0.0.1:8080/users")
-        //let url = URL(string: "http://192.168.1.101:8080/users")
-        // Create URLRequest
-        var request = URLRequest(url: url!)
-        request.httpMethod = "POST"
-        request.allHTTPHeaderFields = [
-            "Content-Type": "application/json"
-        ]
+    func create(userToSave: User) -> User? {
         
-        let user = [
-            "username": username,
-            "email": email,
-            "password": password
-        ]
+        var user: User? = nil
         
-        do {
-            let data = try JSONSerialization.data(withJSONObject: user, options: .fragmentsAllowed)
-            request.httpBody = data
-        } catch {
-            print(error)
-        }
-        
-        // Create Session
-        let session = URLSession(configuration: .default)
-        
-        let getAnswerTask = session.dataTask(with: request) { (data, _, _) in
-            if let data = data {
-                if let answer = try? JSONDecoder().decode(UserAuth.self, from: data) {
-                    reqAnser = true
-                    print(answer)
-                } else {
-                    let err = try? JSONDecoder().decode(Error.self, from: data)
-                    print(err!.reason)
-                    reqAnser = false
-                    //completion([])
+        guard let data = try? JSONEncoder().encode(userToSave) else { return nil }
+
+        Service.request(route: .create(body: data)) { (result) in
+            switch result {
+            case .success(let data):
+                guard let data = data else { return }
+                
+                if let userJson = try? JSONDecoder().decode(User.self, from: data) {
+                    user = userJson
                 }
+                
+            case .failure(let error):
+                print(error)
             }
         }
-        // Execute the task.
-        getAnswerTask.resume()
-        return reqAnser
+        
+        return user
     }
 }

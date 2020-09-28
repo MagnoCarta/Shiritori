@@ -38,9 +38,15 @@ class SigninController: UIViewController {
         let repeatPassword = String(self.signinView.repeatPasswordTextField.text!)
         
         if password == repeatPassword {
-            if !repositoy.create(username: username, email: email, password: password) {
-                print("Usuario ou email ja existem!")
+            
+            let user = User(username: username, email: email, password: password)
+            
+            if let userR = repositoy.create(userToSave: user) {
+                print(userR.id)
+            } else {
+                print("Erro ao criar usuário!")
             }
+            
         } else {
             print("Password should be same.")
         }

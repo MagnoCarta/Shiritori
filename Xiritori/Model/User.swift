@@ -8,24 +8,20 @@
 
 import Foundation
 
-class User: Codable {
-    let id: String
+struct User: Codable {
+    let id: String?
     let username: String
     let email: String
     let password: String
-    let tag: Int
     
     init(
-        id: String,
         username: String,
         email: String,
-        password: String,
-        tag: Int
+        password: String
     ) {
-        self.id = id
+        self.id = nil
         self.username = username
         self.email = email
         self.password = password
-        self.tag = tag
     }
 }
