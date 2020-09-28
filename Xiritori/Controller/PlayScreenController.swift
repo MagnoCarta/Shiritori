@@ -17,6 +17,14 @@ class PlayScreenController: UIViewController {
 		
 		playView.computerButton.addTarget(self, action: #selector(self.pressedComputer), for: .touchUpInside)
 		playView.playerButton.addTarget(self, action: #selector(self.pressedPlayer), for: .touchUpInside)
+		
+		navigationItem.title = "Modo de Jogo"
+		navigationController?.navigationBar.prefersLargeTitles = true
+		self.navigationController?.navigationBar.largeTitleTextAttributes = [
+			NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 40)!,
+			NSAttributedString.Key.foregroundColor: UIColor.white
+		]
+		
 		self.view = playView
 	}
 	

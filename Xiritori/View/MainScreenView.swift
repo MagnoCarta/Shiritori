@@ -60,10 +60,11 @@ class MainScreenView: UIView {
 		
 		self.addSubview(faceRight)
 		faceRight.translatesAutoresizingMaskIntoConstraints = false
+		faceRight.transform = faceRight.transform.rotated(by: -0.15)
 		NSLayoutConstraint.activate([
 			faceRight.widthAnchor.constraint(equalToConstant: 90),
 			faceRight.heightAnchor.constraint(equalToConstant: 90),
-			faceRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 75),
+			faceRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 70),
 			faceRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -185)
 		])
 		
@@ -72,8 +73,8 @@ class MainScreenView: UIView {
 		NSLayoutConstraint.activate([
 			decorRight.widthAnchor.constraint(equalToConstant: 90),
 			decorRight.heightAnchor.constraint(equalToConstant: 90),
-			decorRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 35),
-			decorRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -155) //155 - 215
+			decorRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 45),
+			decorRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -155)
 		])
 		
 		self.addSubview(decorLeft)
@@ -81,7 +82,7 @@ class MainScreenView: UIView {
 		NSLayoutConstraint.activate([
 			decorLeft.widthAnchor.constraint(equalToConstant: 65),
 			decorLeft.heightAnchor.constraint(equalToConstant: 65),
-			decorLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -105), //105 - 155
+			decorLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -105),
 			decorLeft.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -95)
 		])
 		
@@ -91,8 +92,8 @@ class MainScreenView: UIView {
 		NSLayoutConstraint.activate([
 			compFinal.widthAnchor.constraint(equalToConstant: 150),
 			compFinal.heightAnchor.constraint(equalToConstant: 150),
-			compFinal.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -80), //80 - 100
-			compFinal.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -160) //160 - 200
+			compFinal.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -80),
+			compFinal.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -160)
 		])
 	}
 	
@@ -250,6 +251,72 @@ class MainScreenView: UIView {
 	}
 	
 	// MARK: - Asset Animation
+	func playButtonAnimation() {
+		
+		self.faceLeft.transform = self.faceLeft.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.faceLeft.transform = self.faceLeft.transform.scaledBy(x: 1.5, y: 1.5)
+				self.faceLeft.center.x -= 30
+			},
+			completion: { _
+				in()
+				self.faceLeft.transform = CGAffineTransform.identity
+			})
+		
+		self.faceRight.transform = self.faceRight.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.faceRight.transform = self.faceRight.transform.scaledBy(x: 1.5, y: 1.5)
+				self.faceRight.center.x += 10
+				self.faceRight.center.y -= 10
+			},
+			completion: { _
+				in()
+				self.faceRight.transform = CGAffineTransform.identity
+			})
+		
+		self.decorRight.transform = self.decorRight.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.decorRight.transform = self.decorRight.transform.scaledBy(x: 1.5, y: 1.5)
+				self.decorRight.center.y -= 60
+			},
+			completion: { _
+				in()
+				self.decorRight.transform = CGAffineTransform.identity
+			})
+		
+		self.decorLeft.transform = self.decorLeft.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.decorLeft.transform = self.decorLeft.transform.scaledBy(x: 1.5, y: 1.5)
+				self.decorLeft.center.x -= 50
+			},
+			completion: { _
+				in()
+				self.decorLeft.transform = CGAffineTransform.identity
+			})
+		
+		let previousCompTransform = compFinal.transform
+		self.compFinal.transform = self.compFinal.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.compFinal.transform = self.compFinal.transform.scaledBy(x: 1.5, y: 1.5)
+				self.compFinal.center.x -= 20
+				self.compFinal.center.y -= 40
+			},
+			completion: { _
+				in()
+				self.compFinal.transform = previousCompTransform
+			})
+	}
+	
 	func friendsButtonAnimation() {
 		
 		self.dog.transform = self.dog.transform.scaledBy(x: 0.8, y: 0.8)

@@ -11,6 +11,13 @@ import UIKit
 class PlayScreenView: UIView {
 
 	let computerButton = UIButton()
+	let comp = UIImageView(image: UIImage(named: "Comp"))
+	let faceRight = UIImageView(image: UIImage(named: "Cara 1"))
+	let faceLeft = UIImageView(image: UIImage(named: "Cara 2 Sorrindo"))
+	let decorCompLeft = UIImageView(image: UIImage(named: "Group 3"))
+	let decorCompRight = UIImageView(image: UIImage(named: "Group 3"))
+	let decorBalloon = UIImageView(image: UIImage(named: "Balao"))
+	
 	let playerButton = UIButton()
 	
     override init(frame: CGRect) {
@@ -18,6 +25,10 @@ class PlayScreenView: UIView {
 		self.backgroundColor = .seriousPurple
 		
 		setupBackgroundImage()
+		
+		setupComputerAssets()
+		setupPlayerAssets()
+		
 		setupComputerButton()
 		setupPlayerButton()
     }
@@ -26,6 +37,17 @@ class PlayScreenView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+	// MARK: - Setup Assets
+	func setupComputerAssets() {
+		
+		
+	}
+	
+	func setupPlayerAssets() {
+		
+		
+	}
+	
 	// MARK: - Setup Buttons
 	func setupComputerButton() {
 		

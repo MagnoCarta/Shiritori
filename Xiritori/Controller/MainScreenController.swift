@@ -38,6 +38,7 @@ class MainScreenController: UIViewController {
 		
 		let previousButtonShape = sender.transform
 		sender.transform = sender.transform.scaledBy(x: CGFloat(0.8), y: CGFloat(0.8))
+		self.mainView.playButtonAnimation()
 		UIView.animate(
 			withDuration: 0.2,
 			delay: 0,
@@ -49,6 +50,7 @@ class MainScreenController: UIViewController {
 			},
 		   completion: { _
 				in()
+				usleep(200000)
 				let playController = PlayScreenController()
 				playController.modalPresentationStyle = .fullScreen
 				self.navigationController?.pushViewController(playController, animated: true)
@@ -75,6 +77,7 @@ class MainScreenController: UIViewController {
 			},
 		   completion: { _
 				in()
+				usleep(200000)
 				let friendsController = FriendsController()
 				friendsController.modalPresentationStyle = .fullScreen
 				self.navigationController?.pushViewController(friendsController, animated: true)
@@ -97,6 +100,7 @@ class MainScreenController: UIViewController {
 			},
 		   completion: { _
 				in()
+				usleep(200000)
 				let friendsController = FriendsController()
 				friendsController.modalPresentationStyle = .fullScreen
 				self.navigationController?.pushViewController(friendsController, animated: true)
