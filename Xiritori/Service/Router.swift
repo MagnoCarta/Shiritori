@@ -11,14 +11,10 @@ import Foundation
 enum Router {
     case create(body: Data?)
     case getAll
-    case delete(id: String)
+    case delete(uid: String)
     
-    var scheme: String {
-        return "http"
-    }
-    
-    var host: String {
-        return "localhost:8080"
+    var baseUrl: String {
+        return "http://127.0.0.1:8080"
     }
     
     var path: String {
@@ -27,8 +23,8 @@ enum Router {
             return "/users"
         case .getAll:
             return "/users"
-        case .delete(let id):
-            return "/users/\(id)"
+        case .delete(let uid):
+            return "/users/\(uid)"
         }
     }
     
@@ -63,12 +59,8 @@ enum Router {
     
     // URL
     var url: URL? {
-        var components = URLComponents()
-        components.scheme = self.scheme
-        components.host = self.host
-        components.path = self.path
-        
-        return components.url
+        let url: String = self.baseUrl + self.path
+        return URL(string: url)
     }
     
     // Request

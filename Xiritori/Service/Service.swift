@@ -32,6 +32,7 @@ struct Service {
                 completion(.success(data))
             default:
                 completion(.failure(.badRequest))
+                print(response.statusCode)
             }
         }
         

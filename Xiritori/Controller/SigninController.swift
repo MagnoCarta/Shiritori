@@ -9,6 +9,14 @@
 import UIKit
 
 class SigninController: UIViewController {
+    
+    let repositoy = UserRepository()
+    var session: Session? {
+        didSet {
+            print(self.session!.token)
+        }
+    }
+    
 // MARK: - VIEW
     
     // View Cotent
@@ -31,24 +39,28 @@ class SigninController: UIViewController {
 // MARK: - ACTIONS
     
     func signin() { // signin action
-        let repositoy = UserRepository()
-        let username = String(self.signinView.usernameTextField.text!)
-        let email = String(self.signinView.emailTextField.text!)
-        let password = String(self.signinView.passwordTextField.text!)
-        let repeatPassword = String(self.signinView.repeatPasswordTextField.text!)
+        let user = User(
+            username: String(self.signinView.usernameTextField.text!),
+            email: String(self.signinView.emailTextField.text!),
+            password: String(self.signinView.passwordTextField.text!)
+        )
         
-        if password == repeatPassword {
-            
-            let user = User(username: username, email: email, password: password)
-            
-            if let userR = repositoy.create(userToSave: user) {
-                print(userR.id)
+        if validadeNoNullFields(user.username, user.email) {
+            if validatePassword(user.password, self.signinView.repeatPasswordTextField.text!) {
+                
+                self.repositoy.create(userToSave: user) { (session) in
+                    if let session = session {
+                        self.session = session
+                    } else {
+                        print("Nao foi possível criar o usuário!")
+                    }
+                }
+                
             } else {
-                print("Erro ao criar usuário!")
+                print("Password should be same!")
             }
-            
         } else {
-            print("Password should be same.")
+            print("All fields are required!")
         }
     }
     
@@ -64,5 +76,20 @@ class SigninController: UIViewController {
             NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 40)!,
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]
+    }
+    
+    private func validadeNoNullFields(_ fieldsContents: String...) -> Bool {
+        for content in fieldsContents where content == "" {
+            return false
+        }
+        return true
+    }
+    
+    private func validatePassword(_ pass1: String, _ pass2: String) -> Bool {
+        if pass1 == pass2 && pass1 != "" {
+            return true
+        } else {
+            return false
+        }
     }
 }

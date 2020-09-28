@@ -11,26 +11,31 @@ import Foundation
 class UserRepository {
     
     // Create User
-    func create(userToSave: User) -> User? {
+    func create(userToSave: User, completion: @escaping (Session?) -> Void) {
         
-        var user: User? = nil
+        let userData = [
+            "username": userToSave.username,
+            "email": userToSave.email,
+            "password": userToSave.password
+        ]
         
-        guard let data = try? JSONEncoder().encode(userToSave) else { return nil }
+        let data = try? JSONSerialization.data(withJSONObject: userData, options: [])
 
         Service.request(route: .create(body: data)) { (result) in
             switch result {
             case .success(let data):
                 guard let data = data else { return }
                 
-                if let userJson = try? JSONDecoder().decode(User.self, from: data) {
-                    user = userJson
+                if let userJson = try? JSONDecoder().decode(Session.self, from: data) {
+                    
+                    completion(userJson)
+                    
                 }
                 
-            case .failure(let error):
-                print(error)
+            case .failure:
+                completion(nil)
             }
         }
         
-        return user
     }
 }
