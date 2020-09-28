@@ -35,6 +35,8 @@ class MainScreenView: UIView {
 		setupBackgroundImage()
 		setupOptionsAssets()
 		setupFriendsAssets()
+		setupPlayAssets()
+		
 		setupPlayButton()
 		setupFriendsButton()
 		setupOptionsButton()
@@ -47,6 +49,51 @@ class MainScreenView: UIView {
 	// MARK: - Setup Assets
 	func setupPlayAssets() {
 		
+		self.addSubview(faceLeft)
+		faceLeft.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			faceLeft.widthAnchor.constraint(equalToConstant: 85),
+			faceLeft.heightAnchor.constraint(equalToConstant: 85),
+			faceLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -115),
+			faceLeft.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0)
+		])
+		
+		self.addSubview(faceRight)
+		faceRight.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			faceRight.widthAnchor.constraint(equalToConstant: 90),
+			faceRight.heightAnchor.constraint(equalToConstant: 90),
+			faceRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 75),
+			faceRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -185)
+		])
+		
+		self.addSubview(decorRight)
+		decorRight.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			decorRight.widthAnchor.constraint(equalToConstant: 90),
+			decorRight.heightAnchor.constraint(equalToConstant: 90),
+			decorRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 35),
+			decorRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -155) //155 - 215
+		])
+		
+		self.addSubview(decorLeft)
+		decorLeft.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			decorLeft.widthAnchor.constraint(equalToConstant: 65),
+			decorLeft.heightAnchor.constraint(equalToConstant: 65),
+			decorLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -105), //105 - 155
+			decorLeft.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -95)
+		])
+		
+		self.addSubview(compFinal)
+		compFinal.translatesAutoresizingMaskIntoConstraints = false
+		compFinal.transform = compFinal.transform.rotated(by: -0.17)
+		NSLayoutConstraint.activate([
+			compFinal.widthAnchor.constraint(equalToConstant: 150),
+			compFinal.heightAnchor.constraint(equalToConstant: 150),
+			compFinal.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -80), //80 - 100
+			compFinal.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -160) //160 - 200
+		])
 	}
 	
 	func setupFriendsAssets() {
