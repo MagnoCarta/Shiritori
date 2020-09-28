@@ -57,6 +57,7 @@ class PlayScreenController: UIViewController {
 	@objc func pressedPlayer(sender: UIButton) {
 		let previousButtonShape = sender.transform
 		sender.transform = sender.transform.scaledBy(x: CGFloat(0.8), y: CGFloat(0.8))
+		self.playView.playerModeAnimation()
 		UIView.animate(
 			withDuration: 0.2,
 			delay: 0,
@@ -68,6 +69,12 @@ class PlayScreenController: UIViewController {
 			},
 		   completion: { _
 				in()
+				usleep(200000)
+				let gameController = ChatGameController()
+				gameController.modalPresentationStyle = .fullScreen
+				self.navigationController?.navigationBar.isHidden = true
+				self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+				self.navigationController?.pushViewController(gameController, animated: true)
 			}
 		)
 	}

@@ -46,7 +46,7 @@ class PlayScreenView: UIView {
 		NSLayoutConstraint.activate([
 			decorCompLeft.widthAnchor.constraint(equalToConstant: 80),
 			decorCompLeft.heightAnchor.constraint(equalToConstant: 80),
-			decorCompLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -100), //-100 > -155
+			decorCompLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -100),
 			decorCompLeft.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -20)
 		])
 		
@@ -58,7 +58,7 @@ class PlayScreenView: UIView {
 			decorCompRight.widthAnchor.constraint(equalToConstant: 95),
 			decorCompRight.heightAnchor.constraint(equalToConstant: 95),
 			decorCompRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 25),
-			decorCompRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -160) //-160 > -220
+			decorCompRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -160)
 		])
 		
 		self.addSubview(comp)
@@ -67,8 +67,8 @@ class PlayScreenView: UIView {
 		NSLayoutConstraint.activate([
 			comp.widthAnchor.constraint(equalToConstant: 175),
 			comp.heightAnchor.constraint(equalToConstant: 175),
-			comp.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -100), //-100 > -135
-			comp.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -135) //-135 > -170
+			comp.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -100),
+			comp.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -135)
 		])
 	}
 	
@@ -157,18 +157,20 @@ class PlayScreenView: UIView {
 	// MARK: - Asset Animation
 	func computerModeAnimation() {
 		
+		let previousDecorLeftTransform = decorCompLeft.transform
 		self.decorCompLeft.transform = self.decorCompLeft.transform.scaledBy(x: 0.8, y: 0.8)
 		UIView.animate(
 			withDuration: 0.2,
 			animations: {
 				self.decorCompLeft.transform = self.decorCompLeft.transform.scaledBy(x: 1.5, y: 1.5)
-				self.decorCompLeft.center.x -= 50
+				self.decorCompLeft.center.x -= 60
 			},
 			completion: { _
 				in()
-				self.decorCompLeft.transform = CGAffineTransform.identity
+				self.decorCompLeft.transform = previousDecorLeftTransform
 		})
 		
+		let previousDecorRightTransform = decorCompRight.transform
 		self.decorCompRight.transform = self.decorCompRight.transform.scaledBy(x: 0.8, y: 0.8)
 		UIView.animate(
 			withDuration: 0.2,
@@ -178,9 +180,10 @@ class PlayScreenView: UIView {
 			},
 			completion: { _
 				in()
-				self.decorCompRight.transform = CGAffineTransform.identity
+				self.decorCompRight.transform = previousDecorRightTransform
 		})
 		
+		let previousCompTransform = comp.transform
 		self.comp.transform = self.comp.transform.scaledBy(x: 0.8, y: 0.8)
 		UIView.animate(
 			withDuration: 0.2,
@@ -191,7 +194,48 @@ class PlayScreenView: UIView {
 			},
 			completion: { _
 				in()
-				self.comp.transform = CGAffineTransform.identity
+				self.comp.transform = previousCompTransform
+		})
+	}
+	
+	func playerModeAnimation() {
+		
+		self.faceRight.transform = self.faceRight.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.faceRight.transform = self.faceRight.transform.scaledBy(x: 1.5, y: 1.5)
+				self.faceRight.center.x += 27
+			},
+			completion: { _
+				in()
+				self.faceRight.transform = CGAffineTransform.identity
+		})
+		
+		let previousFaceLeftTransform = faceLeft.transform
+		self.faceLeft.transform = self.faceLeft.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.faceLeft.transform = self.faceLeft.transform.scaledBy(x: 1.5, y: 1.5)
+				self.faceLeft.center.y += 23
+			},
+			completion: { _
+				in()
+				self.faceLeft.transform = previousFaceLeftTransform
+		})
+		
+		let previousBalloonTransform = decorBalloon.transform
+		self.decorBalloon.transform = self.decorBalloon.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.decorBalloon.transform = self.decorBalloon.transform.scaledBy(x: 1.5, y: 1.5)
+				self.decorBalloon.center.y += 90
+			},
+			completion: { _
+				in()
+				self.decorBalloon.transform = previousBalloonTransform
 		})
 	}
 }
