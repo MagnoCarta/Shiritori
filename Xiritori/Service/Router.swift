@@ -12,6 +12,7 @@ enum Router {
     case create(body: Data?)
     case getAll
     case delete(uid: String)
+    case login(auth: String)
     
     var baseUrl: String {
         return "http://127.0.0.1:8080"
@@ -25,11 +26,18 @@ enum Router {
             return "/users"
         case .delete(let uid):
             return "/users/\(uid)"
+        case .login:
+            return "/users/login"
         }
     }
     
     var header: [String: String] {
         switch self {
+        case .login(let auth):
+            return [
+                "Content-Type": "application/json",
+                "Authorization": "Basic \(auth)"
+            ]
         default:
             return [
                 "Content-Type": "application/json"
@@ -54,6 +62,8 @@ enum Router {
             return "GET"
         case .delete:
             return "DELETE"
+        case .login:
+            return "POST"
         }
     }
     
