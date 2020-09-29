@@ -10,15 +10,17 @@ import UIKit
 
 class PlayScreenView: UIView {
 
+	let centerControl: (x: CGFloat, y: CGFloat) = (x: 0, y: 125)
+	
 	let computerButton = UIButton()
 	let comp = UIImageView(image: UIImage(named: "Comp"))
-	let faceRight = UIImageView(image: UIImage(named: "Cara 1"))
-	let faceLeft = UIImageView(image: UIImage(named: "Cara 2 Sorrindo"))
-	let decorCompLeft = UIImageView(image: UIImage(named: "Group 3"))
-	let decorCompRight = UIImageView(image: UIImage(named: "Group 3"))
-	let decorBalloon = UIImageView(image: UIImage(named: "Balao"))
+	let decorCompLeft = UIImageView(image: UIImage(named: "Confetin"))
+	let decorCompRight = UIImageView(image: UIImage(named: "Confetin"))
 	
 	let playerButton = UIButton()
+	let faceLeft = UIImageView(image: UIImage(named: "Cara 1"))
+	let faceRight = UIImageView(image: UIImage(named: "Cara 2 Sorrindo"))
+	let decorBalloon = UIImageView(image: UIImage(named: "Balao"))
 	
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,12 +42,69 @@ class PlayScreenView: UIView {
 	// MARK: - Setup Assets
 	func setupComputerAssets() {
 		
+		self.addSubview(decorCompLeft)
+		decorCompLeft.translatesAutoresizingMaskIntoConstraints = false
+		decorCompLeft.transform = decorCompLeft.transform.rotated(by: -0.65)
+		NSLayoutConstraint.activate([
+			decorCompLeft.widthAnchor.constraint(equalToConstant: 100),
+			decorCompLeft.heightAnchor.constraint(equalToConstant: 100),
+			decorCompLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -110 + centerControl.x),
+			decorCompLeft.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -20 + centerControl.y)
+		])
 		
+		self.addSubview(decorCompRight)
+		decorCompRight.translatesAutoresizingMaskIntoConstraints = false
+		decorCompRight.image = decorCompRight.image?.withHorizontallyFlippedOrientation()
+		decorCompRight.transform = decorCompRight.transform.rotated(by: -0.2)
+		NSLayoutConstraint.activate([
+			decorCompRight.widthAnchor.constraint(equalToConstant: 155),
+			decorCompRight.heightAnchor.constraint(equalToConstant: 155),
+			decorCompRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 55 + centerControl.x),
+			decorCompRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -130 + centerControl.y)
+		])
+		
+		self.addSubview(comp)
+		comp.translatesAutoresizingMaskIntoConstraints = false
+		comp.transform = comp.transform.rotated(by: -0.4)
+		NSLayoutConstraint.activate([
+			comp.widthAnchor.constraint(equalToConstant: 175),
+			comp.heightAnchor.constraint(equalToConstant: 175),
+			comp.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -100 + centerControl.x),
+			comp.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -135 + centerControl.y)
+		])
 	}
 	
 	func setupPlayerAssets() {
 		
+		self.addSubview(faceRight)
+		faceRight.translatesAutoresizingMaskIntoConstraints = false
+		faceRight.image = faceRight.image?.withHorizontallyFlippedOrientation()
+		NSLayoutConstraint.activate([
+			faceRight.widthAnchor.constraint(equalToConstant: 90),
+			faceRight.heightAnchor.constraint(equalToConstant: 90),
+			faceRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 123 + centerControl.x),
+			faceRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0 + centerControl.y)
+		])
 		
+		self.addSubview(faceLeft)
+		faceLeft.translatesAutoresizingMaskIntoConstraints = false
+		faceLeft.transform = faceLeft.transform.rotated(by: 2.5)
+		NSLayoutConstraint.activate([
+			faceLeft.widthAnchor.constraint(equalToConstant: 105),
+			faceLeft.heightAnchor.constraint(equalToConstant: 105),
+			faceLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0 + centerControl.x),
+			faceLeft.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 105 + centerControl.y)
+		])
+		
+		self.addSubview(decorBalloon)
+		decorBalloon.translatesAutoresizingMaskIntoConstraints = false
+		decorBalloon.transform = decorBalloon.transform.rotated(by: 3)
+		NSLayoutConstraint.activate([
+			decorBalloon.widthAnchor.constraint(equalToConstant: 110),
+			decorBalloon.heightAnchor.constraint(equalToConstant: 110),
+			decorBalloon.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 45 + centerControl.x),
+			decorBalloon.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 40 + centerControl.y)
+		])
 	}
 	
 	// MARK: - Setup Buttons
@@ -61,8 +120,8 @@ class PlayScreenView: UIView {
 		NSLayoutConstraint.activate([
 			computerButton.widthAnchor.constraint(equalToConstant: 300),
 			computerButton.heightAnchor.constraint(equalToConstant: 150),
-			computerButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -50),
-			computerButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -100)
+			computerButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -50 + centerControl.x),
+			computerButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -100 + centerControl.y)
 		])
 		
 		computerButton.transform = computerButton.transform.rotated(by: 150)
@@ -85,8 +144,8 @@ class PlayScreenView: UIView {
 		NSLayoutConstraint.activate([
 			playerButton.widthAnchor.constraint(equalToConstant: 300),
 			playerButton.heightAnchor.constraint(equalToConstant: 150),
-			playerButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 60),
-			playerButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 5)
+			playerButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 60 + centerControl.x),
+			playerButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 5 + centerControl.y)
 		])
 		
 		playerButton.transform = playerButton.transform.rotated(by: 150)
@@ -97,4 +156,88 @@ class PlayScreenView: UIView {
 		playerButton.layer.mask = circleShape
 	}
 	
+	// MARK: - Asset Animation
+	func computerModeAnimation() {
+		
+		let previousDecorLeftTransform = decorCompLeft.transform
+		self.decorCompLeft.transform = self.decorCompLeft.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.decorCompLeft.transform = self.decorCompLeft.transform.scaledBy(x: 1.5, y: 1.5)
+				self.decorCompLeft.center.x -= 60
+			},
+			completion: { _
+				in()
+				self.decorCompLeft.transform = previousDecorLeftTransform
+		})
+		
+		let previousDecorRightTransform = decorCompRight.transform
+		self.decorCompRight.transform = self.decorCompRight.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.decorCompRight.transform = self.decorCompRight.transform.scaledBy(x: 1.5, y: 1.5)
+				self.decorCompRight.center.y -= 80
+			},
+			completion: { _
+				in()
+				self.decorCompRight.transform = previousDecorRightTransform
+		})
+		
+		let previousCompTransform = comp.transform
+		self.comp.transform = self.comp.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.comp.transform = self.comp.transform.scaledBy(x: 1.5, y: 1.5)
+				self.comp.center.x -= 35
+				self.comp.center.y -= 35
+			},
+			completion: { _
+				in()
+				self.comp.transform = previousCompTransform
+		})
+	}
+	
+	func playerModeAnimation() {
+		
+		self.faceRight.transform = self.faceRight.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.faceRight.transform = self.faceRight.transform.scaledBy(x: 1.5, y: 1.5)
+				self.faceRight.center.x += 27
+			},
+			completion: { _
+				in()
+				self.faceRight.transform = CGAffineTransform.identity
+		})
+		
+		let previousFaceLeftTransform = faceLeft.transform
+		self.faceLeft.transform = self.faceLeft.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.faceLeft.transform = self.faceLeft.transform.scaledBy(x: 1.5, y: 1.5)
+				self.faceLeft.center.y += 23
+			},
+			completion: { _
+				in()
+				self.faceLeft.transform = previousFaceLeftTransform
+		})
+		
+		let previousBalloonTransform = decorBalloon.transform
+		self.decorBalloon.transform = self.decorBalloon.transform.scaledBy(x: 0.8, y: 0.8)
+		UIView.animate(
+			withDuration: 0.2,
+			animations: {
+				self.decorBalloon.transform = self.decorBalloon.transform.scaledBy(x: 1.5, y: 1.5)
+				self.decorBalloon.center.y += 90
+			},
+			completion: { _
+				in()
+				self.decorBalloon.transform = previousBalloonTransform
+		})
+	}
 }

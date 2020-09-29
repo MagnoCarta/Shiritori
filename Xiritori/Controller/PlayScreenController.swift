@@ -18,13 +18,6 @@ class PlayScreenController: UIViewController {
 		playView.computerButton.addTarget(self, action: #selector(self.pressedComputer), for: .touchUpInside)
 		playView.playerButton.addTarget(self, action: #selector(self.pressedPlayer), for: .touchUpInside)
 		
-		navigationItem.title = "Modo de Jogo"
-		navigationController?.navigationBar.prefersLargeTitles = true
-		self.navigationController?.navigationBar.largeTitleTextAttributes = [
-			NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 40)!,
-			NSAttributedString.Key.foregroundColor: UIColor.white
-		]
-		
 		self.view = playView
 	}
 	
@@ -32,6 +25,7 @@ class PlayScreenController: UIViewController {
 	@objc func pressedComputer(sender: UIButton) {
 		let previousButtonShape = sender.transform
 		sender.transform = sender.transform.scaledBy(x: CGFloat(0.8), y: CGFloat(0.8))
+		self.playView.computerModeAnimation()
 		UIView.animate(
 			withDuration: 0.2,
 			delay: 0,
@@ -43,11 +37,12 @@ class PlayScreenController: UIViewController {
 			},
 		   completion: { _
 				in()
-				let gameController = ChatGameController()
-				gameController.modalPresentationStyle = .fullScreen
-				self.navigationController?.navigationBar.isHidden = true
-				self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-				self.navigationController?.pushViewController(gameController, animated: true)
+//				usleep(200000)
+//				let gameController = ChatGameController()
+//				gameController.modalPresentationStyle = .fullScreen
+//				self.navigationController?.navigationBar.isHidden = true
+//				self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+//				self.navigationController?.pushViewController(gameController, animated: true)
 			}
 		)
 	}
@@ -55,6 +50,7 @@ class PlayScreenController: UIViewController {
 	@objc func pressedPlayer(sender: UIButton) {
 		let previousButtonShape = sender.transform
 		sender.transform = sender.transform.scaledBy(x: CGFloat(0.8), y: CGFloat(0.8))
+		self.playView.playerModeAnimation()
 		UIView.animate(
 			withDuration: 0.2,
 			delay: 0,
@@ -66,6 +62,12 @@ class PlayScreenController: UIViewController {
 			},
 		   completion: { _
 				in()
+				usleep(200000)
+				let gameController = ChatGameController()
+				gameController.modalPresentationStyle = .fullScreen
+				self.navigationController?.navigationBar.isHidden = true
+				self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+				self.navigationController?.pushViewController(gameController, animated: true)
 			}
 		)
 	}

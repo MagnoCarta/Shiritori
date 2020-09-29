@@ -13,6 +13,7 @@
 		0F79F5242514EA9F0086F6EF /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5232514EA9F0086F6EF /* ChatCell.swift */; };
 		0F79F5262514EECF0086F6EF /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5252514EECF0086F6EF /* ColorExtension.swift */; };
 		92112710251A283100ED9C07 /* MyMessyHandwriting.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9211270F251A283100ED9C07 /* MyMessyHandwriting.ttf */; };
+		927EB85F25222DD7008A677B /* MainScreenAnimationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927EB85E25222DD7008A677B /* MainScreenAnimationExtension.swift */; };
 		92C12B7B251CBBCB00E83F0B /* EndMatchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C12B7A251CBBCB00E83F0B /* EndMatchScreenView.swift */; };
 		92C12B86251CC75B00E83F0B /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C12B85251CC75B00E83F0B /* UIViewExtension.swift */; };
 		92C12B8E251CC95500E83F0B /* EndMatchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C12B8D251CC95500E83F0B /* EndMatchTableView.swift */; };
@@ -72,6 +73,7 @@
 		0F79F5232514EA9F0086F6EF /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		0F79F5252514EECF0086F6EF /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		9211270F251A283100ED9C07 /* MyMessyHandwriting.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MyMessyHandwriting.ttf; sourceTree = SOURCE_ROOT; };
+		927EB85E25222DD7008A677B /* MainScreenAnimationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenAnimationExtension.swift; sourceTree = "<group>"; };
 		92C12B7A251CBBCB00E83F0B /* EndMatchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndMatchScreenView.swift; sourceTree = "<group>"; };
 		92C12B85251CC75B00E83F0B /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		92C12B8D251CC95500E83F0B /* EndMatchTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndMatchTableView.swift; sourceTree = "<group>"; };
@@ -227,10 +229,10 @@
 				DE7726F8250E8A1E002E6EA7 /* ChatGameExtension.swift */,
 				92C12B85251CC75B00E83F0B /* UIViewExtension.swift */,
 				0F79F5252514EECF0086F6EF /* ColorExtension.swift */,
-				DE32018F2514DB0D00346B9D /* UIViewExtension.swift */,
 				DE6952AC2518EB9700F9648F /* UISearchBarExtension.swift */,
 				DEB4EDBF251244E5009F744F /* LoginViewExtension.swift */,
 				DEB4EDC325124CD0009F744F /* SigninViewExtension.swift */,
+				927EB85E25222DD7008A677B /* MainScreenAnimationExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -441,6 +443,7 @@
 				92C12B86251CC75B00E83F0B /* UIViewExtension.swift in Sources */,
 				92C5FB77251A48A400A12A00 /* PlayScreenController.swift in Sources */,
 				DE32019425153E7300346B9D /* FriendsTableViewCell.swift in Sources */,
+				927EB85F25222DD7008A677B /* MainScreenAnimationExtension.swift in Sources */,
 				DECEF85D2513ADB0009AF56D /* FriendsView.swift in Sources */,
 				DE7726FB250E8A2A002E6EA7 /* Utility.swift in Sources */,
 				92E585FA2518CBEC00998AAC /* MainScreenController.swift in Sources */,
