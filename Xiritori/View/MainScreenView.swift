@@ -18,7 +18,7 @@ class MainScreenView: UIView {
 	let compFinal = UIImageView(image: UIImage(named: "Comp"))
 	let faceRight = UIImageView(image: UIImage(named: "Cara 1"))
 	let faceLeft = UIImageView(image: UIImage(named: "Cara 2 Sorrindo"))
-	let decorLeft = UIImageView(image: UIImage(named: "Group 3"))
+	let decorLeft = UIImageView(image: UIImage(named: "Confetin"))
 	let decorRight = UIImageView(image: UIImage(named: "Balao"))
 	
 	let friendsButton = UIButton()
@@ -81,9 +81,10 @@ class MainScreenView: UIView {
 		
 		self.addSubview(decorLeft)
 		decorLeft.translatesAutoresizingMaskIntoConstraints = false
+		decorLeft.transform = decorLeft.transform.rotated(by: -0.5)
 		NSLayoutConstraint.activate([
-			decorLeft.widthAnchor.constraint(equalToConstant: 65),
-			decorLeft.heightAnchor.constraint(equalToConstant: 65),
+			decorLeft.widthAnchor.constraint(equalToConstant: 80),
+			decorLeft.heightAnchor.constraint(equalToConstant: 80),
 			decorLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -105 + centerControl.x),
 			decorLeft.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -95 + centerControl.y)
 		])

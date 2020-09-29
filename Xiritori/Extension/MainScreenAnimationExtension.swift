@@ -49,6 +49,7 @@ extension MainScreenView {
 				self.decorRight.transform = CGAffineTransform.identity
 		})
 		
+		let previousDecLeftTransform = decorLeft.transform
 		self.decorLeft.transform = self.decorLeft.transform.scaledBy(x: 0.8, y: 0.8)
 		UIView.animate(
 			withDuration: 0.2,
@@ -58,7 +59,7 @@ extension MainScreenView {
 			},
 			completion: { _
 				in()
-				self.decorLeft.transform = CGAffineTransform.identity
+				self.decorLeft.transform = previousDecLeftTransform
 		})
 		
 		let previousCompTransform = compFinal.transform

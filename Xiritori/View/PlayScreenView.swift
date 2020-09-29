@@ -14,8 +14,8 @@ class PlayScreenView: UIView {
 	
 	let computerButton = UIButton()
 	let comp = UIImageView(image: UIImage(named: "Comp"))
-	let decorCompLeft = UIImageView(image: UIImage(named: "Group 3"))
-	let decorCompRight = UIImageView(image: UIImage(named: "Group 3"))
+	let decorCompLeft = UIImageView(image: UIImage(named: "Confetin"))
+	let decorCompRight = UIImageView(image: UIImage(named: "Confetin"))
 	
 	let playerButton = UIButton()
 	let faceLeft = UIImageView(image: UIImage(named: "Cara 1"))
@@ -44,23 +44,23 @@ class PlayScreenView: UIView {
 		
 		self.addSubview(decorCompLeft)
 		decorCompLeft.translatesAutoresizingMaskIntoConstraints = false
-		decorCompLeft.transform = decorCompLeft.transform.rotated(by: -0.45)
+		decorCompLeft.transform = decorCompLeft.transform.rotated(by: -0.65)
 		NSLayoutConstraint.activate([
-			decorCompLeft.widthAnchor.constraint(equalToConstant: 80),
-			decorCompLeft.heightAnchor.constraint(equalToConstant: 80),
-			decorCompLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -100 + centerControl.x),
+			decorCompLeft.widthAnchor.constraint(equalToConstant: 100),
+			decorCompLeft.heightAnchor.constraint(equalToConstant: 100),
+			decorCompLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -110 + centerControl.x),
 			decorCompLeft.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -20 + centerControl.y)
 		])
 		
 		self.addSubview(decorCompRight)
 		decorCompRight.translatesAutoresizingMaskIntoConstraints = false
 		decorCompRight.image = decorCompRight.image?.withHorizontallyFlippedOrientation()
-		decorCompRight.transform = decorCompRight.transform.rotated(by: -0.85)
+		decorCompRight.transform = decorCompRight.transform.rotated(by: -0.2)
 		NSLayoutConstraint.activate([
-			decorCompRight.widthAnchor.constraint(equalToConstant: 95),
-			decorCompRight.heightAnchor.constraint(equalToConstant: 95),
-			decorCompRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 25 + centerControl.x),
-			decorCompRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -160 + centerControl.y)
+			decorCompRight.widthAnchor.constraint(equalToConstant: 155),
+			decorCompRight.heightAnchor.constraint(equalToConstant: 155),
+			decorCompRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 55 + centerControl.x),
+			decorCompRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -130 + centerControl.y)
 		])
 		
 		self.addSubview(comp)
@@ -178,7 +178,7 @@ class PlayScreenView: UIView {
 			withDuration: 0.2,
 			animations: {
 				self.decorCompRight.transform = self.decorCompRight.transform.scaledBy(x: 1.5, y: 1.5)
-				self.decorCompRight.center.y -= 60
+				self.decorCompRight.center.y -= 80
 			},
 			completion: { _
 				in()

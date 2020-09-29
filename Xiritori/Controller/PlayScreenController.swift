@@ -37,12 +37,12 @@ class PlayScreenController: UIViewController {
 			},
 		   completion: { _
 				in()
-				usleep(200000)
-				let gameController = ChatGameController()
-				gameController.modalPresentationStyle = .fullScreen
-				self.navigationController?.navigationBar.isHidden = true
-				self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-				self.navigationController?.pushViewController(gameController, animated: true)
+//				usleep(200000)
+//				let gameController = ChatGameController()
+//				gameController.modalPresentationStyle = .fullScreen
+//				self.navigationController?.navigationBar.isHidden = true
+//				self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+//				self.navigationController?.pushViewController(gameController, animated: true)
 			}
 		)
 	}
