@@ -15,14 +15,16 @@ class LoginView: UIView {
     
     // Logo Image.
     lazy var logo: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "test"))
+        let imageView = UIImageView(image: UIImage(named: "bart"))
         return imageView
     }()
     
     // Email TextField.
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Email/Username"
+        textField.placeholder = "Email ou Apelido"
+        textField.font = UIFont(name: "Comfortaa", size: 17)
+        textField.textColor = .blazingBlack
         textField.layer.borderWidth = 1.0
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.borderStyle = UITextField.BorderStyle.roundedRect
@@ -36,6 +38,7 @@ class LoginView: UIView {
     lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Senha"
+        textField.font = UIFont(name: "Comfortaa", size: 17)
         textField.layer.borderWidth = 1.0
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.borderStyle = UITextField.BorderStyle.roundedRect
@@ -48,8 +51,10 @@ class LoginView: UIView {
     // Submit Button.
     lazy var submitButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Login", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
+        button.setTitle("Entrar", for: .normal)
+        button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 30)
+        button.setTitleColor(.blazingBlack, for: .normal)
+        button.backgroundColor = .lightGreen
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.gray.cgColor
         button.addTarget(self, action: #selector(submit), for: .touchUpInside)
@@ -73,7 +78,9 @@ class LoginView: UIView {
     lazy var signinButton: UIButton = {
         let button = UIButton()
         button.setTitle("Cadastrar", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
+        button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 30)
+        button.setTitleColor(.blazingBlack, for: .normal)
+        button.backgroundColor = .lightGreen
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.gray.cgColor
         button.addTarget(self, action: #selector(signin), for: .touchUpInside)
@@ -83,8 +90,10 @@ class LoginView: UIView {
     // Guest Button.
     lazy var guestButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Convidado", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
+        button.setTitle("Entrar como Convidado", for: .normal)
+        button.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 30)
+        button.setTitleColor(.blazingBlack, for: .normal)
+        button.backgroundColor = .lightRed
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.gray.cgColor
         button.addTarget(self, action: #selector(guest), for: .touchUpInside)
@@ -109,7 +118,7 @@ class LoginView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        self.backgroundColor = .seriousPurple
         self.addSubviews(
             logo,
             emailTextField,
@@ -120,14 +129,17 @@ class LoginView: UIView {
             signinButton,
             guestButton
         )
-        self.setupAllViews()
+        self.setupLogin()
+        self.setupSeparator()
+        self.setupOptionButtons()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-// MARK: - FUNC
+// MARK: - FUNCS
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         emailTextField.layer.cornerRadius = emailTextField.frame.height / 2

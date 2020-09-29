@@ -9,14 +9,25 @@
 import Foundation
 import UIKit
 
-
 class SettingsViewController: UIViewController {
+    
+    let editButton: UIBarButtonItem = {
+       let button = UIBarButtonItem()
+        
+        button.title = "Editar"
+
+        return button
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view = SettingsView()
-    }
+        editButton.action = #selector(edit)
+        editButton.target = self
+        self.navigationItem.rightBarButtonItem = editButton
+        }
     
+    @objc func edit() {
+    }
     
 }

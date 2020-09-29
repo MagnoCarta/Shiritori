@@ -15,10 +15,8 @@ class FriendsView: UIView {
 // MARK: - INIT
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
-        //self.addSubview(searchBar)
+        self.backgroundColor = .seriousPurple
         self.addSubview(tableView)
-        //self.septupSearchBar()
         self.setupTableView()
     }
     
@@ -26,16 +24,7 @@ class FriendsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // Constraints
-    func septupSearchBar() {
-//        searchBar.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            searchBar.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
-//            searchBar.heightAnchor.constraint(equalToConstant: 50),
-//            searchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
-//            searchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8)
-//        ])
-    }
+// MARK: - CONSTRAINTS
     
     func setupTableView() {
         tableView.translatesAutoresizingMaskIntoConstraints = false

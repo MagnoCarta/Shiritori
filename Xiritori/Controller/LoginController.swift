@@ -10,6 +10,8 @@ import UIKit
 
 class LoginController: UIViewController {
 // MARK: - VIEW
+    
+    // View Content
     lazy var loginView: LoginView = {
         let view = LoginView()
         view.submitAction = { self.login() }
@@ -19,6 +21,7 @@ class LoginController: UIViewController {
     }()
     
 // MARK: - APP CYCLE
+    
     override func loadView() {
         super.loadView()
         self.view = loginView
@@ -26,18 +29,27 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.standardAppearance.configureWithTransparentBackground()
-        // Always use Light Mode.
         self.navigationController?.overrideUserInterfaceStyle = .light
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
     }
     
 // MARK: - ACTIONS
+    
     func login() { // login action.
         print("Logar!")
+		
+		let mainScreenController = MainScreenController()
+		mainScreenController.modalPresentationStyle = .fullScreen
+		self.navigationController?.pushViewController(mainScreenController, animated: true)
     }
     
     private func guest() { // log as a guest.
         print("Convidado!")
+		let mainScreenController = MainScreenController()
+		mainScreenController.modalPresentationStyle = .fullScreen
+		self.navigationController?.pushViewController(mainScreenController, animated: true)
     }
     
     private func signin() { // goes to signin screen.

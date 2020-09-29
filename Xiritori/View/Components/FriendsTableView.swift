@@ -9,7 +9,6 @@
 import UIKit
 
 class FriendsTableView: UITableView {
-
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         self.backgroundColor = .clear
@@ -18,13 +17,10 @@ class FriendsTableView: UITableView {
         self.alwaysBounceHorizontal = false
         self.separatorInset = .zero
         self.tableFooterView = UIView()
-//        self.layer.borderWidth = 0.3
-//        self.layer.borderColor = UIColor.gray.cgColor
         self.rowHeight = 95
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
