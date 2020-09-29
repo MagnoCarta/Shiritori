@@ -10,15 +10,17 @@ import UIKit
 
 class PlayScreenView: UIView {
 
+	let centerControl: (x: CGFloat, y: CGFloat) = (x: 0, y: 125)
+	
 	let computerButton = UIButton()
 	let comp = UIImageView(image: UIImage(named: "Comp"))
-	let faceLeft = UIImageView(image: UIImage(named: "Cara 1"))
-	let faceRight = UIImageView(image: UIImage(named: "Cara 2 Sorrindo"))
 	let decorCompLeft = UIImageView(image: UIImage(named: "Group 3"))
 	let decorCompRight = UIImageView(image: UIImage(named: "Group 3"))
-	let decorBalloon = UIImageView(image: UIImage(named: "Balao"))
 	
 	let playerButton = UIButton()
+	let faceLeft = UIImageView(image: UIImage(named: "Cara 1"))
+	let faceRight = UIImageView(image: UIImage(named: "Cara 2 Sorrindo"))
+	let decorBalloon = UIImageView(image: UIImage(named: "Balao"))
 	
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,8 +48,8 @@ class PlayScreenView: UIView {
 		NSLayoutConstraint.activate([
 			decorCompLeft.widthAnchor.constraint(equalToConstant: 80),
 			decorCompLeft.heightAnchor.constraint(equalToConstant: 80),
-			decorCompLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -100),
-			decorCompLeft.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -20)
+			decorCompLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -100 + centerControl.x),
+			decorCompLeft.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -20 + centerControl.y)
 		])
 		
 		self.addSubview(decorCompRight)
@@ -57,8 +59,8 @@ class PlayScreenView: UIView {
 		NSLayoutConstraint.activate([
 			decorCompRight.widthAnchor.constraint(equalToConstant: 95),
 			decorCompRight.heightAnchor.constraint(equalToConstant: 95),
-			decorCompRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 25),
-			decorCompRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -160)
+			decorCompRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 25 + centerControl.x),
+			decorCompRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -160 + centerControl.y)
 		])
 		
 		self.addSubview(comp)
@@ -67,8 +69,8 @@ class PlayScreenView: UIView {
 		NSLayoutConstraint.activate([
 			comp.widthAnchor.constraint(equalToConstant: 175),
 			comp.heightAnchor.constraint(equalToConstant: 175),
-			comp.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -100),
-			comp.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -135)
+			comp.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -100 + centerControl.x),
+			comp.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -135 + centerControl.y)
 		])
 	}
 	
@@ -80,8 +82,8 @@ class PlayScreenView: UIView {
 		NSLayoutConstraint.activate([
 			faceRight.widthAnchor.constraint(equalToConstant: 90),
 			faceRight.heightAnchor.constraint(equalToConstant: 90),
-			faceRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 123), //123 > 150
-			faceRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0)
+			faceRight.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 123 + centerControl.x),
+			faceRight.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0 + centerControl.y)
 		])
 		
 		self.addSubview(faceLeft)
@@ -90,8 +92,8 @@ class PlayScreenView: UIView {
 		NSLayoutConstraint.activate([
 			faceLeft.widthAnchor.constraint(equalToConstant: 105),
 			faceLeft.heightAnchor.constraint(equalToConstant: 105),
-			faceLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
-			faceLeft.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 105) //105 > 128
+			faceLeft.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0 + centerControl.x),
+			faceLeft.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 105 + centerControl.y)
 		])
 		
 		self.addSubview(decorBalloon)
@@ -100,8 +102,8 @@ class PlayScreenView: UIView {
 		NSLayoutConstraint.activate([
 			decorBalloon.widthAnchor.constraint(equalToConstant: 110),
 			decorBalloon.heightAnchor.constraint(equalToConstant: 110),
-			decorBalloon.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 45),
-			decorBalloon.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 40) //40 > 130
+			decorBalloon.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 45 + centerControl.x),
+			decorBalloon.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 40 + centerControl.y)
 		])
 	}
 	
@@ -118,8 +120,8 @@ class PlayScreenView: UIView {
 		NSLayoutConstraint.activate([
 			computerButton.widthAnchor.constraint(equalToConstant: 300),
 			computerButton.heightAnchor.constraint(equalToConstant: 150),
-			computerButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -50),
-			computerButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -100)
+			computerButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: -50 + centerControl.x),
+			computerButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -100 + centerControl.y)
 		])
 		
 		computerButton.transform = computerButton.transform.rotated(by: 150)
@@ -142,8 +144,8 @@ class PlayScreenView: UIView {
 		NSLayoutConstraint.activate([
 			playerButton.widthAnchor.constraint(equalToConstant: 300),
 			playerButton.heightAnchor.constraint(equalToConstant: 150),
-			playerButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 60),
-			playerButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 5)
+			playerButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 60 + centerControl.x),
+			playerButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 5 + centerControl.y)
 		])
 		
 		playerButton.transform = playerButton.transform.rotated(by: 150)
