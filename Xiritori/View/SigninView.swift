@@ -18,8 +18,10 @@ class SigninView: UIView {
         textField.placeholder = "Username"
         textField.font = UIFont(name: "Comfortaa", size: 17)
         textField.layer.borderWidth = 1.0
+        textField.textContentType = .username
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.borderStyle = UITextField.BorderStyle.roundedRect
+        textField.addTarget(self, action: #selector(verify), for: .editingDidEnd)
         textField.clipsToBounds = true
         return textField
     }()
@@ -30,6 +32,7 @@ class SigninView: UIView {
         textField.placeholder = "Email"
         textField.font = UIFont(name: "Comfortaa", size: 17)
         textField.layer.borderWidth = 1.0
+        textField.textContentType = .emailAddress
         textField.layer.borderColor = UIColor.gray.cgColor
         textField.borderStyle = UITextField.BorderStyle.roundedRect
         textField.keyboardType = .emailAddress
@@ -44,6 +47,7 @@ class SigninView: UIView {
         textField.font = UIFont(name: "Comfortaa", size: 17)
         textField.layer.borderWidth = 1.0
         textField.layer.borderColor = UIColor.gray.cgColor
+        textField.textContentType = .newPassword
         textField.borderStyle = UITextField.BorderStyle.roundedRect
         textField.isSecureTextEntry = true
         textField.clipsToBounds = true
@@ -57,6 +61,7 @@ class SigninView: UIView {
         textField.font = UIFont(name: "Comfortaa", size: 17)
         textField.layer.borderWidth = 1.0
         textField.layer.borderColor = UIColor.gray.cgColor
+        textField.textContentType = .newPassword
         textField.borderStyle = UITextField.BorderStyle.roundedRect
         textField.isSecureTextEntry = true
         textField.clipsToBounds = true
@@ -82,6 +87,11 @@ class SigninView: UIView {
     var signinAction: (() -> Void)!
     @objc func signin(sender: UIButton!) {
         signinAction()
+    }
+    
+    // Veirfy username.
+    @objc func verify() {
+        print("Verificando!")
     }
 
 // MARK: - INIT
