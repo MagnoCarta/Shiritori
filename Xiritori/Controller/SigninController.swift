@@ -52,7 +52,9 @@ class SigninController: UIViewController {
                     if let session = session {
                         self.session = session
                     } else {
-                        self.showErrorMessage("Nao foi possível criar o usuário!")
+                        DispatchQueue.main.async {
+                            self.showErrorMessage("Nao foi possível criar o usuário!")
+                        }
                     }
                 }
                 
