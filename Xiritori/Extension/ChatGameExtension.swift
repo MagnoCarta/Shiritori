@@ -73,7 +73,6 @@ extension ChatGame {
 			whiteBlueLineTop.trailingAnchor.constraint(equalTo: self.trailingAnchor),
 			whiteBlueLineTop.heightAnchor.constraint(equalToConstant: 3)
         ])
-
     }
 
     func addConstraintTableView() {
@@ -152,7 +151,7 @@ extension UIAlertController {
   //Set title font and title color
   func setTitle(font: UIFont?, color: UIColor?) {
     guard let title = self.title else { return }
-    let attributeString = NSMutableAttributedString(string: title)//1
+    let attributeString = NSMutableAttributedString(string: title)
     if let titleFont = font {
       attributeString.addAttributes([NSAttributedString.Key.font: titleFont],//2
         range:NSMakeRange(0, title.utf8.count))
@@ -160,6 +159,10 @@ extension UIAlertController {
     if let titleColor = color {
       attributeString.addAttributes([NSAttributedString.Key.foregroundColor : titleColor],//3
         range:NSMakeRange(0, title.utf8.count))
+      attributeString.addAttributes([NSAttributedString.Key.font: titleFont], range: NSMakeRange(0, title.utf8.count))
+    }
+    if let titleColor = color {
+      attributeString.addAttributes([NSAttributedString.Key.foregroundColor: titleColor], range: NSMakeRange(0, title.utf8.count))
     }
     self.setValue(attributeString, forKey: "attributedTitle")//4
   }
@@ -171,10 +174,10 @@ extension UIAlertController {
     }
     let attributedString = NSMutableAttributedString(string: title)
     if let titleFont = font {
-        attributedString.addAttributes([NSAttributedString.Key.font:titleFont], range:NSMakeRange(0, title.utf8.count))
+      attributedString.addAttributes([NSAttributedString.Key.font: titleFont], range: NSMakeRange(0, title.utf8.count))
     }
     if let titleColor = color {
-        attributedString.addAttributes([NSAttributedString.Key.foregroundColor:titleColor], range:NSMakeRange(0, title.utf8.count))
+      attributedString.addAttributes([NSAttributedString.Key.foregroundColor: titleColor], range: NSMakeRange(0, title.utf8.count))
     }
     self.setValue(attributedString, forKey: "attributedMessage")//4
   }

@@ -33,6 +33,7 @@ class ChatGameController: UIViewController {
     func addConstraintGiveUp() {
         
         buttonGiveUp.translatesAutoresizingMaskIntoConstraints = false
+
         NSLayoutConstraint.activate([buttonGiveUp.bottomAnchor.constraint(equalTo: viewChat.shapeTop.bottomAnchor,constant:  -52),
             buttonGiveUp.heightAnchor.constraint(equalToConstant: 30),
             buttonGiveUp.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 32),
@@ -52,22 +53,26 @@ class ChatGameController: UIViewController {
     
     @objc func giveUp() {
         let dialogMessage = UIAlertController(title: "Confirme", message: "Tem certeza que quer desistir?", preferredStyle: .alert)
-        
         // Create OK button with action handler
         let okay = UIAlertAction(title: "Sim", style: .default, handler: { (_) -> Void in
+
 			self.navigationController?.navigationBar.isHidden = false
 			let endMatchController = EndMatchScreenController()
 			endMatchController.modalPresentationStyle = .fullScreen
 			self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
 			self.navigationController?.pushViewController(endMatchController, animated: true)
         })
+		
         // Create Cancel button with action handlder
         let cancel = UIAlertAction(title: "Não", style: .cancel) { (_) -> Void in
             
         }
+		
         //Add OK and Cancel button to an Alert object
+
         dialogMessage.addAction(okay)
         dialogMessage.addAction(cancel)
+		
         // Present alert message to user
         self.present(dialogMessage, animated: true, completion: nil)
         

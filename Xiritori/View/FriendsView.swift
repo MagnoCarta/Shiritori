@@ -16,6 +16,7 @@ class FriendsView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .seriousPurple
+        self.setupBackgroundImage()
         self.addSubview(tableView)
         self.setupTableView()
     }
