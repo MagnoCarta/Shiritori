@@ -35,7 +35,7 @@ enum Router {
         case .search(let username):
             return "/users/search/\(username)"
         case .friends:
-            return "/friends/list"
+            return "/friends"
         case .removeFriend(_, let fid):
             return "/friends/\(fid)"
         case .addFriend(_, let fid):
