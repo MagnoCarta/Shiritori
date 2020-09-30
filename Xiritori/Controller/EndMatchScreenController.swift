@@ -36,19 +36,8 @@ class EndMatchScreenController: UIViewController {
 		self.navigationController?.navigationBar.isTranslucent = true
 		
 		navigationItem.hidesBackButton = true
-		let rightButton = UIBarButtonItem(title: "Confirmar", style: .plain, target: self, action: #selector(self.pressedConfirm))
+		let rightButton = UIBarButtonItem(title: "Fim de papo!", style: .plain, target: self, action: #selector(self.pressedConfirm))
 		navigationItem.rightBarButtonItems = [rightButton]
-		
-		navigationItem.title = "Fim da Partida"
-		navigationController?.navigationBar.prefersLargeTitles = true
-		self.navigationController?.navigationBar.largeTitleTextAttributes = [
-					NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 40)!,
-					NSAttributedString.Key.foregroundColor: UIColor.white
-				]
-		self.navigationController?.navigationBar.titleTextAttributes = [
-			NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 20)!,
-			NSAttributedString.Key.foregroundColor: UIColor.white
-		]
 	}
 	
 }
