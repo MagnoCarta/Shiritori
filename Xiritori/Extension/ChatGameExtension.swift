@@ -155,11 +155,12 @@ extension UIAlertController {
     if let titleFont = font {
       attributeString.addAttributes([NSAttributedString.Key.font: titleFont],//2
         range:NSMakeRange(0, title.utf8.count))
-    }
+    
     if let titleColor = color {
       attributeString.addAttributes([NSAttributedString.Key.foregroundColor : titleColor],//3
         range:NSMakeRange(0, title.utf8.count))
       attributeString.addAttributes([NSAttributedString.Key.font: titleFont], range: NSMakeRange(0, title.utf8.count))
+    }
     }
     if let titleColor = color {
       attributeString.addAttributes([NSAttributedString.Key.foregroundColor: titleColor], range: NSMakeRange(0, title.utf8.count))
