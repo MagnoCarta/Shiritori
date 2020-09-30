@@ -9,6 +9,17 @@
 import UIKit
 
 class FriendsController: UIViewController {
+    let repository = FriendRepository()
+    
+    // Temporaly! Update it with the session model.
+    let token = "v45FNni4ck9PclVp5hLuzA=="
+    
+    var friends = [Friend]() {
+        didSet {
+            self.friendsView.tableView.reloadData()
+        }
+    }
+    
 // MARK: - VIEWS
     
     // View Content
@@ -46,19 +57,31 @@ class FriendsController: UIViewController {
         friendsView.addGestureRecognizer(tap)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.updateFriend()
+    }
+    
 // MARK: - ACTIONS
     
     @objc func addFriend() { // Plus button action.
         let addFriendController = AddFriendController()
+        addFriendController.updateParentModel = updateFriend
         navigationController?.present(addFriendController, animated: true, completion: nil)
     }
     
-    func vsAction() { // Action to button vs.
+    func vsAction(uid: String?) { // Action to button vs.
         print("VS")
     }
     
-    func removeFriend() { // Action to remove a friend.
-        print("Remove Friend!")
+    func removeFriend(fid: String, position: Int) { // Action to remove a friend.
+        repository.remove(token: self.token, fid: fid) { result in
+            if result {
+                print("Removido com sucesso!")
+                DispatchQueue.main.async {
+                    self.friends.remove(at: position)
+                }
+            }
+        }
     }
     
 // MARK: - FUNCS
@@ -88,19 +111,33 @@ class FriendsController: UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    // Update Model
+    func updateFriend() {
+        repository.list(token: self.token) { friends in
+            if let friends = friends {
+                DispatchQueue.main.async {
+                    self.friends = friends
+                }
+            } else {
+                print("Algo deu errado!!!")
+            }
+        }
+    }
 }
 
 // MARK: - TableView Delegate and DataSource
 
 extension FriendsController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.friends.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as? FriendsTableViewCell
         cell?.buttonVsPlusAction = self.vsAction
         cell?.buttonRemoveAction = self.removeFriend
+        cell?.config(friend: self.friends[indexPath.row], position: indexPath.row)
         return cell!
     }
 }
