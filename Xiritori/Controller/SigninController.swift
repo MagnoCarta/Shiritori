@@ -52,15 +52,17 @@ class SigninController: UIViewController {
                     if let session = session {
                         self.session = session
                     } else {
-                        print("Nao foi possível criar o usuário!")
+                        DispatchQueue.main.async {
+                            self.showErrorMessage("Nao foi possível criar o usuário!")
+                        }
                     }
                 }
                 
             } else {
-                print("Password should be same!")
+                self.showErrorMessage("As Senhas não são iguais!")
             }
         } else {
-            print("All fields are required!")
+            self.showErrorMessage("Todos os campos são obrigatórios!")
         }
     }
     
@@ -91,5 +93,17 @@ class SigninController: UIViewController {
         } else {
             return false
         }
+    }
+    
+    func showErrorMessage(_ message: String) {
+        let dialogMessage = UIAlertController(title: "Erro!", message: message, preferredStyle: .alert)
+        // Create OK button with action handler
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        //Add Cancel button to an Alert object
+        dialogMessage.addAction(cancel)
+        // Present alert message to user
+        self.present(dialogMessage, animated: true, completion: nil)
+        //dialogMessage.setMessage(font: UIFont(name: "Comfortaa", size: 18), color: .black)
+        dialogMessage.setTitle(font: UIFont(name: "Comfortaa-Bold", size: 20), color: .lightRed)
     }
 }
