@@ -22,7 +22,7 @@ class ChatCell: UITableViewCell {
         addSubview(message)
         organizeMessage()
         organizeBubble()
-        print("1")
+        
         messageConstraints()
         bubbleConstraints()
         self.backgroundColor = .backgroundColor
@@ -30,7 +30,7 @@ class ChatCell: UITableViewCell {
     }
     
     func set(message: String) {
-        print("2")
+        
         self.message.text = message
         
         if ChatCell.isPlayer {
