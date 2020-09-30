@@ -40,23 +40,31 @@ class LoginController: UIViewController {
 // MARK: - ACTIONS
     
     func login() { // login action.
-    
-        let email = loginView.emailTextField.text!
-        let pass = loginView.passwordTextField.text!
         
-        // TESTE
-        self.repository.login(email: email, password: pass) { (session) in
-            if session != nil {
-                DispatchQueue.main.async {
-                    let mainScreenController = MainScreenController()
-     //               mainScreenController.session = session
-                    mainScreenController.modalPresentationStyle = .fullScreen
-                    self.navigationController?.pushViewController(mainScreenController, animated: true)
-                }
-            } else {
-                print("Login ou senha incorreto!")
-            }
-        }
+        // - To the TESTS.
+        
+        let mainScreenController = MainScreenController()
+        mainScreenController.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(mainScreenController, animated: true)
+        
+        // - To the DEPLOY.
+        
+//        let email = loginView.emailTextField.text!
+//        let pass = loginView.passwordTextField.text!
+//
+//        self.repository.login(email: email, password: pass) { (session) in
+//            if session != nil {
+//                DispatchQueue.main.async {
+//                    let mainScreenController = MainScreenController()
+//                    //mainScreenController.session = session
+//                    mainScreenController.modalPresentationStyle = .fullScreen
+//                    self.navigationController?.pushViewController(mainScreenController, animated: true)
+//                }
+//            } else {
+//                print("Login ou senha incorreto!")
+//            }
+//        }
+        
     }
     
     private func guest() { // log as a guest.
