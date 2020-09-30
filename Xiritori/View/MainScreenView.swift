@@ -11,6 +11,7 @@ import UIKit
 class MainScreenView: UIView {
 	
 	let centerControl: (x: CGFloat, y: CGFloat) = (x: -5, y: 155)
+	let titleImage = UIImageView(image: UIImage(named: "Title"))
 	
 	let playButton = UIButton()
 	let compRosto = UIImageView(image: UIImage(named: "Comp Cabeca"))
@@ -42,6 +43,8 @@ class MainScreenView: UIView {
 		setupPlayButton()
 		setupFriendsButton()
 		setupOptionsButton()
+		
+		setupTitleImage()
     }
     
     required init?(coder: NSCoder) {
@@ -49,6 +52,31 @@ class MainScreenView: UIView {
 	}
 	
 	// MARK: - Setup Assets
+	func setupTitleImage() {
+		
+		self.addSubview(titleImage)
+		titleImage.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			titleImage.widthAnchor.constraint(equalToConstant: 375),
+			titleImage.heightAnchor.constraint(equalToConstant: 190),
+			titleImage.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
+			titleImage.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -225)
+		])
+		
+		let previousTitleTransform = titleImage.transform
+		UIView.animate(
+			withDuration: 1,
+			delay: 0,
+			options: [.repeat, .autoreverse],
+			animations: {
+				self.titleImage.transform = self.titleImage.transform.scaledBy(x: 1.02, y: 1.02)
+			},
+			completion: { _
+				in()
+				self.titleImage.transform = previousTitleTransform
+			})
+	}
+	
 	func setupPlayAssets() {
 		
 		self.addSubview(faceLeft)
