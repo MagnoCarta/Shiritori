@@ -137,7 +137,6 @@ extension ChatGame {
                ])
     }
 }
-
 extension UIAlertController {
 
   //Set background color of UIAlertController
@@ -154,7 +153,14 @@ extension UIAlertController {
     guard let title = self.title else { return }
     let attributeString = NSMutableAttributedString(string: title)
     if let titleFont = font {
+      attributeString.addAttributes([NSAttributedString.Key.font: titleFont],//2
+        range:NSMakeRange(0, title.utf8.count))
+    
+    if let titleColor = color {
+      attributeString.addAttributes([NSAttributedString.Key.foregroundColor : titleColor],//3
+        range:NSMakeRange(0, title.utf8.count))
       attributeString.addAttributes([NSAttributedString.Key.font: titleFont], range: NSMakeRange(0, title.utf8.count))
+    }
     }
     if let titleColor = color {
       attributeString.addAttributes([NSAttributedString.Key.foregroundColor: titleColor], range: NSMakeRange(0, title.utf8.count))

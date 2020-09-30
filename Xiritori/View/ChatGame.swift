@@ -183,7 +183,6 @@ class ChatGame: UIView {
     }
     
     @objc func  giveUp() {
-      
         //Codigo apos integracao
     }
 }

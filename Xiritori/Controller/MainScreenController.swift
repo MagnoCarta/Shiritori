@@ -103,8 +103,10 @@ class MainScreenController: UIViewController {
 				usleep(200000)
 				let friendsController = FriendsController()
 				friendsController.modalPresentationStyle = .fullScreen
-				self.navigationController?.pushViewController(friendsController, animated: true)
+                let settings = SettingsViewController()
+				self.navigationController?.pushViewController(settings, animated: true)
 			}
 		)
+
 	}
 }
