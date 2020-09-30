@@ -61,7 +61,7 @@ class PlayScreenView: UIView {
 			delay: 0,
 			options: [.repeat, .autoreverse],
 			animations: {
-				self.screenTitle.transform = self.screenTitle.transform.scaledBy(x: 1.02, y: 1.02)
+				self.screenTitle.transform = self.screenTitle.transform.scaledBy(x: 1.1, y: 1.1)
 			},
 			completion: { _
 				in()
