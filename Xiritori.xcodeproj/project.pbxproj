@@ -53,6 +53,8 @@
 		DE99C15C2522580C003FC387 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C15B2522580C003FC387 /* Service.swift */; };
 		DE99C1642522581A003FC387 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C1632522581A003FC387 /* ServiceError.swift */; };
 		DE99C169252258DA003FC387 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE99C168252258DA003FC387 /* Router.swift */; };
+		DEB10C782525199E00C25C7A /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB10C772525199E00C25C7A /* Friend.swift */; };
+		DEB10C7F252519D300C25C7A /* FriendRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB10C7E252519D300C25C7A /* FriendRepository.swift */; };
 		DEB4EDBA2510DFD9009F744F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDB92510DFD9009F744F /* LoginView.swift */; };
 		DEB4EDBC2510FF4E009F744F /* Separator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDBB2510FF4E009F744F /* Separator.swift */; };
 		DEB4EDBE25123E21009F744F /* SigninController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB4EDBD25123E21009F744F /* SigninController.swift */; };
@@ -141,6 +143,8 @@
 		DE99C15B2522580C003FC387 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		DE99C1632522581A003FC387 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		DE99C168252258DA003FC387 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		DEB10C772525199E00C25C7A /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		DEB10C7E252519D300C25C7A /* FriendRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRepository.swift; sourceTree = "<group>"; };
 		DEB4EDB92510DFD9009F744F /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DEB4EDBB2510FF4E009F744F /* Separator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Separator.swift; sourceTree = "<group>"; };
 		DEB4EDBD25123E21009F744F /* SigninController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninController.swift; sourceTree = "<group>"; };
@@ -300,6 +304,7 @@
 				DE99C0FD251CD689003FC387 /* User.swift */,
 				DE99C10E251CE39F003FC387 /* Session.swift */,
 				DE99C119251CE8D8003FC387 /* ErrorBody.swift */,
+				DEB10C772525199E00C25C7A /* Friend.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				DE99C106251CDA27003FC387 /* UserRepository.swift */,
+				DEB10C7E252519D300C25C7A /* FriendRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -649,6 +655,7 @@
 				DEB4EDC225124C94009F744F /* SigninView.swift in Sources */,
 				0F2359B7251CE952003122E4 /* SettingsViewController.swift in Sources */,
 				DEB4EDBC2510FF4E009F744F /* Separator.swift in Sources */,
+				DEB10C7F252519D300C25C7A /* FriendRepository.swift in Sources */,
 				DEB4EDC0251244E5009F744F /* LoginViewExtension.swift in Sources */,
 				DE99C15C2522580C003FC387 /* Service.swift in Sources */,
 				DE99C11A251CE8D8003FC387 /* ErrorBody.swift in Sources */,
@@ -658,6 +665,7 @@
 				92FC12DB251A42C60059BBC8 /* PlayScreenView.swift in Sources */,
 				DE7726F7250E8A0F002E6EA7 /* Model.swift in Sources */,
 				0F79F5262514EECF0086F6EF /* ColorExtension.swift in Sources */,
+				DEB10C782525199E00C25C7A /* Friend.swift in Sources */,
 				DE6952AB2518EA4100F9648F /* FriendsTableView.swift in Sources */,
 				DE6952AD2518EB9700F9648F /* UISearchBarExtension.swift in Sources */,
 			);

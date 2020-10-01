@@ -60,4 +60,22 @@ class UserRepository {
             }
         }
     }
+    
+    // Search.
+    func search(username: String, completion: @escaping ([User]?) -> Void) {
+        Service.request(route: .search(username: username)) { result in
+            switch result {
+            case .success(let data):
+                guard let data = data else { return }
+                
+                if let userJson = try? JSONDecoder().decode([User].self, from: data) {
+                    
+                    completion(userJson)
+                    
+                }
+            case .failure:
+                completion(nil)
+            }
+        }
+    }
 }

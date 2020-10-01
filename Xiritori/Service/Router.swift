@@ -13,6 +13,10 @@ enum Router {
     case getAll
     case delete(uid: String)
     case login(auth: String)
+    case search(username: String)
+    case friends(token: String)
+    case removeFriend(token: String, fid: String)
+    case addFriend(token: String, fid: String)
     
     var baseUrl: String {
         return "http://127.0.0.1:8080"
@@ -28,6 +32,15 @@ enum Router {
             return "/users/\(uid)"
         case .login:
             return "/users/login"
+        case .search(let username):
+            return "/users/search/\(username)"
+        case .friends:
+            return "/friends"
+        case .removeFriend(_, let fid):
+            return "/friends/\(fid)"
+        case .addFriend(_, let fid):
+            print(fid)
+            return "/friends/\(fid)"
         }
     }
     
@@ -37,6 +50,22 @@ enum Router {
             return [
                 "Content-Type": "application/json",
                 "Authorization": "Basic \(auth)"
+            ]
+        case .friends(let token):
+            return [
+                "Content-Type": "application/json",
+                "Authorization": "Bearer \(token)"
+            ]
+        case .removeFriend(let token, _):
+            return [
+                "Content-Type": "application/json",
+                "Authorization": "Bearer \(token)"
+            ]
+        case .addFriend(let token, _):
+            print(token)
+            return [
+                "Content-Type": "application/json",
+                "Authorization": "Bearer \(token)"
             ]
         default:
             return [
@@ -58,12 +87,16 @@ enum Router {
         switch self {
         case .create:
             return "POST"
-        case .getAll:
-            return "GET"
         case .delete:
             return "DELETE"
         case .login:
             return "POST"
+        case .removeFriend:
+            return "DELETE"
+        case .addFriend:
+            return "POST"
+        default:
+            return "GET"
         }
     }
     

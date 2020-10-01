@@ -9,7 +9,8 @@
 import UIKit
 
 class FriendsTableViewCell: UITableViewCell {
-
+    var uid: String?
+    var position: Int?
 // MARK: - VIEWS
     
     // Image Character.
@@ -78,14 +79,14 @@ class FriendsTableViewCell: UITableViewCell {
     
  // MARK: - ACTIONS
     
-    var buttonVsPlusAction: (() -> Void)!
+    var buttonVsPlusAction: ((String) -> Void)!
     @objc func vsPlusAction() {
-        buttonVsPlusAction()
+        buttonVsPlusAction(self.uid!)
     }
     
-    var buttonRemoveAction: (() -> Void)!
+    var buttonRemoveAction: ((String, Int) -> Void)!
     @objc func removeAction() {
-        buttonRemoveAction()
+        buttonRemoveAction(self.uid!, self.position!)
     }
     
 // MARK: - FUNCS
@@ -95,6 +96,17 @@ class FriendsTableViewCell: UITableViewCell {
         labelName.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         buttonPlusVS.setTitle("+", for: .normal)
         buttonPlusVS.titleLabel?.font = UIFont(name: "MyMessyHandwriting", size: 40)
+    }
+    
+    func config(user: User) {
+        self.labelName.text = user.username
+        self.uid = user.id
+    }
+    
+    func config(friend: Friend, position: Int) {
+        self.labelName.text = friend.username
+        self.uid = friend.id
+        self.position = position
     }
 
 // MARK: - CONSTRAINTS
