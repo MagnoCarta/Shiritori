@@ -15,8 +15,17 @@ class ChatGameController: UIViewController {
 
     let buttonGiveUp: UIButton = {
         let button = UIButton(type: .roundedRect)
-        button.backgroundColor = .gray
+        //button.backgroundColor = .gray
         button.layer.cornerRadius = 15
+        let imageView = UIImageView(image: UIImage(named: "Flag"))
+        button.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([imageView.topAnchor.constraint(equalTo: button.topAnchor),
+                                     imageView.bottomAnchor.constraint(equalTo: button.bottomAnchor),
+                                     imageView.leadingAnchor.constraint(equalTo: button.leadingAnchor),
+                                     imageView.trailingAnchor.constraint(equalTo: button.trailingAnchor)])
+        
+        button.contentMode = .scaleAspectFit
         
         return button
     }()
