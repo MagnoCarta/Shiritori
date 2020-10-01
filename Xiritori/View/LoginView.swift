@@ -15,7 +15,7 @@ class LoginView: UIView {
     
     // Logo Image.
     lazy var logo: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "bart"))
+        let imageView = UIImageView(image: UIImage(named: "Title"))
         return imageView
     }()
     
