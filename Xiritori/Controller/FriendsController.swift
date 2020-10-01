@@ -12,7 +12,9 @@ class FriendsController: UIViewController {
     let repository = FriendRepository()
     
     // Temporaly! Update it with the session model.
-    let token = "v45FNni4ck9PclVp5hLuzA=="
+    //let token = "Ej4UxrTcO7o/1XnZMKwXKw=="
+    
+    var session: Session?
     
     var friends = [Friend]() {
         didSet {
@@ -65,6 +67,9 @@ class FriendsController: UIViewController {
     
     @objc func addFriend() { // Plus button action.
         let addFriendController = AddFriendController()
+        if let session = self.session {
+            addFriendController.session = session
+        }
         addFriendController.updateParentModel = updateFriend
         navigationController?.present(addFriendController, animated: true, completion: nil)
     }
@@ -73,12 +78,14 @@ class FriendsController: UIViewController {
         print("VS")
     }
     
-    func removeFriend(fid: String, position: Int) { // Action to remove a friend.
-        repository.remove(token: self.token, fid: fid) { result in
-            if result {
-                print("Removido com sucesso!")
-                DispatchQueue.main.async {
-                    self.friends.remove(at: position)
+    func removeFriend(fid: String, position: Int) {// Action to remove a friend.
+        if let session = self.session {
+            repository.remove(token: session.token, fid: fid) { result in
+                if result {
+                    print("Removido com sucesso!")
+                    DispatchQueue.main.async {
+                        self.friends.remove(at: position)
+                    }
                 }
             }
         }
@@ -114,15 +121,31 @@ class FriendsController: UIViewController {
     
     // Update Model
     func updateFriend() {
-        repository.list(token: self.token) { friends in
-            if let friends = friends {
-                DispatchQueue.main.async {
-                    self.friends = friends
+        if let session = self.session {
+            repository.list(token: session.token) { friends in
+                if let friends = friends {
+                    DispatchQueue.main.async {
+                        self.friends = friends
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.showErrorMessage("Algo deu errado com o servidor!")
+                    }
                 }
-            } else {
-                print("Algo deu errado!!!")
             }
         }
+    }
+    
+    func showErrorMessage(_ message: String) {
+        let dialogMessage = UIAlertController(title: "Erro!", message: message, preferredStyle: .alert)
+        // Create OK button with action handler
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        //Add Cancel button to an Alert object
+        dialogMessage.addAction(cancel)
+        // Present alert message to user
+        self.present(dialogMessage, animated: true, completion: nil)
+        //dialogMessage.setMessage(font: UIFont(name: "Comfortaa", size: 18), color: .black)
+        dialogMessage.setTitle(font: UIFont(name: "Comfortaa-Bold", size: 20), color: .lightRed)
     }
 }
 

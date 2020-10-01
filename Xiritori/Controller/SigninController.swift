@@ -11,11 +11,7 @@ import UIKit
 class SigninController: UIViewController {
     
     let repositoy = UserRepository()
-    var session: Session? {
-        didSet {
-            print(self.session!.token)
-        }
-    }
+    var session: Session?
     
 // MARK: - VIEW
     
@@ -50,7 +46,12 @@ class SigninController: UIViewController {
                 
                 self.repositoy.create(userToSave: user) { (session) in
                     if let session = session {
-                        self.session = session
+                        DispatchQueue.main.async {
+                            let mainScreenController = MainScreenController()
+                            mainScreenController.session = session
+                            mainScreenController.modalPresentationStyle = .fullScreen
+                            self.navigationController?.pushViewController(mainScreenController, animated: true)
+                        }
                     } else {
                         DispatchQueue.main.async {
                             self.showErrorMessage("Nao foi possível criar o usuário!")

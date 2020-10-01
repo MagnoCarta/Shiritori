@@ -19,7 +19,7 @@ enum Router {
     case addFriend(token: String, fid: String)
     
     var baseUrl: String {
-        return "http://127.0.0.1:8080"
+        return "https://backend-shiritori.herokuapp.com"
     }
     
     var path: String {

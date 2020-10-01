@@ -16,8 +16,8 @@ extension LoginView {
         NSLayoutConstraint.activate([
             logo.topAnchor.constraint(equalTo: self.topAnchor, constant: 90),
             logo.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            logo.widthAnchor.constraint(equalToConstant: 126),
-            logo.heightAnchor.constraint(equalTo: logo.widthAnchor)
+            logo.widthAnchor.constraint(equalToConstant: 210),
+            logo.heightAnchor.constraint(equalToConstant: 120)
         ])
         // Email TextField Constraints
         emailTextField.translatesAutoresizingMaskIntoConstraints = false

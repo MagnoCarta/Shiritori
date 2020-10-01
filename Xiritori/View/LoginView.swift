@@ -15,14 +15,14 @@ class LoginView: UIView {
     
     // Logo Image.
     lazy var logo: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "bart"))
+        let imageView = UIImageView(image: UIImage(named: "Title"))
         return imageView
     }()
     
     // Email TextField.
     lazy var emailTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Email ou Apelido"
+        textField.placeholder = "Email"
         textField.font = UIFont(name: "Comfortaa", size: 17)
         textField.textColor = .blazingBlack
         textField.layer.borderWidth = 1.0

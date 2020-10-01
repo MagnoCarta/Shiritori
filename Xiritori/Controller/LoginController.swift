@@ -43,35 +43,36 @@ class LoginController: UIViewController {
         
         // - To the TESTS.
         
-        let mainScreenController = MainScreenController()
-        mainScreenController.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(mainScreenController, animated: true)
+//        let mainScreenController = MainScreenController()
+//        mainScreenController.modalPresentationStyle = .fullScreen
+//        self.navigationController?.pushViewController(mainScreenController, animated: true)
         
         // - To the DEPLOY.
         
-//        let email = loginView.emailTextField.text!
-//        let pass = loginView.passwordTextField.text!
-//
-//        self.repository.login(email: email, password: pass) { [self] (session) in
-//            if session != nil {
-//                DispatchQueue.main.async {
-//                    let mainScreenController = MainScreenController()
-//                    //mainScreenController.session = session
-//                    mainScreenController.modalPresentationStyle = .fullScreen
-//                    self.navigationController?.pushViewController(mainScreenController, animated: true)
-//                }
-//            } else {
-//                DispatchQueue.main.async {
-//                    self.showErrorMessage(message: "Usuário ou Senha incorretos!")
-//                }
-//            }
-//        }
+        let email = loginView.emailTextField.text!
+        let pass = loginView.passwordTextField.text!
+
+        self.repository.login(email: email, password: pass) { [self] (session) in
+            if session != nil {
+                DispatchQueue.main.async {
+                    let mainScreenController = MainScreenController()
+                    mainScreenController.session = session
+                    mainScreenController.modalPresentationStyle = .fullScreen
+                    self.navigationController?.pushViewController(mainScreenController, animated: true)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.showErrorMessage(message: "Usuário ou Senha incorretos!")
+                }
+            }
+        }
         
     }
     
     private func guest() { // log as a guest.
         print("Convidado!")
 		let mainScreenController = MainScreenController()
+        mainScreenController.session = nil
 		mainScreenController.modalPresentationStyle = .fullScreen
 		self.navigationController?.pushViewController(mainScreenController, animated: true)
     }
