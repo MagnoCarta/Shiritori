@@ -13,7 +13,9 @@ class AddFriendController: UIViewController {
     let friendRepository = FriendRepository()
     
     // Temporaly! Update it with the session model.
-    let token = "Ej4UxrTcO7o/1XnZMKwXKw=="
+    //let token = "Ej4UxrTcO7o/1XnZMKwXKw=="
+    
+    var session: Session?
     
     var users = [User]() {
         didSet {
@@ -54,38 +56,63 @@ class AddFriendController: UIViewController {
     }
 
 // MARK: - ACTIONS
+    
     var updateParentModel: (() -> Void)!
+    
     func plusAction(uid: String?) {
-        self.friendRepository.add(token: self.token, fid: uid!) { result in
-            if result {
-                print("Adicionado com sucesso!")
-                DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
-                    self.updateParentModel()
+        if let session = self.session {
+            self.friendRepository.add(token: session.token, fid: uid!) { result in
+                if result {
+                    print("Adicionado com sucesso!")
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true, completion: nil)
+                        self.updateParentModel()
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.showErrorMessage("Erro ao adicionar!")
+                    }
                 }
-            } else {
-                print("Erro ao adicionar!")
             }
+        } else {
+            self.showErrorMessage("É preciso fazer login para adinionar amigos!")
         }
     }
     
     func search() {
         let username = self.addFriendView.friendSearchBar.searchTextField.text!
-        
         repository.search(username: username) { users in
             if let users = users {
                 
                 DispatchQueue.main.async {
                     self.users = users
+                    
+                    if users.count == 0 {
+                        self.showErrorMessage("Nenhum usuário encontrado!")
+                    }
                 }
                     
-                if users.count == 0 {
-                    print("Nenhum usuário encontrado!")
-                }
+                
             } else {
-                print("Algo deu errado!")
+                DispatchQueue.main.async {
+                    self.showErrorMessage("Algo deu errado com o servidor!")
+                }
             }
         }
+    }
+
+// MARK: - FUNCS
+    
+    func showErrorMessage(_ message: String) {
+        let dialogMessage = UIAlertController(title: "Erro!", message: message, preferredStyle: .alert)
+        // Create OK button with action handler
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        //Add Cancel button to an Alert object
+        dialogMessage.addAction(cancel)
+        // Present alert message to user
+        self.present(dialogMessage, animated: true, completion: nil)
+        //dialogMessage.setMessage(font: UIFont(name: "Comfortaa", size: 18), color: .black)
+        dialogMessage.setTitle(font: UIFont(name: "Comfortaa-Bold", size: 20), color: .lightRed)
     }
 }
 

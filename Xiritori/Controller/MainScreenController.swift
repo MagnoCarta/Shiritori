@@ -11,6 +11,7 @@ import UIKit
 class MainScreenController: UIViewController {
 
 	let mainView = MainScreenView()
+    var session: Session?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +80,11 @@ class MainScreenController: UIViewController {
 				in()
 				usleep(200000)
 				let friendsController = FriendsController()
+            
+                if let session = self.session {
+                    friendsController.session = session
+                }
+                
 				friendsController.modalPresentationStyle = .fullScreen
 				self.navigationController?.pushViewController(friendsController, animated: true)
 			}
