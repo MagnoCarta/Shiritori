@@ -15,8 +15,17 @@ class ChatGameController: UIViewController {
 
     let buttonGiveUp: UIButton = {
         let button = UIButton(type: .roundedRect)
-        button.backgroundColor = .gray
+        //button.backgroundColor = .gray
         button.layer.cornerRadius = 15
+        let imageView = UIImageView(image: UIImage(named: "Flag"))
+        button.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([imageView.topAnchor.constraint(equalTo: button.topAnchor),
+                                     imageView.bottomAnchor.constraint(equalTo: button.bottomAnchor),
+                                     imageView.leadingAnchor.constraint(equalTo: button.leadingAnchor),
+                                     imageView.trailingAnchor.constraint(equalTo: button.trailingAnchor)])
+        
+        button.contentMode = .scaleAspectFit
         
         return button
     }()
@@ -52,6 +61,7 @@ class ChatGameController: UIViewController {
     }
     
     @objc func giveUp() {
+        // print(UserDefaults.standard.string(forKey: "randomWord"))
         let dialogMessage = UIAlertController(title: "Confirme", message: "Tem certeza que quer desistir?", preferredStyle: .alert)
         // Create OK button with action handler
         let okay = UIAlertAction(title: "Sim", style: .default, handler: { (_) -> Void in
