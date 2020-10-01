@@ -24,6 +24,7 @@ class AddFriend: UIView {
         self.backgroundColor = .seriousPurple
         self.setupBackgroundImage()
         self.addSubviews(tableView, friendSearchBar)
+        self.friendSearchBar.searchTextField.addTarget(self, action: #selector(search), for: .primaryActionTriggered)
         friendSearchBar.setUpSearchBar()
         self.septupLayout()
     }
@@ -31,6 +32,9 @@ class AddFriend: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+// MARK: - ACTIONS
+    var searchAction: (() -> Void)!
+    @objc func search() { searchAction() }
     
 // MARK: - CONSTRAINTS
     

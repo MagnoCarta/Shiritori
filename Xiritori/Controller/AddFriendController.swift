@@ -9,12 +9,25 @@
 import UIKit
 
 class AddFriendController: UIViewController {
+    let repository = UserRepository()
+    let friendRepository = FriendRepository()
+    
+    // Temporaly! Update it with the session model.
+    let token = "v45FNni4ck9PclVp5hLuzA=="
+    
+    var users = [User]() {
+        didSet {
+            self.addFriendView.tableView.reloadData()
+        }
+    }
+    
 // MARK: - VIEW
     
     lazy var addFriendView: AddFriend = {
         let addFriend = AddFriend()
         addFriend.tableView.delegate = self
         addFriend.tableView.dataSource = self
+        addFriend.searchAction = self.search
         return addFriend
     }()
     
@@ -41,9 +54,38 @@ class AddFriendController: UIViewController {
     }
 
 // MARK: - ACTIONS
+    var updateParentModel: (() -> Void)!
+    func plusAction(uid: String?) {
+        self.friendRepository.add(token: self.token, fid: uid!) { result in
+            if result {
+                print("Adicionado com sucesso!")
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                    self.updateParentModel()
+                }
+            } else {
+                print("Erro ao adicionar!")
+            }
+        }
+    }
     
-    func plusAction() {
-        print("+")
+    func search() {
+        let username = self.addFriendView.friendSearchBar.searchTextField.text!
+        
+        repository.search(username: username) { users in
+            if let users = users {
+                
+                DispatchQueue.main.async {
+                    self.users = users
+                }
+                    
+                if users.count == 0 {
+                    print("Nenhum usuário encontrado!")
+                }
+            } else {
+                print("Algo deu errado!")
+            }
+        }
     }
 }
 
@@ -51,7 +93,7 @@ class AddFriendController: UIViewController {
 
 extension AddFriendController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,6 +101,8 @@ extension AddFriendController: UITableViewDelegate, UITableViewDataSource {
             withIdentifier: "AddFriendCell",
             for: indexPath
         ) as? FriendsTableViewCell
+        
+        cell?.config(user: self.users[indexPath.row])
         cell?.setupCellForAddFriend()
         cell?.buttonVsPlusAction = self.plusAction
         return cell!

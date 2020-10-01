@@ -9,6 +9,14 @@
 import UIKit
 
 class SigninController: UIViewController {
+    
+    let repositoy = UserRepository()
+    var session: Session? {
+        didSet {
+            print(self.session!.token)
+        }
+    }
+    
 // MARK: - VIEW
     
     // View Cotent
@@ -31,7 +39,31 @@ class SigninController: UIViewController {
 // MARK: - ACTIONS
     
     func signin() { // signin action
-        print("SignIn")
+        let user = User(
+            username: String(self.signinView.usernameTextField.text!),
+            email: String(self.signinView.emailTextField.text!),
+            password: String(self.signinView.passwordTextField.text!)
+        )
+        
+        if validadeNoNullFields(user.username, user.email) {
+            if validatePassword(user.password, self.signinView.repeatPasswordTextField.text!) {
+                
+                self.repositoy.create(userToSave: user) { (session) in
+                    if let session = session {
+                        self.session = session
+                    } else {
+                        DispatchQueue.main.async {
+                            self.showErrorMessage("Nao foi possível criar o usuário!")
+                        }
+                    }
+                }
+                
+            } else {
+                self.showErrorMessage("As Senhas não são iguais!")
+            }
+        } else {
+            self.showErrorMessage("Todos os campos são obrigatórios!")
+        }
     }
     
 // MARK: - FUNCS
@@ -46,5 +78,32 @@ class SigninController: UIViewController {
             NSAttributedString.Key.font: UIFont(name: "MyMessyHandwriting", size: 40)!,
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]
+    }
+    
+    private func validadeNoNullFields(_ fieldsContents: String...) -> Bool {
+        for content in fieldsContents where content == "" {
+            return false
+        }
+        return true
+    }
+    
+    private func validatePassword(_ pass1: String, _ pass2: String) -> Bool {
+        if pass1 == pass2 && pass1 != "" {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func showErrorMessage(_ message: String) {
+        let dialogMessage = UIAlertController(title: "Erro!", message: message, preferredStyle: .alert)
+        // Create OK button with action handler
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        //Add Cancel button to an Alert object
+        dialogMessage.addAction(cancel)
+        // Present alert message to user
+        self.present(dialogMessage, animated: true, completion: nil)
+        //dialogMessage.setMessage(font: UIFont(name: "Comfortaa", size: 18), color: .black)
+        dialogMessage.setTitle(font: UIFont(name: "Comfortaa-Bold", size: 20), color: .lightRed)
     }
 }

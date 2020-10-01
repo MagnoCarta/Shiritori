@@ -10,7 +10,9 @@ import UIKit
 
 class PlayScreenView: UIView {
 
-	let centerControl: (x: CGFloat, y: CGFloat) = (x: 0, y: 125)
+	let centerControl: (x: CGFloat, y: CGFloat) = (x: -5, y: 125)
+	
+	let screenTitle = UIImageView(image: UIImage(named: "ModoDeJogo-2-2"))
 	
 	let computerButton = UIButton()
 	let comp = UIImageView(image: UIImage(named: "Comp"))
@@ -33,6 +35,8 @@ class PlayScreenView: UIView {
 		
 		setupComputerButton()
 		setupPlayerButton()
+		
+		setupTitleAssets()
     }
     
     required init?(coder: NSCoder) {
@@ -40,6 +44,31 @@ class PlayScreenView: UIView {
     }
 
 	// MARK: - Setup Assets
+	func setupTitleAssets() {
+		
+		self.addSubview(screenTitle)
+		screenTitle.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			screenTitle.widthAnchor.constraint(equalToConstant: 225),
+			screenTitle.heightAnchor.constraint(equalToConstant: 125),
+			screenTitle.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
+			screenTitle.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -235)
+		])
+		
+		let previousTitleTransform = screenTitle.transform
+		UIView.animate(
+			withDuration: 1,
+			delay: 0,
+			options: [.repeat, .autoreverse],
+			animations: {
+				self.screenTitle.transform = self.screenTitle.transform.scaledBy(x: 1.1, y: 1.1)
+			},
+			completion: { _
+				in()
+				self.screenTitle.transform = previousTitleTransform
+			})
+	}
+	
 	func setupComputerAssets() {
 		
 		self.addSubview(decorCompLeft)
