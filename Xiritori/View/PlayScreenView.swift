@@ -10,7 +10,7 @@ import UIKit
 
 class PlayScreenView: UIView {
 
-	let centerControl: (x: CGFloat, y: CGFloat) = (x: 0, y: 125)
+	let centerControl: (x: CGFloat, y: CGFloat) = (x: -5, y: 125)
 	
 	let screenTitle = UIImageView(image: UIImage(named: "ModoDeJogo-2-2"))
 	
@@ -51,8 +51,8 @@ class PlayScreenView: UIView {
 		NSLayoutConstraint.activate([
 			screenTitle.widthAnchor.constraint(equalToConstant: 225),
 			screenTitle.heightAnchor.constraint(equalToConstant: 125),
-			screenTitle.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0 + centerControl.x),
-			screenTitle.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -360 + centerControl.y)
+			screenTitle.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
+			screenTitle.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -235)
 		])
 		
 		let previousTitleTransform = screenTitle.transform
@@ -61,7 +61,7 @@ class PlayScreenView: UIView {
 			delay: 0,
 			options: [.repeat, .autoreverse],
 			animations: {
-				self.screenTitle.transform = self.screenTitle.transform.scaledBy(x: 1.05, y: 1.05)
+				self.screenTitle.transform = self.screenTitle.transform.scaledBy(x: 1.1, y: 1.1)
 			},
 			completion: { _
 				in()
