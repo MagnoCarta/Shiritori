@@ -12,7 +12,7 @@ class FriendsController: UIViewController {
     let repository = FriendRepository()
     
     // Temporaly! Update it with the session model.
-    let token = "v45FNni4ck9PclVp5hLuzA=="
+    let token = "Ej4UxrTcO7o/1XnZMKwXKw=="
     
     var friends = [Friend]() {
         didSet {
