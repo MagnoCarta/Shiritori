@@ -53,6 +53,11 @@ class ChatGame: UIView {
     let shapeOrangePoints = UIView()
     let orangePoints = UILabel()
     var path: UIBezierPath!
+    var inversalTime: Double = 3*(.pi)/2
+    let wordGenerator = CreateJson()
+    var firstWord = true
+    var ultimaPalavra = ""
+    var isMyTurn = false
     
     override init(frame: CGRect) {
 
@@ -92,25 +97,58 @@ class ChatGame: UIView {
         buttonSendText.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
         
         keyboardActions()
-
         clockTime()
-        
+        Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { etimer in
+            
+            if self.wordGenerator.palavra != "" && self.firstWord{
+                self.firstWord = !self.firstWord
+                self.mensagemMockada.append(self.wordGenerator.palavra)
+                
+                self.ultimaPalavra = self.mensagemMockada.last!
+                self.tableView.reloadData()
+                self.inversalTime = 3*(.pi)/2
+               // self.wordGenerator.getRandomWord(initiaLetter: String(self.ultimaPalavra[(self.ultimaPalavra.startIndex)]))
+            }else if !self.firstWord && self.isMyTurn {
+                self.mensagemMockada.append(self.wordGenerator.palavra)
+                if self.mensagemMockada.count >= 6 {
+                    self.mensagemMockada.removeFirst()
+                  //  ChatCell.isPlayer = false
+                }
+                self.ultimaPalavra = self.mensagemMockada.last!
+                self.tableView.reloadData()
+                self.inversalTime = 3*(.pi)/2
+                self.isMyTurn = !self.isMyTurn
+            }
+            
+        }
     }
     func clockTime() {
         
         var tempo: Double = 0
-        var inversalTime: Double = 6.18
-        Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
+        
+        let circle = UIBezierPath.init(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: 90), radius: 35, startAngle: 0, endAngle: 2*(.pi), clockwise: true)
+        let circleShapeBackLine = CAShapeLayer()
+        circleShapeBackLine.path = circle.cgPath
+        circleShapeBackLine.fillColor = UIColor.lightRed.cgColor
+        self.layer.addSublayer(circleShapeBackLine)
+        Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { timer in
             tempo += 0.01
-            inversalTime -= 0.01
+            self.inversalTime += 0.01
             
          //   circle.move(to: .zero)
-            let circle = UIBezierPath.init(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: 90), radius: 35, startAngle: 0, endAngle:
-											CGFloat(inversalTime), clockwise: true)
+        let halfLeftCircle = UIBezierPath.init(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: 90), radius: 35, startAngle: 3*(.pi)/2, endAngle:
+                                                CGFloat(self.inversalTime), clockwise: true)
+        let halfRightCircle = UIBezierPath.init(arcCenter: CGPoint(x: UIScreen.main.bounds.width/2, y: 90), radius: 35, startAngle: .pi/2, endAngle:
+                                                    CGFloat(self.inversalTime) + .pi, clockwise: true)
             let circleShape = CAShapeLayer()
-            circleShape.path = circle.cgPath
-            circleShape.fillColor = UIColor.lightRed.cgColor
+            circleShape.path = halfLeftCircle.cgPath
+            circleShape.fillColor = UIColor.seriousPurple.cgColor
             self.layer.addSublayer(circleShape)
+//            let otherSideCircleshape = CAShapeLayer()
+//            otherSideCircleshape.path = halfRightCircle.cgPath
+//            otherSideCircleshape.fillColor = UIColor.seriousPurple.cgColor
+//            self.layer.addSublayer(otherSideCircleshape)
+        
             var tempoEspera: Double = 0
             Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { etimer in
                 tempoEspera += 0.01
@@ -118,10 +156,10 @@ class ChatGame: UIView {
                     circleShape.removeFromSuperlayer()
                     etimer.invalidate()
                 }
-                
+
             }
-            if tempo > 6.17 {
-                timer.invalidate()
+            if self.inversalTime >= (2*(.pi))+(3*(.pi)/2) {
+                self.inversalTime = 3*(.pi)/2
             }
         }
         
@@ -178,7 +216,20 @@ class ChatGame: UIView {
         
         guard let textSent = textField.text else { return  }
         mensagemMockada.append(textSent)
+        if self.mensagemMockada.count >= 6 {
+            self.mensagemMockada.removeFirst()
+        }
+
+       // self.ultimaPalavra = self.mensagemMockada.last!
+        self.inversalTime = 3*(.pi)/2
+        ChatCell.isPlayer = true
         tableView.reloadData()
+       
+        self.wordGenerator.getRandomWord(initiaLetter: String(self.mensagemMockada.last![(self.mensagemMockada.last!.count-1)...]).uppercased(), completion: {palavra in
+            self.isMyTurn = !self.isMyTurn
+            
+        })
+        
 
     }
     
@@ -194,6 +245,7 @@ extension ChatGame: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Cells.chatCell) as? ChatCell else {
             return UITableViewCell() }
+        
         let messages = mensagemMockada[indexPath.row]
         cell.set(message: messages)
         return cell

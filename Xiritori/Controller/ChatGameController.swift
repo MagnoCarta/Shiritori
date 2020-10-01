@@ -52,6 +52,7 @@ class ChatGameController: UIViewController {
     }
     
     @objc func giveUp() {
+        // print(UserDefaults.standard.string(forKey: "randomWord"))
         let dialogMessage = UIAlertController(title: "Confirme", message: "Tem certeza que quer desistir?", preferredStyle: .alert)
         // Create OK button with action handler
         let okay = UIAlertAction(title: "Sim", style: .default, handler: { (_) -> Void in
