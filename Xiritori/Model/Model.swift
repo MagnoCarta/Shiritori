@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct Cells {
+    static let chatCell = "ChatCell"
+    static let notificationSettingsCell = "NotiicationSettingsCell"
+    static let soundSettingsCell = "soundSettingsCell"
+}
