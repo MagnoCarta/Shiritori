@@ -36,8 +36,6 @@
 		0F666E6C2524C1E200E7FAEF /* Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F666E6B2524C1E200E7FAEF /* Create.swift */; };
 		0F666E6D2524C1E200E7FAEF /* Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F666E6B2524C1E200E7FAEF /* Create.swift */; };
 		0F792C162524AAB1001F9100 /* MyPlaygroundGetWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F792C0D2524AAB1001F9100 /* MyPlaygroundGetWords.framework */; };
-		0F792C1B2524AAB1001F9100 /* MyPlaygroundGetWordsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F792C1A2524AAB1001F9100 /* MyPlaygroundGetWordsTests.swift */; };
-		0F792C1D2524AAB1001F9100 /* MyPlaygroundGetWords.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F792C0F2524AAB1001F9100 /* MyPlaygroundGetWords.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0F79F51C250F99410086F6EF /* ChatGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F51B250F99410086F6EF /* ChatGameController.swift */; };
 		0F79F51E25123F720086F6EF /* ChatGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F51D25123F720086F6EF /* ChatGame.swift */; };
 		0F79F5242514EA9F0086F6EF /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F79F5232514EA9F0086F6EF /* ChatCell.swift */; };
@@ -132,11 +130,7 @@
 		0F666E632524C16300E7FAEF /* teste.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = teste.txt; sourceTree = "<group>"; };
 		0F666E6B2524C1E200E7FAEF /* Create.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Create.swift; sourceTree = "<group>"; };
 		0F792C0D2524AAB1001F9100 /* MyPlaygroundGetWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyPlaygroundGetWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F792C0F2524AAB1001F9100 /* MyPlaygroundGetWords.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPlaygroundGetWords.h; sourceTree = "<group>"; };
-		0F792C102524AAB1001F9100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F792C152524AAB1001F9100 /* MyPlaygroundGetWordsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyPlaygroundGetWordsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F792C1A2524AAB1001F9100 /* MyPlaygroundGetWordsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlaygroundGetWordsTests.swift; sourceTree = "<group>"; };
-		0F792C1C2524AAB1001F9100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F79F51B250F99410086F6EF /* ChatGameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGameController.swift; sourceTree = "<group>"; };
 		0F79F51D25123F720086F6EF /* ChatGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGame.swift; sourceTree = "<group>"; };
 		0F79F5232514EA9F0086F6EF /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
@@ -267,24 +261,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		0F792C0E2524AAB1001F9100 /* MyPlaygroundGetWords */ = {
-			isa = PBXGroup;
-			children = (
-				0F792C0F2524AAB1001F9100 /* MyPlaygroundGetWords.h */,
-				0F792C102524AAB1001F9100 /* Info.plist */,
-			);
-			path = MyPlaygroundGetWords;
-			sourceTree = "<group>";
-		};
-		0F792C192524AAB1001F9100 /* MyPlaygroundGetWordsTests */ = {
-			isa = PBXGroup;
-			children = (
-				0F792C1A2524AAB1001F9100 /* MyPlaygroundGetWordsTests.swift */,
-				0F792C1C2524AAB1001F9100 /* Info.plist */,
-			);
-			path = MyPlaygroundGetWordsTests;
-			sourceTree = "<group>";
-		};
 		92E585FF2518EDB300998AAC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,8 +277,6 @@
 				DE7726C0250E8950002E6EA7 /* Xiritori */,
 				DE7726D7250E8952002E6EA7 /* XiritoriTests */,
 				DE7726E2250E8952002E6EA7 /* XiritoriUITests */,
-				0F792C0E2524AAB1001F9100 /* MyPlaygroundGetWords */,
-				0F792C192524AAB1001F9100 /* MyPlaygroundGetWordsTests */,
 				DE7726BF250E8950002E6EA7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -465,7 +439,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F792C1D2524AAB1001F9100 /* MyPlaygroundGetWords.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,7 +677,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F792C1B2524AAB1001F9100 /* MyPlaygroundGetWordsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
