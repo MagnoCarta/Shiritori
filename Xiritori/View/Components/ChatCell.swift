@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-class ChatCell: UITableViewCell {
+class ChatCustomCell: UITableViewCell {
     
     let chatBubble = UIView()
     let message = UILabel()
-    static var isPlayer = true
-    static var isOponent = true
+    // static var isPlayer = true
+    // static var isOponent = true
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -33,12 +33,12 @@ class ChatCell: UITableViewCell {
         
         self.message.text = message
         
-        if ChatCell.isPlayer {
-            ChatCell.isPlayer = !ChatCell.isPlayer
+        if ChatCustomCell.isPlayer {
+            ChatCustomCell.isPlayer = !ChatCustomCell.isPlayer
             chatBubble.backgroundColor = .lightGreen
             
         } else {
-            ChatCell.isPlayer = !ChatCell.isPlayer
+            ChatCustomCell.isPlayer = !ChatCustomCell.isPlayer
             chatBubble.backgroundColor = .orangeChat
             
         }
@@ -62,8 +62,8 @@ class ChatCell: UITableViewCell {
         
         chatBubble.translatesAutoresizingMaskIntoConstraints = false
         
-        if !ChatCell.isOponent {
-            ChatCell.isOponent = !ChatCell.isOponent
+        if !ChatCustomCell.isOponent {
+            ChatCustomCell.isOponent = !ChatCustomCell.isOponent
             
             NSLayoutConstraint.activate([
             chatBubble.heightAnchor.constraint(equalToConstant: 50),
@@ -74,7 +74,7 @@ class ChatCell: UITableViewCell {
             
         } else {
             
-            ChatCell.isOponent = !ChatCell.isOponent
+            ChatCustomCell.isOponent = !ChatCustomCell.isOponent
             
             NSLayoutConstraint.activate([
             chatBubble.heightAnchor.constraint(equalToConstant: 50),
@@ -93,7 +93,7 @@ class ChatCell: UITableViewCell {
         NSLayoutConstraint.activate([
             message.heightAnchor.constraint(equalToConstant: 30),
             message.leadingAnchor.constraint(equalTo: chatBubble.leadingAnchor, constant: 10),
-            message.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            message.trailingAnchor.constraint(equalTo: chatBubble.trailingAnchor),
             message.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
